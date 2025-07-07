@@ -27,7 +27,12 @@ const HomePage = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <Heart className="h-8 w-8 text-blue-600" />
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
+                alt="Website Logo"
+                className="h-8 w-8 object-contain" />
+
+
               <h1 className="text-2xl font-bold text-gray-900">Allurement Healthcare</h1>
             </div>
             <nav className="hidden md:flex space-x-6">
@@ -403,7 +408,12 @@ const HomePage = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Heart className="h-8 w-8 text-blue-400" />
+                <img
+                  src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
+                  alt="Website Logo"
+                  className="h-8 w-8 object-contain" />
+
+
                 <h3 className="text-xl font-bold">Allurement Healthcare</h3>
               </div>
               <p className="text-gray-400 mb-4">

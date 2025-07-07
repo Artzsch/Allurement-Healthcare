@@ -31,22 +31,22 @@ const AdminLogin = () => {
             <p className="text-gray-600 mb-6">
               Click the button below to access the admin login portal through Titan Email.
             </p>
-            <Button 
+            <Button
               onClick={handleLoginRedirect}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              size="lg"
-            >
+              size="lg">
+
               <ExternalLink className="mr-2 h-5 w-5" />
               Login to Admin Portal
             </Button>
           </div>
           
           <div className="border-t pt-6">
-            <Button 
+            <Button
               onClick={handleBackToHome}
               variant="outline"
-              className="w-full"
-            >
+              className="w-full">
+
               <ArrowRight className="mr-2 h-5 w-5 rotate-180" />
               Back to Home
             </Button>
@@ -59,8 +59,8 @@ const AdminLogin = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>);
+
 };
 
 export default AdminLogin;
