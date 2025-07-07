@@ -2,22 +2,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Heart, 
-  Users, 
-  Clock, 
-  CheckCircle, 
-  Hospital, 
-  Home, 
-  Building2, 
-  GraduationCap, 
-  Phone, 
-  Mail, 
+import {
+  Heart,
+  Users,
+  Clock,
+  CheckCircle,
+  Hospital,
+  Home,
+  Building2,
+  GraduationCap,
+  Phone,
+  Mail,
   MapPin,
   Star,
   Award,
-  Shield
-} from "lucide-react";
+  Shield } from
+"lucide-react";
 
 const HomePage = () => {
   return (
@@ -37,7 +37,10 @@ const HomePage = () => {
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </nav>
-            <Button className="hidden md:block">Get Started</Button>
+            <div className="hidden md:flex items-center space-x-4">
+              <Button className="bg-blue-600 hover:bg-blue-700">Get Started</Button>
+              <Button variant="outline" onClick={() => window.location.href = '/admin'}>Admin</Button>
+            </div>
           </div>
         </div>
       </header>
@@ -57,11 +60,11 @@ const HomePage = () => {
               We provide temporary, temp-to-hire, and permanent employees to ensure your facility operates at its best.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => window.location.href = 'tel:(437)220-2025'}>
                 <Phone className="mr-2 h-5 w-5" />
                 Contact Us Today
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '#contact'}>
                 Learn More
               </Button>
             </div>
@@ -297,7 +300,7 @@ const HomePage = () => {
                     <Phone className="h-6 w-6 text-blue-600" />
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <p className="text-gray-600">Call us for immediate assistance</p>
+                      <p className="text-gray-600">(437) 220-2025</p>
                     </div>
                   </div>
                   
@@ -305,15 +308,26 @@ const HomePage = () => {
                     <Mail className="h-6 w-6 text-blue-600" />
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-gray-600">Send us your requirements</p>
+                      <p className="text-gray-600">enquire@allurementhealthcares.com</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-4">
                     <MapPin className="h-6 w-6 text-blue-600" />
                     <div>
-                      <p className="font-semibold">Location</p>
-                      <p className="text-gray-600">Serving local companies nationwide</p>
+                      <p className="font-semibold">Address</p>
+                      <p className="text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
+                    </div>
+                  </div>
+                  
+                  <Separator />
+                  
+                  <div className="space-y-4">
+                    <h4 className="font-semibold">Contact Information</h4>
+                    <div className="text-sm text-gray-600 space-y-2">
+                      <p><strong>Phone:</strong> (437) 220-2025</p>
+                      <p><strong>Email:</strong> enquire@allurementhealthcares.com</p>
+                      <p><strong>Website:</strong> www.allurementhealthcares.com</p>
                     </div>
                   </div>
                   
@@ -339,20 +353,20 @@ const HomePage = () => {
                   <form className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Your healthcare facility"
-                      />
+                        placeholder="Your healthcare facility" />
+
                     </div>
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="your@email.com"
-                      />
+                        placeholder="your@email.com" />
+
                     </div>
                     
                     <div>
@@ -367,11 +381,11 @@ const HomePage = () => {
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                      <textarea 
+                      <textarea
                         rows={4}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Tell us about your staffing requirements..."
-                      />
+                        placeholder="Tell us about your staffing requirements..." />
+
                     </div>
                     
                     <Button type="submit" className="w-full">Send Message</Button>
@@ -392,9 +406,15 @@ const HomePage = () => {
                 <Heart className="h-8 w-8 text-blue-400" />
                 <h3 className="text-xl font-bold">Allurement Healthcare</h3>
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-4">
                 Your trusted partner in healthcare staffing solutions, providing quality personnel for healthcare facilities nationwide.
               </p>
+              <div className="text-sm text-gray-400 space-y-1">
+                <p>📞 (437) 220-2025</p>
+                <p>✉️ enquire@allurementhealthcares.com</p>
+                <p>📍 2 County Ln, Barrie, ON L4N 0E6</p>
+                <p>🌐 www.allurementhealthcares.com</p>
+              </div>
             </div>
             
             <div>
@@ -435,8 +455,8 @@ const HomePage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default HomePage;
