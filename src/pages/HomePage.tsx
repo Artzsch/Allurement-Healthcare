@@ -550,19 +550,38 @@ const HomePage = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div className="flex flex-col items-center">
-                <MapPin className="h-6 w-6 text-blue-600 mb-2" />
-                <p className="font-semibold text-gray-900">Address</p>
-                <p className="text-sm text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
+                <a 
+                  href="https://maps.google.com/?q=2+County+Ln,+Barrie,+ON+L4N+0E6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
+                >
+                  <MapPin className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
+                  <p className="font-semibold text-gray-900">Address</p>
+                  <p className="text-sm text-gray-600 hover:text-blue-600">2 County Ln, Barrie, ON L4N 0E6</p>
+                </a>
               </div>
               <div className="flex flex-col items-center">
-                <Phone className="h-6 w-6 text-blue-600 mb-2" />
-                <p className="font-semibold text-gray-900">Phone</p>
-                <p className="text-sm text-gray-600">(437) 220-2025</p>
+                <a 
+                  href="tel:+14372202025" 
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
+                >
+                  <Phone className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
+                  <p className="font-semibold text-gray-900">Phone</p>
+                  <p className="text-sm text-gray-600 hover:text-blue-600">(437) 220-2025</p>
+                </a>
               </div>
               <div className="flex flex-col items-center">
-                <Mail className="h-6 w-6 text-blue-600 mb-2" />
-                <p className="font-semibold text-gray-900">Email</p>
-                <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
+                <a 
+                  href="https://app.titan.email/login/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
+                >
+                  <Mail className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
+                  <p className="font-semibold text-gray-900">Email</p>
+                  <p className="text-sm text-gray-600 hover:text-blue-600">enquire@allurementhealthcares.com</p>
+                </a>
               </div>
               <div className="flex flex-col items-center">
                 <Globe className="h-6 w-6 text-blue-600 mb-2" />
