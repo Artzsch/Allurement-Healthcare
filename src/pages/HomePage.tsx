@@ -110,12 +110,12 @@ const HomePage = () => {
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-800/90"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
             backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/c13e5b26-42fc-4d81-870a-a9000ec3af74.png')`
-          }}
-        ></div>
+          }}>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -362,22 +362,7 @@ const HomePage = () => {
             </p>
           </div>
           
-          {/* Educational Session Image */}
-          <div className="mb-16">
-            <div className="relative rounded-lg overflow-hidden shadow-xl max-w-5xl mx-auto">
-              <img 
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/38c61bf8-3abb-48b9-9865-9cc4fbedc699.png" 
-                alt="Healthcare professional conducting educational session" 
-                className="w-full h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h4 className="text-xl font-semibold mb-2">Professional Development</h4>
-                  <p className="text-sm opacity-90">We invest in our professionals' growth through ongoing education and training</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {staffingModels.map((model, index) =>
@@ -490,11 +475,11 @@ const HomePage = () => {
           {/* Professional Care Image */}
           <div className="mt-16 text-center">
             <div className="relative rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
-              <img 
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png" 
-                alt="Healthcare professional providing compassionate care" 
-                className="w-full h-96 object-cover"
-              />
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png"
+                alt="Healthcare professional providing compassionate care"
+                className="w-full h-96 object-cover" />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h4 className="text-xl font-semibold mb-2">Compassionate Care</h4>
