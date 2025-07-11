@@ -41,7 +41,7 @@ const HomePage = () => {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </nav>
             <div className="hidden md:flex items-center space-x-4">
-              <Button className="bg-blue-600 hover:bg-blue-700">Get Started</Button>
+              <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => window.location.href = '/consultation'}>Get Started</Button>
               <Button variant="outline" onClick={() => window.location.href = '/admin'}>Admin</Button>
             </div>
           </div>
