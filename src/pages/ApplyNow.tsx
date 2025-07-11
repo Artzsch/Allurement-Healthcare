@@ -732,7 +732,7 @@ const ApplyNow = () => {
                 <Mail className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="font-semibold">Email Us</p>
-                  <p className="text-sm text-gray-600">enquire@allurementhealthcare.com</p>
+                  <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
                 </div>
               </div>
               <div className="flex items-center">

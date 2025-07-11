@@ -562,12 +562,12 @@ const HomePage = () => {
               <div className="flex flex-col items-center">
                 <Mail className="h-6 w-6 text-blue-600 mb-2" />
                 <p className="font-semibold text-gray-900">Email</p>
-                <p className="text-sm text-gray-600">enquire@allurementhealthcare.com</p>
+                <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
               </div>
               <div className="flex flex-col items-center">
                 <Globe className="h-6 w-6 text-blue-600 mb-2" />
                 <p className="font-semibold text-gray-900">Website</p>
-                <p className="text-sm text-gray-600">www.allurementhealthcare.com</p>
+                <p className="text-sm text-gray-600">www.allurementhealthcares.com</p>
               </div>
             </div>
           </div>
