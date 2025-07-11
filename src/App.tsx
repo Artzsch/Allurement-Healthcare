@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import ConsultationForm from "./pages/ConsultationForm";
+import RequestStaffingSolutions from "./pages/RequestStaffingSolutions";
+import ApplyNow from "./pages/ApplyNow";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,8 @@ const App = () =>
           <Route path="/" element={<HomePage />} />
           <Route path="/consultation" element={<ConsultationForm />} />
           <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/request-staffing" element={<RequestStaffingSolutions />} />
+          <Route path="/apply-now" element={<ApplyNow />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

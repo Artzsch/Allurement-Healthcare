@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Link } from 'react-router-dom';
 import {
   Heart,
   Users,
@@ -17,7 +18,8 @@ import {
   Building2,
   CheckCircle,
   Star,
-  Award } from
+  Award,
+  Globe } from
 "lucide-react";
 
 const HomePage = () => {
@@ -511,7 +513,9 @@ const HomePage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full mb-4">Request Staffing Solutions</Button>
+                <Button className="w-full mb-4" asChild>
+                  <Link to="/request-staffing">Request Staffing Solutions</Link>
+                </Button>
                 <p className="text-sm text-gray-600 text-center">
                   24-72 hour emergency placements available
                 </p>
@@ -525,26 +529,45 @@ const HomePage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full mb-4" variant="outline">Apply Now</Button>
+                <Button className="w-full mb-4" variant="outline" asChild>
+                  <Link to="/apply-now">Apply Now</Link>
+                </Button>
                 <p className="text-sm text-gray-600 text-center">
                   Flexible schedules and competitive compensation
                 </p>
               </CardContent>
             </Card>
           </div>
-          <div className="mt-16 text-center">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-              <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-gray-700">Call us for immediate assistance</span>
+          {/* Service Hours and Contact Info */}
+          <div className="mt-16 bg-blue-50 rounded-lg p-8">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">📌 Service Hours</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700"><strong>Monday-Friday:</strong> 8:00 AM – 6:00 PM</p>
+                <p className="text-gray-700"><strong>Weekends:</strong> Emergency staffing only</p>
               </div>
-              <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-gray-700">Email for detailed inquiries</span>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center">
+                <MapPin className="h-6 w-6 text-blue-600 mb-2" />
+                <p className="font-semibold text-gray-900">Address</p>
+                <p className="text-sm text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
               </div>
-              <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-gray-700">Serving all of Ontario</span>
+              <div className="flex flex-col items-center">
+                <Phone className="h-6 w-6 text-blue-600 mb-2" />
+                <p className="font-semibold text-gray-900">Phone</p>
+                <p className="text-sm text-gray-600">(437) 220-2025</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Mail className="h-6 w-6 text-blue-600 mb-2" />
+                <p className="font-semibold text-gray-900">Email</p>
+                <p className="text-sm text-gray-600">enquire@allurementhealthcare.com</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Globe className="h-6 w-6 text-blue-600 mb-2" />
+                <p className="font-semibold text-gray-900">Website</p>
+                <p className="text-sm text-gray-600">www.allurementhealthcare.com</p>
               </div>
             </div>
           </div>
