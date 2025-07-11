@@ -123,6 +123,11 @@ const HomePage = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Flexible, Reliable Healthcare Staffing Solutions
             </h1>
+            <div className="mb-6">
+              <p className="text-2xl md:text-3xl font-semibold text-blue-100 mb-4">
+                "Your Workforce, Our Commitment"
+              </p>
+            </div>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
               Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </p>
@@ -550,34 +555,34 @@ const HomePage = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div className="flex flex-col items-center">
-                <a 
-                  href="https://maps.google.com/?q=2+County+Ln,+Barrie,+ON+L4N+0E6" 
-                  target="_blank" 
+                <a
+                  href="https://maps.google.com/?q=2+County+Ln,+Barrie,+ON+L4N+0E6"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
-                >
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
+
                   <MapPin className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
                   <p className="font-semibold text-gray-900">Address</p>
                   <p className="text-sm text-gray-600 hover:text-blue-600">2 County Ln, Barrie, ON L4N 0E6</p>
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                <a 
-                  href="tel:+14372202025" 
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
-                >
+                <a
+                  href="tel:+14372202025"
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
+
                   <Phone className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
                   <p className="font-semibold text-gray-900">Phone</p>
                   <p className="text-sm text-gray-600 hover:text-blue-600">(437) 220-2025</p>
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                <a 
-                  href="https://app.titan.email/login/" 
-                  target="_blank" 
+                <a
+                  href="https://app.titan.email/login/"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200"
-                >
+                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
+
                   <Mail className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
                   <p className="font-semibold text-gray-900">Email</p>
                   <p className="text-sm text-gray-600 hover:text-blue-600">enquire@allurementhealthcares.com</p>
@@ -601,6 +606,9 @@ const HomePage = () => {
               <img src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/9feb6ea2-78af-4017-a792-94fb0d17ce4e.png" alt="Logo" className="h-8 w-8 mr-2" />
               <span className="text-2xl font-bold">Allurement Healthcare Staffing</span>
             </div>
+            <p className="text-lg text-blue-300 font-medium mb-2">
+              "Your Workforce, Our Commitment"
+            </p>
             <p className="text-gray-400 mb-4">
               Providing flexible, reliable, and high-quality staffing services across Ontario
             </p>
