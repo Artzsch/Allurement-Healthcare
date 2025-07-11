@@ -9,19 +9,19 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
-import { 
-  Heart, 
-  ArrowLeft, 
-  Building2, 
-  Users, 
-  Clock, 
-  Phone, 
-  Mail, 
+import {
+  Heart,
+  ArrowLeft,
+  Building2,
+  Users,
+  Clock,
+  Phone,
+  Mail,
   MapPin,
   Stethoscope,
   ChefHat,
-  Home as HomeIcon
-} from 'lucide-react';
+  Home as HomeIcon } from
+'lucide-react';
 
 const RequestStaffingSolutions = () => {
   const { toast } = useToast();
@@ -46,56 +46,56 @@ const RequestStaffingSolutions = () => {
   });
 
   const facilityTypes = [
-    'Hospital',
-    'Long-Term Care Home',
-    'Retirement Residence',
-    'Home Care Agency',
-    'Private Residence',
-    'Rehabilitation Center',
-    'Mental Health Facility',
-    'Community Health Center',
-    'Other'
-  ];
+  'Hospital',
+  'Long-Term Care Home',
+  'Retirement Residence',
+  'Home Care Agency',
+  'Private Residence',
+  'Rehabilitation Center',
+  'Mental Health Facility',
+  'Community Health Center',
+  'Other'];
+
 
   const staffingOptions = [
-    { id: 'rn', label: 'Registered Nurses (RN)', icon: <Stethoscope className="h-4 w-4" /> },
-    { id: 'rpn', label: 'Registered Practical Nurses (RPN)', icon: <Stethoscope className="h-4 w-4" /> },
-    { id: 'psw', label: 'Personal Support Workers (PSW)', icon: <Heart className="h-4 w-4" /> },
-    { id: 'chef', label: 'Personal Chef Services', icon: <ChefHat className="h-4 w-4" /> },
-    { id: 'homecare', label: 'Home Care Support', icon: <HomeIcon className="h-4 w-4" /> },
-    { id: 'management', label: 'Nursing Management', icon: <Users className="h-4 w-4" /> }
-  ];
+  { id: 'rn', label: 'Registered Nurses (RN)', icon: <Stethoscope className="h-4 w-4" /> },
+  { id: 'rpn', label: 'Registered Practical Nurses (RPN)', icon: <Stethoscope className="h-4 w-4" /> },
+  { id: 'psw', label: 'Personal Support Workers (PSW)', icon: <Heart className="h-4 w-4" /> },
+  { id: 'chef', label: 'Personal Chef Services', icon: <ChefHat className="h-4 w-4" /> },
+  { id: 'homecare', label: 'Home Care Support', icon: <HomeIcon className="h-4 w-4" /> },
+  { id: 'management', label: 'Nursing Management', icon: <Users className="h-4 w-4" /> }];
+
 
   const shiftOptions = [
-    'Day Shift (7AM-7PM)',
-    'Night Shift (7PM-7AM)',
-    'Split Shifts',
-    'Flexible Hours',
-    'Weekend Coverage',
-    'Overtime Coverage'
-  ];
+  'Day Shift (7AM-7PM)',
+  'Night Shift (7PM-7AM)',
+  'Split Shifts',
+  'Flexible Hours',
+  'Weekend Coverage',
+  'Overtime Coverage'];
+
 
   const handleStaffingNeedChange = (needId: string, checked: boolean) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      staffingNeeds: checked 
-        ? [...prev.staffingNeeds, needId]
-        : prev.staffingNeeds.filter(id => id !== needId)
+      staffingNeeds: checked ?
+      [...prev.staffingNeeds, needId] :
+      prev.staffingNeeds.filter((id) => id !== needId)
     }));
   };
 
   const handleShiftPreferenceChange = (shift: string, checked: boolean) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      shiftPreferences: checked 
-        ? [...prev.shiftPreferences, shift]
-        : prev.shiftPreferences.filter(s => s !== shift)
+      shiftPreferences: checked ?
+      [...prev.shiftPreferences, shift] :
+      prev.shiftPreferences.filter((s) => s !== shift)
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.facilityName || !formData.contactName || !formData.email || !formData.phone) {
       toast({
@@ -117,10 +117,10 @@ const RequestStaffingSolutions = () => {
 
     // Here you would typically send the data to your API
     console.log('Form submitted:', formData);
-    
+
     toast({
       title: "Request Submitted Successfully!",
-      description: "We'll contact you within 24 hours to discuss your staffing needs.",
+      description: "We'll contact you within 24 hours to discuss your staffing needs."
     });
 
     // Reset form
@@ -192,24 +192,24 @@ const RequestStaffingSolutions = () => {
                   <Input
                     id="facilityName"
                     value={formData.facilityName}
-                    onChange={(e) => setFormData(prev => ({ ...prev, facilityName: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, facilityName: e.target.value }))}
                     placeholder="Enter facility name"
-                    required
-                  />
+                    required />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="facilityType">Facility Type *</Label>
-                  <Select 
-                    value={formData.facilityType} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, facilityType: value }))}
-                  >
+                  <Select
+                    value={formData.facilityType}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, facilityType: value }))}>
+
                     <SelectTrigger>
                       <SelectValue placeholder="Select facility type" />
                     </SelectTrigger>
                     <SelectContent>
-                      {facilityTypes.map(type => (
-                        <SelectItem key={type} value={type}>{type}</SelectItem>
-                      ))}
+                      {facilityTypes.map((type) =>
+                      <SelectItem key={type} value={type}>{type}</SelectItem>
+                      )}
                     </SelectContent>
                   </Select>
                 </div>
@@ -221,19 +221,19 @@ const RequestStaffingSolutions = () => {
                   <Input
                     id="contactName"
                     value={formData.contactName}
-                    onChange={(e) => setFormData(prev => ({ ...prev, contactName: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, contactName: e.target.value }))}
                     placeholder="Your full name"
-                    required
-                  />
+                    required />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="contactTitle">Title/Position</Label>
                   <Input
                     id="contactTitle"
                     value={formData.contactTitle}
-                    onChange={(e) => setFormData(prev => ({ ...prev, contactTitle: e.target.value }))}
-                    placeholder="e.g., HR Manager, Director of Care"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, contactTitle: e.target.value }))}
+                    placeholder="e.g., HR Manager, Director of Care" />
+
                 </div>
               </div>
 
@@ -244,10 +244,10 @@ const RequestStaffingSolutions = () => {
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                     placeholder="contact@facility.com"
-                    required
-                  />
+                    required />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number *</Label>
@@ -255,10 +255,10 @@ const RequestStaffingSolutions = () => {
                     id="phone"
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
                     placeholder="(xxx) xxx-xxxx"
-                    required
-                  />
+                    required />
+
                 </div>
               </div>
 
@@ -267,9 +267,9 @@ const RequestStaffingSolutions = () => {
                 <Input
                   id="address"
                   value={formData.address}
-                  onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
-                  placeholder="Street address"
-                />
+                  onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
+                  placeholder="Street address" />
+
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -278,16 +278,16 @@ const RequestStaffingSolutions = () => {
                   <Input
                     id="city"
                     value={formData.city}
-                    onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
-                    placeholder="City"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, city: e.target.value }))}
+                    placeholder="City" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="province">Province</Label>
-                  <Select 
-                    value={formData.province} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, province: value }))}
-                  >
+                  <Select
+                    value={formData.province}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, province: value }))}>
+
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -301,58 +301,58 @@ const RequestStaffingSolutions = () => {
                   <Input
                     id="postalCode"
                     value={formData.postalCode}
-                    onChange={(e) => setFormData(prev => ({ ...prev, postalCode: e.target.value }))}
-                    placeholder="A1A 1A1"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, postalCode: e.target.value }))}
+                    placeholder="A1A 1A1" />
+
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Staffing Needs * (Select all that apply)</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {staffingOptions.map(option => (
-                    <div key={option.id} className="flex items-center space-x-2">
+                  {staffingOptions.map((option) =>
+                  <div key={option.id} className="flex items-center space-x-2">
                       <Checkbox
-                        id={option.id}
-                        checked={formData.staffingNeeds.includes(option.id)}
-                        onCheckedChange={(checked) => handleStaffingNeedChange(option.id, checked as boolean)}
-                      />
-                      <Label 
-                        htmlFor={option.id} 
-                        className="flex items-center cursor-pointer"
-                      >
+                      id={option.id}
+                      checked={formData.staffingNeeds.includes(option.id)}
+                      onCheckedChange={(checked) => handleStaffingNeedChange(option.id, checked as boolean)} />
+
+                      <Label
+                      htmlFor={option.id}
+                      className="flex items-center cursor-pointer">
+
                         {option.icon}
                         <span className="ml-2">{option.label}</span>
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Shift Preferences (Select all that apply)</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {shiftOptions.map(shift => (
-                    <div key={shift} className="flex items-center space-x-2">
+                  {shiftOptions.map((shift) =>
+                  <div key={shift} className="flex items-center space-x-2">
                       <Checkbox
-                        id={shift}
-                        checked={formData.shiftPreferences.includes(shift)}
-                        onCheckedChange={(checked) => handleShiftPreferenceChange(shift, checked as boolean)}
-                      />
+                      id={shift}
+                      checked={formData.shiftPreferences.includes(shift)}
+                      onCheckedChange={(checked) => handleShiftPreferenceChange(shift, checked as boolean)} />
+
                       <Label htmlFor={shift} className="cursor-pointer">
                         {shift}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Request Urgency</Label>
-                <RadioGroup 
-                  value={formData.urgency} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, urgency: value }))}
-                >
+                <RadioGroup
+                  value={formData.urgency}
+                  onValueChange={(value) => setFormData((prev) => ({ ...prev, urgency: value }))}>
+
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="emergency" id="emergency" />
                     <Label htmlFor="emergency" className="flex items-center">
@@ -380,10 +380,10 @@ const RequestStaffingSolutions = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="duration">Expected Duration</Label>
-                  <Select 
-                    value={formData.duration} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, duration: value }))}
-                  >
+                  <Select
+                    value={formData.duration}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, duration: value }))}>
+
                     <SelectTrigger>
                       <SelectValue placeholder="Select duration" />
                     </SelectTrigger>
@@ -402,8 +402,8 @@ const RequestStaffingSolutions = () => {
                     id="startDate"
                     type="date"
                     value={formData.startDate}
-                    onChange={(e) => setFormData(prev => ({ ...prev, startDate: e.target.value }))}
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, startDate: e.target.value }))} />
+
                 </div>
               </div>
 
@@ -412,10 +412,10 @@ const RequestStaffingSolutions = () => {
                 <Textarea
                   id="specialRequirements"
                   value={formData.specialRequirements}
-                  onChange={(e) => setFormData(prev => ({ ...prev, specialRequirements: e.target.value }))}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, specialRequirements: e.target.value }))}
                   placeholder="e.g., Language requirements, specific certifications, experience level"
-                  rows={3}
-                />
+                  rows={3} />
+
               </div>
 
               <div className="space-y-2">
@@ -423,10 +423,10 @@ const RequestStaffingSolutions = () => {
                 <Textarea
                   id="additionalInfo"
                   value={formData.additionalInfo}
-                  onChange={(e) => setFormData(prev => ({ ...prev, additionalInfo: e.target.value }))}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, additionalInfo: e.target.value }))}
                   placeholder="Any additional details about your staffing needs"
-                  rows={4}
-                />
+                  rows={4} />
+
               </div>
 
               <div className="flex gap-4">
@@ -473,8 +473,8 @@ const RequestStaffingSolutions = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default RequestStaffingSolutions;

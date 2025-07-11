@@ -9,22 +9,22 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
-import { 
-  Heart, 
-  ArrowLeft, 
-  User, 
-  Briefcase, 
-  GraduationCap, 
-  Phone, 
-  Mail, 
+import {
+  Heart,
+  ArrowLeft,
+  User,
+  Briefcase,
+  GraduationCap,
+  Phone,
+  Mail,
   MapPin,
   Stethoscope,
   ChefHat,
   Home as HomeIcon,
   Upload,
   Calendar,
-  Clock
-} from 'lucide-react';
+  Clock } from
+'lucide-react';
 
 const ApplyNow = () => {
   const { toast } = useToast();
@@ -38,7 +38,7 @@ const ApplyNow = () => {
     city: '',
     province: 'Ontario',
     postalCode: '',
-    
+
     // Professional Information
     profession: '',
     license: '',
@@ -46,22 +46,22 @@ const ApplyNow = () => {
     specializations: [],
     availability: '',
     shiftPreferences: [],
-    
+
     // Employment Preferences
     employmentType: '',
     minHourlyRate: '',
     preferredLocations: [],
     transportationReliable: '',
-    
+
     // Qualifications
     education: '',
     certifications: [],
     languages: [],
-    
+
     // Additional Information
     additionalSkills: '',
     whyJoin: '',
-    
+
     // Legal
     eligibleToWork: '',
     backgroundCheck: '',
@@ -69,93 +69,93 @@ const ApplyNow = () => {
   });
 
   const professionOptions = [
-    { value: 'rn', label: 'Registered Nurse (RN)', icon: <Stethoscope className="h-4 w-4" /> },
-    { value: 'rpn', label: 'Registered Practical Nurse (RPN)', icon: <Stethoscope className="h-4 w-4" /> },
-    { value: 'psw', label: 'Personal Support Worker (PSW)', icon: <Heart className="h-4 w-4" /> },
-    { value: 'chef', label: 'Personal Chef', icon: <ChefHat className="h-4 w-4" /> },
-    { value: 'homecare', label: 'Home Care Support', icon: <HomeIcon className="h-4 w-4" /> },
-    { value: 'management', label: 'Nursing Management', icon: <User className="h-4 w-4" /> }
-  ];
+  { value: 'rn', label: 'Registered Nurse (RN)', icon: <Stethoscope className="h-4 w-4" /> },
+  { value: 'rpn', label: 'Registered Practical Nurse (RPN)', icon: <Stethoscope className="h-4 w-4" /> },
+  { value: 'psw', label: 'Personal Support Worker (PSW)', icon: <Heart className="h-4 w-4" /> },
+  { value: 'chef', label: 'Personal Chef', icon: <ChefHat className="h-4 w-4" /> },
+  { value: 'homecare', label: 'Home Care Support', icon: <HomeIcon className="h-4 w-4" /> },
+  { value: 'management', label: 'Nursing Management', icon: <User className="h-4 w-4" /> }];
+
 
   const specializationOptions = [
-    'Critical Care (ICU, CCU, ER)',
-    'Medical-Surgical',
-    'Gerontology & Long-Term Care',
-    'Pediatrics & Neonatal',
-    'Mental Health & Addictions',
-    'Perioperative (OR, PACU)',
-    'Community & Public Health',
-    'Dementia & Alzheimer Care',
-    'Palliative Care',
-    'Rehabilitation',
-    'Wound Care',
-    'Medication Management'
-  ];
+  'Critical Care (ICU, CCU, ER)',
+  'Medical-Surgical',
+  'Gerontology & Long-Term Care',
+  'Pediatrics & Neonatal',
+  'Mental Health & Addictions',
+  'Perioperative (OR, PACU)',
+  'Community & Public Health',
+  'Dementia & Alzheimer Care',
+  'Palliative Care',
+  'Rehabilitation',
+  'Wound Care',
+  'Medication Management'];
+
 
   const shiftOptions = [
-    'Day Shift (7AM-7PM)',
-    'Night Shift (7PM-7AM)',
-    'Split Shifts',
-    'Flexible Hours',
-    'Weekend Coverage',
-    'On-call Availability'
-  ];
+  'Day Shift (7AM-7PM)',
+  'Night Shift (7PM-7AM)',
+  'Split Shifts',
+  'Flexible Hours',
+  'Weekend Coverage',
+  'On-call Availability'];
+
 
   const certificationOptions = [
-    'CPR/BLS',
-    'ACLS',
-    'PALS',
-    'TNCC',
-    'CCRN',
-    'CNA',
-    'Wound Care Certification',
-    'Medication Administration',
-    'First Aid',
-    'Food Safety',
-    'WHMIS',
-    'Other'
-  ];
+  'CPR/BLS',
+  'ACLS',
+  'PALS',
+  'TNCC',
+  'CCRN',
+  'CNA',
+  'Wound Care Certification',
+  'Medication Administration',
+  'First Aid',
+  'Food Safety',
+  'WHMIS',
+  'Other'];
+
 
   const languageOptions = [
-    'English',
-    'French',
-    'Spanish',
-    'Italian',
-    'Portuguese',
-    'Mandarin',
-    'Cantonese',
-    'Hindi',
-    'Punjabi',
-    'Arabic',
-    'Other'
-  ];
+  'English',
+  'French',
+  'Spanish',
+  'Italian',
+  'Portuguese',
+  'Mandarin',
+  'Cantonese',
+  'Hindi',
+  'Punjabi',
+  'Arabic',
+  'Other'];
+
 
   const locationOptions = [
-    'Toronto',
-    'Mississauga',
-    'Brampton',
-    'Hamilton',
-    'Ottawa',
-    'London',
-    'Windsor',
-    'Kitchener',
-    'Barrie',
-    'Oshawa',
-    'Willing to travel anywhere in Ontario'
-  ];
+  'Toronto',
+  'Mississauga',
+  'Brampton',
+  'Hamilton',
+  'Ottawa',
+  'London',
+  'Windsor',
+  'Kitchener',
+  'Barrie',
+  'Oshawa',
+  'Willing to travel anywhere in Ontario'];
+
 
   const handleArrayChange = (arrayName: string, value: string, checked: boolean) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [arrayName]: checked 
-        ? [...prev[arrayName], value]
-        : prev[arrayName].filter(item => item !== value)
+      [arrayName]: checked ?
+      [...prev[arrayName], value] :
+      prev[arrayName].filter((item) => item !== value)
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.profession) {
       toast({
@@ -168,10 +168,10 @@ const ApplyNow = () => {
 
     // Here you would typically send the data to your API
     console.log('Application submitted:', formData);
-    
+
     toast({
       title: "Application Submitted Successfully!",
-      description: "We'll review your application and contact you within 48 hours.",
+      description: "We'll review your application and contact you within 48 hours."
     });
 
     // Reset form
@@ -253,20 +253,20 @@ const ApplyNow = () => {
                   <Input
                     id="firstName"
                     value={formData.firstName}
-                    onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, firstName: e.target.value }))}
                     placeholder="Enter your first name"
-                    required
-                  />
+                    required />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Last Name *</Label>
                   <Input
                     id="lastName"
                     value={formData.lastName}
-                    onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, lastName: e.target.value }))}
                     placeholder="Enter your last name"
-                    required
-                  />
+                    required />
+
                 </div>
               </div>
 
@@ -277,10 +277,10 @@ const ApplyNow = () => {
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                     placeholder="your.email@example.com"
-                    required
-                  />
+                    required />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number *</Label>
@@ -288,10 +288,10 @@ const ApplyNow = () => {
                     id="phone"
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
                     placeholder="(xxx) xxx-xxxx"
-                    required
-                  />
+                    required />
+
                 </div>
               </div>
 
@@ -300,9 +300,9 @@ const ApplyNow = () => {
                 <Input
                   id="address"
                   value={formData.address}
-                  onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
-                  placeholder="Street address"
-                />
+                  onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
+                  placeholder="Street address" />
+
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -311,16 +311,16 @@ const ApplyNow = () => {
                   <Input
                     id="city"
                     value={formData.city}
-                    onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
-                    placeholder="City"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, city: e.target.value }))}
+                    placeholder="City" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="province">Province</Label>
-                  <Select 
-                    value={formData.province} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, province: value }))}
-                  >
+                  <Select
+                    value={formData.province}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, province: value }))}>
+
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -334,9 +334,9 @@ const ApplyNow = () => {
                   <Input
                     id="postalCode"
                     value={formData.postalCode}
-                    onChange={(e) => setFormData(prev => ({ ...prev, postalCode: e.target.value }))}
-                    placeholder="A1A 1A1"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, postalCode: e.target.value }))}
+                    placeholder="A1A 1A1" />
+
                 </div>
               </div>
             </CardContent>
@@ -356,22 +356,22 @@ const ApplyNow = () => {
             <CardContent className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="profession">Profession *</Label>
-                <Select 
-                  value={formData.profession} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, profession: value }))}
-                >
+                <Select
+                  value={formData.profession}
+                  onValueChange={(value) => setFormData((prev) => ({ ...prev, profession: value }))}>
+
                   <SelectTrigger>
                     <SelectValue placeholder="Select your profession" />
                   </SelectTrigger>
                   <SelectContent>
-                    {professionOptions.map(option => (
-                      <SelectItem key={option.value} value={option.value}>
+                    {professionOptions.map((option) =>
+                    <SelectItem key={option.value} value={option.value}>
                         <div className="flex items-center">
                           {option.icon}
                           <span className="ml-2">{option.label}</span>
                         </div>
                       </SelectItem>
-                    ))}
+                    )}
                   </SelectContent>
                 </Select>
               </div>
@@ -382,16 +382,16 @@ const ApplyNow = () => {
                   <Input
                     id="license"
                     value={formData.license}
-                    onChange={(e) => setFormData(prev => ({ ...prev, license: e.target.value }))}
-                    placeholder="Enter your license number"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, license: e.target.value }))}
+                    placeholder="Enter your license number" />
+
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="experience">Years of Experience</Label>
-                  <Select 
-                    value={formData.experience} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, experience: value }))}
-                  >
+                  <Select
+                    value={formData.experience}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, experience: value }))}>
+
                     <SelectTrigger>
                       <SelectValue placeholder="Select experience level" />
                     </SelectTrigger>
@@ -409,27 +409,27 @@ const ApplyNow = () => {
               <div className="space-y-4">
                 <Label>Specializations/Areas of Expertise</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {specializationOptions.map(spec => (
-                    <div key={spec} className="flex items-center space-x-2">
+                  {specializationOptions.map((spec) =>
+                  <div key={spec} className="flex items-center space-x-2">
                       <Checkbox
-                        id={spec}
-                        checked={formData.specializations.includes(spec)}
-                        onCheckedChange={(checked) => handleArrayChange('specializations', spec, checked as boolean)}
-                      />
+                      id={spec}
+                      checked={formData.specializations.includes(spec)}
+                      onCheckedChange={(checked) => handleArrayChange('specializations', spec, checked as boolean)} />
+
                       <Label htmlFor={spec} className="cursor-pointer text-sm">
                         {spec}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Availability</Label>
-                <RadioGroup 
-                  value={formData.availability} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, availability: value }))}
-                >
+                <RadioGroup
+                  value={formData.availability}
+                  onValueChange={(value) => setFormData((prev) => ({ ...prev, availability: value }))}>
+
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="full-time" id="full-time" />
                     <Label htmlFor="full-time">Full-time</Label>
@@ -452,18 +452,18 @@ const ApplyNow = () => {
               <div className="space-y-4">
                 <Label>Shift Preferences</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {shiftOptions.map(shift => (
-                    <div key={shift} className="flex items-center space-x-2">
+                  {shiftOptions.map((shift) =>
+                  <div key={shift} className="flex items-center space-x-2">
                       <Checkbox
-                        id={shift}
-                        checked={formData.shiftPreferences.includes(shift)}
-                        onCheckedChange={(checked) => handleArrayChange('shiftPreferences', shift, checked as boolean)}
-                      />
+                      id={shift}
+                      checked={formData.shiftPreferences.includes(shift)}
+                      onCheckedChange={(checked) => handleArrayChange('shiftPreferences', shift, checked as boolean)} />
+
                       <Label htmlFor={shift} className="cursor-pointer text-sm">
                         {shift}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </CardContent>
@@ -484,10 +484,10 @@ const ApplyNow = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="employmentType">Employment Type</Label>
-                  <Select 
-                    value={formData.employmentType} 
-                    onValueChange={(value) => setFormData(prev => ({ ...prev, employmentType: value }))}
-                  >
+                  <Select
+                    value={formData.employmentType}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, employmentType: value }))}>
+
                     <SelectTrigger>
                       <SelectValue placeholder="Select employment type" />
                     </SelectTrigger>
@@ -506,36 +506,36 @@ const ApplyNow = () => {
                     id="minHourlyRate"
                     type="number"
                     value={formData.minHourlyRate}
-                    onChange={(e) => setFormData(prev => ({ ...prev, minHourlyRate: e.target.value }))}
-                    placeholder="e.g., 30"
-                  />
+                    onChange={(e) => setFormData((prev) => ({ ...prev, minHourlyRate: e.target.value }))}
+                    placeholder="e.g., 30" />
+
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Preferred Work Locations</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {locationOptions.map(location => (
-                    <div key={location} className="flex items-center space-x-2">
+                  {locationOptions.map((location) =>
+                  <div key={location} className="flex items-center space-x-2">
                       <Checkbox
-                        id={location}
-                        checked={formData.preferredLocations.includes(location)}
-                        onCheckedChange={(checked) => handleArrayChange('preferredLocations', location, checked as boolean)}
-                      />
+                      id={location}
+                      checked={formData.preferredLocations.includes(location)}
+                      onCheckedChange={(checked) => handleArrayChange('preferredLocations', location, checked as boolean)} />
+
                       <Label htmlFor={location} className="cursor-pointer text-sm">
                         {location}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Reliable Transportation</Label>
-                <RadioGroup 
-                  value={formData.transportationReliable} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, transportationReliable: value }))}
-                >
+                <RadioGroup
+                  value={formData.transportationReliable}
+                  onValueChange={(value) => setFormData((prev) => ({ ...prev, transportationReliable: value }))}>
+
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="yes" id="transport-yes" />
                     <Label htmlFor="transport-yes">Yes, I have reliable transportation</Label>
@@ -563,10 +563,10 @@ const ApplyNow = () => {
             <CardContent className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="education">Highest Education Level</Label>
-                <Select 
-                  value={formData.education} 
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, education: value }))}
-                >
+                <Select
+                  value={formData.education}
+                  onValueChange={(value) => setFormData((prev) => ({ ...prev, education: value }))}>
+
                   <SelectTrigger>
                     <SelectValue placeholder="Select education level" />
                   </SelectTrigger>
@@ -583,36 +583,36 @@ const ApplyNow = () => {
               <div className="space-y-4">
                 <Label>Certifications</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {certificationOptions.map(cert => (
-                    <div key={cert} className="flex items-center space-x-2">
+                  {certificationOptions.map((cert) =>
+                  <div key={cert} className="flex items-center space-x-2">
                       <Checkbox
-                        id={cert}
-                        checked={formData.certifications.includes(cert)}
-                        onCheckedChange={(checked) => handleArrayChange('certifications', cert, checked as boolean)}
-                      />
+                      id={cert}
+                      checked={formData.certifications.includes(cert)}
+                      onCheckedChange={(checked) => handleArrayChange('certifications', cert, checked as boolean)} />
+
                       <Label htmlFor={cert} className="cursor-pointer text-sm">
                         {cert}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
               <div className="space-y-4">
                 <Label>Languages Spoken</Label>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {languageOptions.map(lang => (
-                    <div key={lang} className="flex items-center space-x-2">
+                  {languageOptions.map((lang) =>
+                  <div key={lang} className="flex items-center space-x-2">
                       <Checkbox
-                        id={lang}
-                        checked={formData.languages.includes(lang)}
-                        onCheckedChange={(checked) => handleArrayChange('languages', lang, checked as boolean)}
-                      />
+                      id={lang}
+                      checked={formData.languages.includes(lang)}
+                      onCheckedChange={(checked) => handleArrayChange('languages', lang, checked as boolean)} />
+
                       <Label htmlFor={lang} className="cursor-pointer text-sm">
                         {lang}
                       </Label>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
@@ -621,10 +621,10 @@ const ApplyNow = () => {
                 <Textarea
                   id="additionalSkills"
                   value={formData.additionalSkills}
-                  onChange={(e) => setFormData(prev => ({ ...prev, additionalSkills: e.target.value }))}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, additionalSkills: e.target.value }))}
                   placeholder="Describe any additional skills, technologies, or experiences relevant to healthcare"
-                  rows={4}
-                />
+                  rows={4} />
+
               </div>
             </CardContent>
           </Card>
@@ -640,10 +640,10 @@ const ApplyNow = () => {
                 <Textarea
                   id="whyJoin"
                   value={formData.whyJoin}
-                  onChange={(e) => setFormData(prev => ({ ...prev, whyJoin: e.target.value }))}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, whyJoin: e.target.value }))}
                   placeholder="Tell us about your career goals and what attracts you to our organization"
-                  rows={4}
-                />
+                  rows={4} />
+
               </div>
 
               <div className="space-y-4">
@@ -651,10 +651,10 @@ const ApplyNow = () => {
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm font-medium mb-2">Are you legally eligible to work in Canada?</p>
-                    <RadioGroup 
-                      value={formData.eligibleToWork} 
-                      onValueChange={(value) => setFormData(prev => ({ ...prev, eligibleToWork: value }))}
-                    >
+                    <RadioGroup
+                      value={formData.eligibleToWork}
+                      onValueChange={(value) => setFormData((prev) => ({ ...prev, eligibleToWork: value }))}>
+
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="yes" id="eligible-yes" />
                         <Label htmlFor="eligible-yes">Yes</Label>
@@ -668,10 +668,10 @@ const ApplyNow = () => {
 
                   <div>
                     <p className="text-sm font-medium mb-2">Are you willing to undergo a background check?</p>
-                    <RadioGroup 
-                      value={formData.backgroundCheck} 
-                      onValueChange={(value) => setFormData(prev => ({ ...prev, backgroundCheck: value }))}
-                    >
+                    <RadioGroup
+                      value={formData.backgroundCheck}
+                      onValueChange={(value) => setFormData((prev) => ({ ...prev, backgroundCheck: value }))}>
+
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="yes" id="background-yes" />
                         <Label htmlFor="background-yes">Yes</Label>
@@ -690,10 +690,10 @@ const ApplyNow = () => {
                 <Textarea
                   id="references"
                   value={formData.references}
-                  onChange={(e) => setFormData(prev => ({ ...prev, references: e.target.value }))}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, references: e.target.value }))}
                   placeholder="Please provide contact information for 2-3 professional references"
-                  rows={4}
-                />
+                  rows={4} />
+
               </div>
             </CardContent>
           </Card>
@@ -740,8 +740,8 @@ const ApplyNow = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ApplyNow;
