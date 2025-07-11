@@ -81,7 +81,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Heart className="h-8 w-8 text-blue-600 mr-2" />
+              <img src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/9feb6ea2-78af-4017-a792-94fb0d17ce4e.png" alt="Logo" className="h-8 w-8 mr-2" />
               <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -579,7 +579,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
-              <Heart className="h-8 w-8 text-blue-400 mr-2" />
+              <img src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/9feb6ea2-78af-4017-a792-94fb0d17ce4e.png" alt="Logo" className="h-8 w-8 mr-2" />
               <span className="text-2xl font-bold">Allurement Healthcare Staffing</span>
             </div>
             <p className="text-gray-400 mb-4">
