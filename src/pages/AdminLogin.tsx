@@ -17,8 +17,16 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{
+          backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/95ac3bc1-4d15-4073-bbea-4c395c3a1f91.png')`
+        }}
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-green-50/90"></div>
+      
+      <Card className="w-full max-w-md relative z-10 backdrop-blur-sm bg-white/95 shadow-xl">
         <CardHeader className="text-center">
           <Shield className="h-16 w-16 text-blue-600 mx-auto mb-4" />
           <CardTitle className="text-2xl font-bold text-gray-900">Admin Login</CardTitle>

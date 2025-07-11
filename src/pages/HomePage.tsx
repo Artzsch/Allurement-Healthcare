@@ -3,22 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Heart, 
-  Users, 
-  Clock, 
-  Shield, 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Heart,
+  Users,
+  Clock,
+  Shield,
+  Phone,
+  Mail,
+  MapPin,
   ChefHat,
   Stethoscope,
   Home,
   Building2,
   CheckCircle,
   Star,
-  Award
-} from "lucide-react";
+  Award } from
+"lucide-react";
 
 const HomePage = () => {
   const scrollToSection = (sectionId: string) => {
@@ -29,48 +29,48 @@ const HomePage = () => {
   };
 
   const services = [
-    {
-      icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-      title: "Nursing Staff Solutions",
-      description: "RNs, RPNs, and specialized nursing professionals",
-      features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
-    },
-    {
-      icon: <Heart className="h-8 w-8 text-red-500" />,
-      title: "Personal Support Workers",
-      description: "Compassionate PSWs for all care settings",
-      features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
-    },
-    {
-      icon: <Home className="h-8 w-8 text-green-600" />,
-      title: "Home Care Support",
-      description: "Comprehensive in-home healthcare services",
-      features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
-    },
-    {
-      icon: <ChefHat className="h-8 w-8 text-orange-600" />,
-      title: "Personal Chef Services",
-      description: "Culinary professionals for healthcare settings",
-      features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
-    }
-  ];
+  {
+    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
+    title: "Nursing Staff Solutions",
+    description: "RNs, RPNs, and specialized nursing professionals",
+    features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
+  },
+  {
+    icon: <Heart className="h-8 w-8 text-red-500" />,
+    title: "Personal Support Workers",
+    description: "Compassionate PSWs for all care settings",
+    features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
+  },
+  {
+    icon: <Home className="h-8 w-8 text-green-600" />,
+    title: "Home Care Support",
+    description: "Comprehensive in-home healthcare services",
+    features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
+  },
+  {
+    icon: <ChefHat className="h-8 w-8 text-orange-600" />,
+    title: "Personal Chef Services",
+    description: "Culinary professionals for healthcare settings",
+    features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
+  }];
+
 
   const staffingModels = [
-    { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
-    { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
-    { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
-    { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
-    { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }
-  ];
+  { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
+  { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
+  { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
+  { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
+  { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }];
+
 
   const industries = [
-    "Hospitals & Health Networks",
-    "Long-Term Care & Retirement Homes", 
-    "Home Care Agencies",
-    "Private Residences (Concierge Care)",
-    "Government Health Programs",
-    "Rehabilitation Centers"
-  ];
+  "Hospitals & Health Networks",
+  "Long-Term Care & Retirement Homes",
+  "Home Care Agencies",
+  "Private Residences (Concierge Care)",
+  "Government Health Programs",
+  "Rehabilitation Centers"];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -83,22 +83,22 @@ const HomePage = () => {
               <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <button 
+              <button
                 onClick={() => scrollToSection('services')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
-              >
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+
                 Services
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
-              >
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+
                 About
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
-              >
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+
                 Contact
               </button>
             </div>
@@ -107,8 +107,16 @@ const HomePage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-800/90"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/c13e5b26-42fc-4d81-870a-a9000ec3af74.png')`
+          }}
+        ></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Flexible, Reliable Healthcare Staffing Solutions
@@ -117,19 +125,19 @@ const HomePage = () => {
               Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-blue-600 hover:bg-gray-100"
-                onClick={() => scrollToSection('services')}
-              >
+                onClick={() => scrollToSection('services')}>
+
                 Our Services
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-white text-white hover:bg-white hover:text-blue-600"
-                onClick={() => scrollToSection('contact')}
-              >
+                onClick={() => scrollToSection('contact')}>
+
                 Get Started
               </Button>
             </div>
@@ -150,8 +158,8 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            {services.map((service, index) =>
+            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
                     {service.icon}
@@ -161,16 +169,16 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                    {service.features.map((feature, idx) =>
+                  <li key={idx} className="flex items-center text-sm text-gray-600">
                         <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                         {feature}
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -353,10 +361,27 @@ const HomePage = () => {
               Multiple engagement options to meet your specific needs
             </p>
           </div>
+          
+          {/* Educational Session Image */}
+          <div className="mb-16">
+            <div className="relative rounded-lg overflow-hidden shadow-xl max-w-5xl mx-auto">
+              <img 
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/38c61bf8-3abb-48b9-9865-9cc4fbedc699.png" 
+                alt="Healthcare professional conducting educational session" 
+                className="w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Professional Development</h4>
+                  <p className="text-sm opacity-90">We invest in our professionals' growth through ongoing education and training</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staffingModels.map((model, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            {staffingModels.map((model, index) =>
+            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <CardTitle className="text-lg">{model.name}</CardTitle>
                   <CardDescription>{model.description}</CardDescription>
@@ -368,7 +393,7 @@ const HomePage = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -382,12 +407,12 @@ const HomePage = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) => (
-              <div key={index} className="flex items-center bg-gray-50 p-4 rounded-lg">
+            {industries.map((industry, index) =>
+            <div key={index} className="flex items-center bg-gray-50 p-4 rounded-lg">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
                 <span className="text-gray-700">{industry}</span>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -459,6 +484,23 @@ const HomePage = () => {
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+          
+          {/* Professional Care Image */}
+          <div className="mt-16 text-center">
+            <div className="relative rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
+              <img 
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png" 
+                alt="Healthcare professional providing compassionate care" 
+                className="w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Compassionate Care</h4>
+                  <p className="text-sm opacity-90">Our professionals deliver exceptional care with empathy and expertise</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -541,8 +583,8 @@ const HomePage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default HomePage;
