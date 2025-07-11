@@ -37,24 +37,24 @@ const ConsultationForm = () => {
   });
 
   const handleInputChange = (field: string, value: string | boolean | string[]) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [field]: value
     }));
   };
 
   const handlePositionChange = (position: string, checked: boolean) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      positions: checked 
-        ? [...prev.positions, position]
-        : prev.positions.filter(p => p !== position)
+      positions: checked ?
+      [...prev.positions, position] :
+      prev.positions.filter((p) => p !== position)
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.company) {
       toast({
         title: "Required Fields Missing",
@@ -74,17 +74,17 @@ const ConsultationForm = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       // Here you would typically send the data to your backend
       // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       toast({
         title: "Consultation Request Submitted!",
-        description: "Thank you for your request. Our team will contact you within 24 hours.",
+        description: "Thank you for your request. Our team will contact you within 24 hours."
       });
-      
+
       // Clear form
       setFormData({
         firstName: '',
@@ -105,7 +105,7 @@ const ConsultationForm = () => {
         contactMethod: '',
         agreesToTerms: false
       });
-      
+
     } catch (error) {
       toast({
         title: "Submission Error",
@@ -118,21 +118,21 @@ const ConsultationForm = () => {
   };
 
   const positions = [
-    'Registered Nurse (RN)',
-    'Licensed Practical Nurse (LPN)',
-    'Certified Nursing Assistant (CNA)',
-    'Medical Assistant',
-    'Physical Therapist',
-    'Occupational Therapist',
-    'Respiratory Therapist',
-    'Pharmacist',
-    'Physician',
-    'Nurse Practitioner',
-    'Medical Technologist',
-    'Radiologic Technologist',
-    'Administrative Staff',
-    'Other'
-  ];
+  'Registered Nurse (RN)',
+  'Licensed Practical Nurse (LPN)',
+  'Certified Nursing Assistant (CNA)',
+  'Medical Assistant',
+  'Physical Therapist',
+  'Occupational Therapist',
+  'Respiratory Therapist',
+  'Pharmacist',
+  'Physician',
+  'Nurse Practitioner',
+  'Medical Technologist',
+  'Radiologic Technologist',
+  'Administrative Staff',
+  'Other'];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -145,8 +145,8 @@ const ConsultationForm = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/')}
-                className="flex items-center space-x-2"
-              >
+                className="flex items-center space-x-2">
+
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back to Home</span>
               </Button>
@@ -154,8 +154,8 @@ const ConsultationForm = () => {
               <img
                 src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
                 alt="Allurement Healthcare Logo"
-                className="h-12 w-12 object-contain"
-              />
+                className="h-12 w-12 object-contain" />
+
               <h1 className="text-xl font-bold text-gray-900">Allurement Healthcare</h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -222,8 +222,8 @@ const ConsultationForm = () => {
                           value={formData.firstName}
                           onChange={(e) => handleInputChange('firstName', e.target.value)}
                           placeholder="John"
-                          required
-                        />
+                          required />
+
                       </div>
                       <div>
                         <Label htmlFor="lastName">Last Name *</Label>
@@ -232,8 +232,8 @@ const ConsultationForm = () => {
                           value={formData.lastName}
                           onChange={(e) => handleInputChange('lastName', e.target.value)}
                           placeholder="Smith"
-                          required
-                        />
+                          required />
+
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -245,8 +245,8 @@ const ConsultationForm = () => {
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
                           placeholder="john.smith@hospital.com"
-                          required
-                        />
+                          required />
+
                       </div>
                       <div>
                         <Label htmlFor="phone">Phone Number *</Label>
@@ -256,8 +256,8 @@ const ConsultationForm = () => {
                           value={formData.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
                           placeholder="(555) 123-4567"
-                          required
-                        />
+                          required />
+
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -268,8 +268,8 @@ const ConsultationForm = () => {
                           value={formData.company}
                           onChange={(e) => handleInputChange('company', e.target.value)}
                           placeholder="General Hospital"
-                          required
-                        />
+                          required />
+
                       </div>
                       <div>
                         <Label htmlFor="position">Your Position</Label>
@@ -277,8 +277,8 @@ const ConsultationForm = () => {
                           id="position"
                           value={formData.position}
                           onChange={(e) => handleInputChange('position', e.target.value)}
-                          placeholder="HR Manager, Director of Nursing, etc."
-                        />
+                          placeholder="HR Manager, Director of Nursing, etc." />
+
                       </div>
                     </div>
                   </div>
@@ -338,18 +338,18 @@ const ConsultationForm = () => {
                     <div>
                       <Label>Positions Needed (Select all that apply)</Label>
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
-                        {positions.map((position) => (
-                          <div key={position} className="flex items-center space-x-2">
+                        {positions.map((position) =>
+                        <div key={position} className="flex items-center space-x-2">
                             <Checkbox
-                              id={position}
-                              checked={formData.positions.includes(position)}
-                              onCheckedChange={(checked) => handlePositionChange(position, checked as boolean)}
-                            />
+                            id={position}
+                            checked={formData.positions.includes(position)}
+                            onCheckedChange={(checked) => handlePositionChange(position, checked as boolean)} />
+
                             <Label htmlFor={position} className="text-sm font-normal">
                               {position}
                             </Label>
                           </div>
-                        ))}
+                        )}
                       </div>
                     </div>
 
@@ -360,8 +360,8 @@ const ConsultationForm = () => {
                           id="numberOfStaff"
                           value={formData.numberOfStaff}
                           onChange={(e) => handleInputChange('numberOfStaff', e.target.value)}
-                          placeholder="e.g., 5-10"
-                        />
+                          placeholder="e.g., 5-10" />
+
                       </div>
                       <div>
                         <Label htmlFor="duration">Expected Duration</Label>
@@ -386,8 +386,8 @@ const ConsultationForm = () => {
                           id="startDate"
                           type="date"
                           value={formData.startDate}
-                          onChange={(e) => handleInputChange('startDate', e.target.value)}
-                        />
+                          onChange={(e) => handleInputChange('startDate', e.target.value)} />
+
                       </div>
                     </div>
 
@@ -396,8 +396,8 @@ const ConsultationForm = () => {
                       <RadioGroup
                         value={formData.urgency}
                         onValueChange={(value) => handleInputChange('urgency', value)}
-                        className="flex flex-col space-y-2 mt-2"
-                      >
+                        className="flex flex-col space-y-2 mt-2">
+
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="immediate" id="immediate" />
                           <Label htmlFor="immediate">Immediate (within 24-48 hours)</Label>
@@ -445,8 +445,8 @@ const ConsultationForm = () => {
                         value={formData.message}
                         onChange={(e) => handleInputChange('message', e.target.value)}
                         placeholder="Please provide any additional information about your staffing needs, specific requirements, certifications needed, shift preferences, etc."
-                        rows={4}
-                      />
+                        rows={4} />
+
                     </div>
 
                     <div>
@@ -454,8 +454,8 @@ const ConsultationForm = () => {
                       <RadioGroup
                         value={formData.contactMethod}
                         onValueChange={(value) => handleInputChange('contactMethod', value)}
-                        className="flex flex-row space-x-6 mt-2"
-                      >
+                        className="flex flex-row space-x-6 mt-2">
+
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="phone" id="phone-contact" />
                           <Label htmlFor="phone-contact">Phone</Label>
@@ -478,8 +478,8 @@ const ConsultationForm = () => {
                       <Checkbox
                         id="terms"
                         checked={formData.agreesToTerms}
-                        onCheckedChange={(checked) => handleInputChange('agreesToTerms', checked as boolean)}
-                      />
+                        onCheckedChange={(checked) => handleInputChange('agreesToTerms', checked as boolean)} />
+
                       <Label htmlFor="terms" className="text-sm font-normal">
                         I agree to be contacted by Allurement Healthcare regarding my staffing needs. 
                         I understand that this consultation is free and there is no obligation to proceed with services.
@@ -493,16 +493,16 @@ const ConsultationForm = () => {
                       type="submit"
                       size="lg"
                       className="bg-blue-600 hover:bg-blue-700 px-8"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>
+                      disabled={isSubmitting}>
+
+                      {isSubmitting ?
+                      <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                           Submitting...
-                        </>
-                      ) : (
-                        'Submit Consultation Request'
-                      )}
+                        </> :
+
+                      'Submit Consultation Request'
+                      }
                     </Button>
                   </div>
                 </form>
@@ -540,8 +540,8 @@ const ConsultationForm = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ConsultationForm;

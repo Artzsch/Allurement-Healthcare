@@ -1,278 +1,339 @@
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import {
-  Heart,
-  Users,
-  Clock,
-  CheckCircle,
-  Hospital,
+import { 
+  Heart, 
+  Users, 
+  Clock, 
+  Shield, 
+  Phone, 
+  Mail, 
+  MapPin, 
+  ChefHat,
+  Stethoscope,
   Home,
   Building2,
-  GraduationCap,
-  Phone,
-  Mail,
-  MapPin,
+  CheckCircle,
   Star,
-  Award,
-  Shield } from
-"lucide-react";
+  Award
+} from "lucide-react";
 
 const HomePage = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const services = [
+    {
+      icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
+      title: "Nursing Staff Solutions",
+      description: "RNs, RPNs, and specialized nursing professionals",
+      features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
+    },
+    {
+      icon: <Heart className="h-8 w-8 text-red-500" />,
+      title: "Personal Support Workers",
+      description: "Compassionate PSWs for all care settings",
+      features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
+    },
+    {
+      icon: <Home className="h-8 w-8 text-green-600" />,
+      title: "Home Care Support",
+      description: "Comprehensive in-home healthcare services",
+      features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
+    },
+    {
+      icon: <ChefHat className="h-8 w-8 text-orange-600" />,
+      title: "Personal Chef Services",
+      description: "Culinary professionals for healthcare settings",
+      features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
+    }
+  ];
+
+  const staffingModels = [
+    { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
+    { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
+    { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
+    { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
+    { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }
+  ];
+
+  const industries = [
+    "Hospitals & Health Networks",
+    "Long-Term Care & Retirement Homes", 
+    "Home Care Agencies",
+    "Private Residences (Concierge Care)",
+    "Government Health Programs",
+    "Rehabilitation Centers"
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
-                alt="Allurement Healthcare Logo"
-                className="h-16 w-16 object-contain" />
-              <h1 className="text-2xl font-bold text-gray-900">Allurement Healthcare</h1>
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <Heart className="h-8 w-8 text-blue-600 mr-2" />
+              <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
             </div>
-            <nav className="hidden md:flex space-x-6">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-              <a href="#industries" className="text-gray-700 hover:text-blue-600 transition-colors">Industries</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-            </nav>
-            <div className="hidden md:flex items-center space-x-4">
-              <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => window.location.href = '/consultation'}>Get Started</Button>
-              <Button variant="outline" onClick={() => window.location.href = '/admin'}>Admin</Button>
+            <div className="hidden md:flex space-x-8">
+              <button 
+                onClick={() => scrollToSection('services')}
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>
-      </header>
+      </nav>
 
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-blue-50 to-green-50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
-              Full-Service Healthcare Staffing
-            </Badge>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Your Trusted Partner in Healthcare Staffing Solutions
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Allurement Healthcare specializes in meeting the staffing needs of companies in the Healthcare industry. 
-              We provide temporary, temp-to-hire, and permanent employees to ensure your facility operates at its best.
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Flexible, Reliable Healthcare Staffing Solutions
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+              Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => window.location.href = 'tel:(437)220-2025'}>
-                <Phone className="mr-2 h-5 w-5" />
-                Contact Us Today
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-600 hover:bg-gray-100"
+                onClick={() => scrollToSection('services')}
+              >
+                Our Services
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.href = '#contact'}>
-                Learn More
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white hover:text-blue-600"
+                onClick={() => scrollToSection('contact')}
+              >
+                Get Started
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Main Services Overview */}
+      <section id="services" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Staffing Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We offer comprehensive staffing solutions tailored to your healthcare facility's unique needs
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Healthcare Staffing Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive, customized recruitment solutions designed to address staffing gaps and improve patient care
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <Clock className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <CardTitle className="text-2xl">Temporary Staffing</CardTitle>
-                <CardDescription>Short-term solutions for immediate needs</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Quick placement within 24-48 hours</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Flexible scheduling options</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Cover for sick leave & vacations</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>No long-term commitments</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <Users className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <CardTitle className="text-2xl">Temp-to-Hire</CardTitle>
-                <CardDescription>Try before you commit</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Evaluate candidates before hiring</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Reduced hiring risks</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Seamless transition process</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Cost-effective solution</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <Award className="h-16 w-16 text-purple-600 mx-auto mb-4" />
-                <CardTitle className="text-2xl">Permanent Placement</CardTitle>
-                <CardDescription>Long-term talent acquisition</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Extensive candidate screening</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Industry expertise matching</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Competitive salary negotiations</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Ongoing support & follow-up</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="text-center">
+                  <div className="flex justify-center mb-4">
+                    {service.icon}
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardDescription>{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section id="industries" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our expertise spans across various healthcare sectors, ensuring specialized staffing solutions
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8">
-                <Hospital className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Healthcare Facilities</h3>
-                <p className="text-gray-600">Hospitals, medical centers, and specialized clinics</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8">
-                <Home className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Long-term Care</h3>
-                <p className="text-gray-600">Nursing homes, assisted living, and rehabilitation centers</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8">
-                <Building2 className="h-16 w-16 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Private Home Care</h3>
-                <p className="text-gray-600">In-home healthcare services and private duty nursing</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-8">
-                <GraduationCap className="h-16 w-16 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Educational Institutions</h3>
-                <p className="text-gray-600">Schools, universities, and training facilities</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Allurement Healthcare?</h2>
-              <p className="text-xl text-gray-600">
-                We're committed to excellence in healthcare staffing with a proven track record of success
-              </p>
+      {/* Detailed Services */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Nursing Staff Solutions */}
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <Stethoscope className="h-8 w-8 text-blue-600 mr-3" />
+              Nursing Staff Solutions
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Registered Nurses (RNs) & Registered Practical Nurses (RPNs)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <h4 className="font-semibold mb-3">Specialty Placements:</h4>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <Badge variant="outline">Critical Care (ICU, CCU, ER)</Badge>
+                    <Badge variant="outline">Medical-Surgical</Badge>
+                    <Badge variant="outline">Gerontology & Long-Term Care</Badge>
+                    <Badge variant="outline">Pediatrics & Neonatal</Badge>
+                    <Badge variant="outline">Mental Health & Addictions</Badge>
+                    <Badge variant="outline">Perioperative (OR, PACU)</Badge>
+                    <Badge variant="outline">Community & Public Health</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Nurse Leadership Recruitment</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Users className="h-4 w-4 text-blue-600 mr-2" />
+                      Nurse Managers
+                    </li>
+                    <li className="flex items-center">
+                      <Users className="h-4 w-4 text-blue-600 mr-2" />
+                      Clinical Educators
+                    </li>
+                    <li className="flex items-center">
+                      <Users className="h-4 w-4 text-blue-600 mr-2" />
+                      Director of Care positions
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
-                <Shield className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Rigorous Screening</h3>
-                <p className="text-gray-600">Comprehensive background checks, credential verification, and skills assessment</p>
-              </div>
-              
-              <div className="text-center">
-                <Star className="h-16 w-16 text-yellow-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
-                <p className="text-gray-600">Ongoing performance monitoring and client satisfaction guarantee</p>
-              </div>
-              
-              <div className="text-center">
-                <Clock className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Quick Response</h3>
-                <p className="text-gray-600">24/7 support and rapid placement to meet urgent staffing needs</p>
-              </div>
+          </div>
+
+          {/* PSW Solutions */}
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <Heart className="h-8 w-8 text-red-500 mr-3" />
+              Personal Support Worker (PSW) Solutions
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Facility-Based Placements</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
+                      Long-Term Care Homes
+                    </li>
+                    <li className="flex items-center">
+                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
+                      Retirement Residences
+                    </li>
+                    <li className="flex items-center">
+                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
+                      Hospitals (elderly care, rehab units)
+                    </li>
+                    <li className="flex items-center">
+                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
+                      Respite Care Facilities
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Home & Community Care</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Home className="h-4 w-4 text-green-600 mr-2" />
+                      Dementia & Alzheimer's Care
+                    </li>
+                    <li className="flex items-center">
+                      <Home className="h-4 w-4 text-green-600 mr-2" />
+                      Palliative & End-of-Life Support
+                    </li>
+                    <li className="flex items-center">
+                      <Home className="h-4 w-4 text-green-600 mr-2" />
+                      Post-Surgical/Injury Recovery
+                    </li>
+                    <li className="flex items-center">
+                      <Home className="h-4 w-4 text-green-600 mr-2" />
+                      Developmental Disability Support
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Specialty PSW Programs</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Clock className="h-4 w-4 text-orange-600 mr-2" />
+                      Overnight & Live-In Care
+                    </li>
+                    <li className="flex items-center">
+                      <Users className="h-4 w-4 text-orange-600 mr-2" />
+                      Language-Specific PSWs
+                    </li>
+                    <li className="flex items-center">
+                      <Shield className="h-4 w-4 text-orange-600 mr-2" />
+                      Behavioral Support PSWs
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
-            
-            <Card className="bg-blue-50">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Process</h3>
-                <div className="grid md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
-                    <h4 className="font-semibold mb-2">Recruitment</h4>
-                    <p className="text-sm text-gray-600">Sourcing qualified candidates</p>
+          </div>
+
+          {/* Personal Chef Services */}
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <ChefHat className="h-8 w-8 text-orange-600 mr-3" />
+              Personal Chef Staffing
+            </h3>
+            <Card>
+              <CardContent className="pt-6">
+                <p className="text-gray-600 mb-4">
+                  Unique to Allurement, we place culinary professionals for specialized dietary needs:
+                </p>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="flex items-center">
+                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
+                    <span>Healthcare Facilities</span>
                   </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
-                    <h4 className="font-semibold mb-2">Screening</h4>
-                    <p className="text-sm text-gray-600">Comprehensive vetting process</p>
+                  <div className="flex items-center">
+                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
+                    <span>Private Clients</span>
                   </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
-                    <h4 className="font-semibold mb-2">Processing</h4>
-                    <p className="text-sm text-gray-600">Documentation and compliance</p>
+                  <div className="flex items-center">
+                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
+                    <span>Therapeutic Nutrition</span>
                   </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">4</div>
-                    <h4 className="font-semibold mb-2">Placement</h4>
-                    <p className="text-sm text-gray-600">Matching and deployment</p>
+                  <div className="flex items-center">
+                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
+                    <span>Cultural Meal Specialists</span>
                   </div>
                 </div>
               </CardContent>
@@ -281,120 +342,183 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
-              <p className="text-xl text-gray-600">
-                Contact us today to discuss your healthcare staffing needs
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
+      {/* Staffing Models */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Flexible Staffing Models
+            </h2>
+            <p className="text-xl text-gray-600">
+              Multiple engagement options to meet your specific needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {staffingModels.map((model, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Get in Touch</CardTitle>
-                  <CardDescription>We're here to help with your staffing needs</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <Phone className="h-6 w-6 text-blue-600" />
-                    <div>
-                      <p className="font-semibold">Phone</p>
-                      <p className="text-gray-600">(437) 220-2025</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <Mail className="h-6 w-6 text-blue-600" />
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <p className="text-gray-600">enquire@allurementhealthcares.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <MapPin className="h-6 w-6 text-blue-600" />
-                    <div>
-                      <p className="font-semibold">Address</p>
-                      <p className="text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
-                    </div>
-                  </div>
-                  
-                  <Separator />
-                  
-                  <div className="space-y-4">
-                    <h4 className="font-semibold">Contact Information</h4>
-                    <div className="text-sm text-gray-600 space-y-2">
-                      <p><strong>Phone:</strong> (437) 220-2025</p>
-                      <p><strong>Email:</strong> enquire@allurementhealthcares.com</p>
-                      <p><strong>Website:</strong> www.allurementhealthcares.com</p>
-                    </div>
-                  </div>
-                  
-                  <Separator />
-                  
-                  <div className="space-y-4">
-                    <h4 className="font-semibold">Business Hours</h4>
-                    <div className="text-sm text-gray-600 space-y-1">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday: Emergency staffing only</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Quick Quote</CardTitle>
-                  <CardDescription>Tell us about your staffing needs</CardDescription>
+                  <CardTitle className="text-lg">{model.name}</CardTitle>
+                  <CardDescription>{model.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Your healthcare facility" />
-
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <input
-                        type="email"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="your@email.com" />
-
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Staffing Type</label>
-                      <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option>Select staffing type</option>
-                        <option>Temporary</option>
-                        <option>Temp-to-Hire</option>
-                        <option>Permanent</option>
-                      </select>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                      <textarea
-                        rows={4}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Tell us about your staffing requirements..." />
-
-                    </div>
-                    
-                    <Button type="submit" className="w-full">Send Message</Button>
-                  </form>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Star className="h-4 w-4 text-yellow-500 mr-2" />
+                    <span>Best for: {model.best}</span>
+                  </div>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Industries We Serve
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {industries.map((industry, index) => (
+              <div key={index} className="flex items-center bg-gray-50 p-4 rounded-lg">
+                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                <span className="text-gray-700">{industry}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section id="about" className="py-20 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Allurement Healthcare Staffing
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Healthcare Facilities</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <Award className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Reduced Vacancy Rates</h4>
+                    <p className="text-gray-600">Deep candidate pool means faster hires</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Heart className="h-6 w-6 text-red-500 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Higher Quality Care</h4>
+                    <p className="text-gray-600">Stringent vetting improves patient outcomes</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Clock className="h-6 w-6 text-green-600 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Cost Efficiency</h4>
+                    <p className="text-gray-600">Flexible models control labor costs</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Shield className="h-6 w-6 text-orange-600 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Risk Mitigation</h4>
+                    <p className="text-gray-600">Comprehensive compliance screening</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Healthcare Professionals</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <Users className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Career-Matching</h4>
+                    <p className="text-gray-600">Aligns skills and passion with ideal workplaces</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Star className="h-6 w-6 text-yellow-500 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Ongoing Support</h4>
+                    <p className="text-gray-600">Access to free continuing education opportunities</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Award className="h-6 w-6 text-green-600 mr-3 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold">Advocacy</h4>
+                    <p className="text-gray-600">Clinical background ensures fair working conditions</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Get Started Today
+            </h2>
+            <p className="text-xl text-gray-600">
+              Ready to solve your staffing challenges or advance your healthcare career?
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>For Healthcare Facilities</CardTitle>
+                <CardDescription>
+                  Let us help you find the right staff for your facility
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full mb-4">Request Staffing Solutions</Button>
+                <p className="text-sm text-gray-600 text-center">
+                  24-72 hour emergency placements available
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>For Healthcare Professionals</CardTitle>
+                <CardDescription>
+                  Join our network of skilled healthcare professionals
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full mb-4" variant="outline">Apply Now</Button>
+                <p className="text-sm text-gray-600 text-center">
+                  Flexible schedules and competitive compensation
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-16 text-center">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-gray-700">Call us for immediate assistance</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-gray-700">Email for detailed inquiries</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-gray-700">Serving all of Ontario</span>
+              </div>
             </div>
           </div>
         </div>
@@ -402,67 +526,23 @@ const HomePage = () => {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <img
-                  src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
-                  alt="Allurement Healthcare Logo"
-                  className="h-12 w-12 object-contain" />
-                <h3 className="text-xl font-bold">Allurement Healthcare</h3>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Your trusted partner in healthcare staffing solutions, providing quality personnel for healthcare facilities nationwide.
-              </p>
-              <div className="text-sm text-gray-400 space-y-1">
-                <p>📞 (437) 220-2025</p>
-                <p>✉️ enquire@allurementhealthcares.com</p>
-                <p>📍 2 County Ln, Barrie, ON L4N 0E6</p>
-                <p>🌐 www.allurementhealthcares.com</p>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex justify-center items-center mb-4">
+              <Heart className="h-8 w-8 text-blue-400 mr-2" />
+              <span className="text-2xl font-bold">Allurement Healthcare Staffing</span>
             </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Temporary Staffing</li>
-                <li>Temp-to-Hire</li>
-                <li>Permanent Placement</li>
-                <li>Emergency Staffing</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Industries</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Healthcare Facilities</li>
-                <li>Long-term Care</li>
-                <li>Private Home Care</li>
-                <li>Educational Institutions</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Contact Us</li>
-                <li>Request Quote</li>
-                <li>Career Opportunities</li>
-                <li>Support</li>
-              </ul>
-            </div>
-          </div>
-          
-          <Separator className="my-8 bg-gray-700" />
-          
-          <div className="text-center text-gray-400">
-            <p>© {new Date().getFullYear()} Allurement Healthcare. All rights reserved.</p>
+            <p className="text-gray-400 mb-4">
+              Providing flexible, reliable, and high-quality staffing services across Ontario
+            </p>
+            <p className="text-gray-500 text-sm">
+              © 2024 Allurement Healthcare Staffing. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
-    </div>);
-
+    </div>
+  );
 };
 
 export default HomePage;
