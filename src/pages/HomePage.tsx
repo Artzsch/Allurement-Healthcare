@@ -19,8 +19,13 @@ import {
   CheckCircle,
   Star,
   Award,
-  Globe } from
-"lucide-react";
+  Globe,
+  ArrowRight,
+  Sparkles
+} from "lucide-react";
+import ModernButton from '@/components/ModernButton';
+import ImageCarousel from '@/components/ImageCarousel';
+import ChatBot from '@/components/ChatBot';
 
 const HomePage = () => {
   const scrollToSection = (sectionId: string) => {
@@ -30,124 +35,167 @@ const HomePage = () => {
     }
   };
 
-  const services = [
-  {
-    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-    title: "Nursing Staff Solutions",
-    description: "RNs, RPNs, and specialized nursing professionals",
-    features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
-  },
-  {
-    icon: <Heart className="h-8 w-8 text-red-500" />,
-    title: "Personal Support Workers",
-    description: "Compassionate PSWs for all care settings",
-    features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
-  },
-  {
-    icon: <Home className="h-8 w-8 text-green-600" />,
-    title: "Home Care Support",
-    description: "Comprehensive in-home healthcare services",
-    features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
-  },
-  {
-    icon: <ChefHat className="h-8 w-8 text-orange-600" />,
-    title: "Personal Chef Services",
-    description: "Culinary professionals for healthcare settings",
-    features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
-  }];
+  // Carousel slides showcasing company services
+  const carouselSlides = [
+    {
+      image: "https://images.unsplash.com/photo-1592392821486-71f028a00581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFsdGhjYXJlJTIwc3RhZmZpbmclMjBudXJzZXMlMjB0ZWFtJTIwd29ya2luZ3xlbnwwfHx8fDE3NTIzNDM2NTl8MA&ixlib=rb-4.1.0&q=80",
+      title: "Professional Nursing Teams",
+      description: "Experienced RNs and RPNs ready to provide exceptional patient care across all healthcare settings.",
+      caption: "Critical Care • Medical-Surgical • Specialty Units"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1596241487476-90c5e85de8db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFscyUyMHByb3ZpZGluZyUyMGNhcmUlMjBlbGRlcmx5fGVufDB8fHx8MTc1MjM0MzY1OXww&ixlib=rb-4.1.0&q=80",
+      title: "Compassionate PSW Care",
+      description: "Dedicated Personal Support Workers providing personalized care with empathy and professionalism.",
+      caption: "Long-Term Care • Home Care • Dementia Support"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1711343777918-6d395c16e37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZmFjaWxpdHklMjBudXJzaW5nJTIwc3RhZmZ8ZW58MHx8fHwxNzUyMzQzNjU5fDA&ixlib=rb-4.1.0&q=80",
+      title: "Modern Healthcare Facilities",
+      description: "Supporting state-of-the-art healthcare facilities with qualified, vetted professionals.",
+      caption: "Hospitals • Clinics • Specialized Care Centers"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1596276547385-61a667714f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFscyUyMHByb3ZpZGluZyUyMGNhcmUlMjBlbGRlcmx5fGVufDB8fHx8MTc1MjM0MzY1OXww&ixlib=rb-4.1.0&q=80",
+      title: "Home Care Excellence",
+      description: "Bringing professional healthcare services directly to clients' homes with warmth and expertise.",
+      caption: "In-Home Care • Companion Services • Medical Support"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1566806885837-6d7b4bb3029a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZmFjaWxpdHklMjBudXJzaW5nJTIwc3RhZmZ8ZW58MHx8fHwxNzUyMzQzNjU5fDA&ixlib=rb-4.1.0&q=80",
+      title: "24/7 Staffing Solutions",
+      description: "Round-the-clock availability to meet urgent staffing needs and emergency placements.",
+      caption: "Emergency Response • Flexible Scheduling • Rapid Deployment"
+    }
+  ];
 
+  const services = [
+    {
+      icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
+      title: "Nursing Staff Solutions",
+      description: "RNs, RPNs, and specialized nursing professionals",
+      features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
+    },
+    {
+      icon: <Heart className="h-8 w-8 text-red-500" />,
+      title: "Personal Support Workers",
+      description: "Compassionate PSWs for all care settings",
+      features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
+    },
+    {
+      icon: <Home className="h-8 w-8 text-green-600" />,
+      title: "Home Care Support",
+      description: "Comprehensive in-home healthcare services",
+      features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
+    },
+    {
+      icon: <ChefHat className="h-8 w-8 text-orange-600" />,
+      title: "Personal Chef Services",
+      description: "Culinary professionals for healthcare settings",
+      features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
+    }
+  ];
 
   const staffingModels = [
-  { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
-  { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
-  { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
-  { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
-  { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }];
-
+    { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
+    { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
+    { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
+    { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
+    { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }
+  ];
 
   const industries = [
-  "Hospitals & Health Networks",
-  "Long-Term Care & Retirement Homes",
-  "Home Care Agencies",
-  "Private Residences (Concierge Care)",
-  "Government Health Programs",
-  "Rehabilitation Centers"];
-
+    "Hospitals & Health Networks",
+    "Long-Term Care & Retirement Homes",
+    "Home Care Agencies",
+    "Private Residences (Concierge Care)",
+    "Government Health Programs",
+    "Rehabilitation Centers"
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30">
+      {/* Modern Navigation */}
+      <nav className="glass-card sticky top-0 z-50 border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/9feb6ea2-78af-4017-a792-94fb0d17ce4e.png" alt="Logo" className="h-8 w-8 mr-2" />
-              <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                  <Sparkles className="h-6 w-6 text-white" />
+                </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Allurement Healthcare Staffing
+                </span>
+              </div>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <button
+            <div className="hidden md:flex space-x-1">
+              <Button
+                variant="ghost"
                 onClick={() => scrollToSection('services')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-
+                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300"
+              >
                 Services
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-
+                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300"
+              >
                 About
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-
+                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300"
+              >
                 Contact
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-800/90"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/c13e5b26-42fc-4d81-870a-a9000ec3af74.png')`
-          }}>
-        </div>
+      {/* Hero Section with Carousel */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 animated-bg opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Flexible, Reliable Healthcare Staffing Solutions
-            </h1>
-            <div className="mb-6">
-              <p className="text-2xl md:text-3xl font-semibold text-blue-100 mb-4">
-                "Your Workforce, Our Commitment"
-              </p>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-2 mb-6">
+              <Sparkles className="h-4 w-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600">"Your Workforce, Our Commitment"</span>
             </div>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+              Flexible, Reliable
+              <br />
+              Healthcare Staffing
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-600">
               Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+              <ModernButton
+                variant="gradient"
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100"
-                onClick={() => scrollToSection('services')}>
-
+                onClick={() => scrollToSection('services')}
+                className="group"
+              >
                 Our Services
-              </Button>
-              <Button
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </ModernButton>
+              <ModernButton
+                variant="glass"
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600"
-                onClick={() => scrollToSection('contact')}>
-
+                onClick={() => scrollToSection('contact')}
+              >
                 Get Started
-              </Button>
+              </ModernButton>
             </div>
+          </div>
+
+          {/* Image Carousel */}
+          <div className="max-w-6xl mx-auto">
+            <ImageCarousel slides={carouselSlides} className="float-animation" />
           </div>
         </div>
       </section>
@@ -156,7 +204,11 @@ const HomePage = () => {
       <section id="services" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="inline-flex items-center space-x-2 bg-blue-50/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-2 mb-6">
+              <Heart className="h-4 w-4 text-blue-600" />
+              <span className="text-sm font-medium text-blue-600">Comprehensive Solutions</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Our Healthcare Staffing Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -165,75 +217,77 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) =>
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            {services.map((service, index) => (
+              <Card key={index} className="modern-card group">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
-                    {service.icon}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                  <CardDescription className="text-gray-600">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) =>
-                  <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
-                  )}
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Nursing Staff Solutions */}
           <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <Stethoscope className="h-8 w-8 text-blue-600 mr-3" />
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+                <Stethoscope className="h-6 w-6 text-white" />
+              </div>
               Nursing Staff Solutions
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card>
+              <Card className="modern-card">
                 <CardHeader>
                   <CardTitle>Registered Nurses (RNs) & Registered Practical Nurses (RPNs)</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <h4 className="font-semibold mb-3">Specialty Placements:</h4>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    <Badge variant="outline">Critical Care (ICU, CCU, ER)</Badge>
-                    <Badge variant="outline">Medical-Surgical</Badge>
-                    <Badge variant="outline">Gerontology & Long-Term Care</Badge>
-                    <Badge variant="outline">Pediatrics & Neonatal</Badge>
-                    <Badge variant="outline">Mental Health & Addictions</Badge>
-                    <Badge variant="outline">Perioperative (OR, PACU)</Badge>
-                    <Badge variant="outline">Community & Public Health</Badge>
+                  <div className="grid grid-cols-1 gap-2 mb-4">
+                    {["Critical Care (ICU, CCU, ER)", "Medical-Surgical", "Gerontology & Long-Term Care", "Pediatrics & Neonatal", "Mental Health & Addictions", "Perioperative (OR, PACU)", "Community & Public Health"].map((specialty, idx) => (
+                      <Badge key={idx} variant="outline" className="justify-start border-blue-200 text-blue-700 hover:bg-blue-50">
+                        {specialty}
+                      </Badge>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="modern-card">
                 <CardHeader>
                   <CardTitle>Nurse Leadership Recruitment</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     <li className="flex items-center">
-                      <Users className="h-4 w-4 text-blue-600 mr-2" />
-                      Nurse Managers
+                      <Users className="h-5 w-5 text-blue-600 mr-3" />
+                      <span>Nurse Managers</span>
                     </li>
                     <li className="flex items-center">
-                      <Users className="h-4 w-4 text-blue-600 mr-2" />
-                      Clinical Educators
+                      <Users className="h-5 w-5 text-blue-600 mr-3" />
+                      <span>Clinical Educators</span>
                     </li>
                     <li className="flex items-center">
-                      <Users className="h-4 w-4 text-blue-600 mr-2" />
-                      Director of Care positions
+                      <Users className="h-5 w-5 text-blue-600 mr-3" />
+                      <span>Director of Care positions</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -243,79 +297,59 @@ const HomePage = () => {
 
           {/* PSW Solutions */}
           <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <Heart className="h-8 w-8 text-red-500 mr-3" />
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
+                <Heart className="h-6 w-6 text-white" />
+              </div>
               Personal Support Worker (PSW) Solutions
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card>
+              <Card className="modern-card">
                 <CardHeader>
                   <CardTitle>Facility-Based Placements</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
-                      Long-Term Care Homes
-                    </li>
-                    <li className="flex items-center">
-                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
-                      Retirement Residences
-                    </li>
-                    <li className="flex items-center">
-                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
-                      Hospitals (elderly care, rehab units)
-                    </li>
-                    <li className="flex items-center">
-                      <Building2 className="h-4 w-4 text-red-500 mr-2" />
-                      Respite Care Facilities
-                    </li>
+                  <ul className="space-y-3">
+                    {["Long-Term Care Homes", "Retirement Residences", "Hospitals (elderly care, rehab units)", "Respite Care Facilities"].map((facility, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <Building2 className="h-4 w-4 text-red-500 mr-3" />
+                        <span className="text-sm">{facility}</span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="modern-card">
                 <CardHeader>
                   <CardTitle>Home & Community Care</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Home className="h-4 w-4 text-green-600 mr-2" />
-                      Dementia & Alzheimer's Care
-                    </li>
-                    <li className="flex items-center">
-                      <Home className="h-4 w-4 text-green-600 mr-2" />
-                      Palliative & End-of-Life Support
-                    </li>
-                    <li className="flex items-center">
-                      <Home className="h-4 w-4 text-green-600 mr-2" />
-                      Post-Surgical/Injury Recovery
-                    </li>
-                    <li className="flex items-center">
-                      <Home className="h-4 w-4 text-green-600 mr-2" />
-                      Developmental Disability Support
-                    </li>
+                  <ul className="space-y-3">
+                    {["Dementia & Alzheimer's Care", "Palliative & End-of-Life Support", "Post-Surgical/Injury Recovery", "Developmental Disability Support"].map((care, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <Home className="h-4 w-4 text-green-600 mr-3" />
+                        <span className="text-sm">{care}</span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="modern-card">
                 <CardHeader>
                   <CardTitle>Specialty PSW Programs</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Clock className="h-4 w-4 text-orange-600 mr-2" />
-                      Overnight & Live-In Care
-                    </li>
-                    <li className="flex items-center">
-                      <Users className="h-4 w-4 text-orange-600 mr-2" />
-                      Language-Specific PSWs
-                    </li>
-                    <li className="flex items-center">
-                      <Shield className="h-4 w-4 text-orange-600 mr-2" />
-                      Behavioral Support PSWs
-                    </li>
+                  <ul className="space-y-3">
+                    {[
+                      { icon: Clock, text: "Overnight & Live-In Care" },
+                      { icon: Users, text: "Language-Specific PSWs" },
+                      { icon: Shield, text: "Behavioral Support PSWs" }
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <item.icon className="h-4 w-4 text-orange-600 mr-3" />
+                        <span className="text-sm">{item.text}</span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -324,32 +358,24 @@ const HomePage = () => {
 
           {/* Personal Chef Services */}
           <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <ChefHat className="h-8 w-8 text-orange-600 mr-3" />
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
+                <ChefHat className="h-6 w-6 text-white" />
+              </div>
               Personal Chef Staffing
             </h3>
-            <Card>
+            <Card className="modern-card">
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-4">
                   Unique to Allurement, we place culinary professionals for specialized dietary needs:
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="flex items-center">
-                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
-                    <span>Healthcare Facilities</span>
-                  </div>
-                  <div className="flex items-center">
-                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
-                    <span>Private Clients</span>
-                  </div>
-                  <div className="flex items-center">
-                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
-                    <span>Therapeutic Nutrition</span>
-                  </div>
-                  <div className="flex items-center">
-                    <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
-                    <span>Cultural Meal Specialists</span>
-                  </div>
+                  {["Healthcare Facilities", "Private Clients", "Therapeutic Nutrition", "Cultural Meal Specialists"].map((service, idx) => (
+                    <div key={idx} className="flex items-center">
+                      <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
+                      <span>{service}</span>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -358,24 +384,31 @@ const HomePage = () => {
       </section>
 
       {/* Staffing Models */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="inline-flex items-center space-x-2 bg-purple-50/80 backdrop-blur-sm border border-purple-200/50 rounded-full px-6 py-2 mb-6">
+              <Star className="h-4 w-4 text-purple-600" />
+              <span className="text-sm font-medium text-purple-600">Flexible Solutions</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
               Flexible Staffing Models
             </h2>
             <p className="text-xl text-gray-600">
               Multiple engagement options to meet your specific needs
             </p>
           </div>
-          
-
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staffingModels.map((model, index) =>
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            {staffingModels.map((model, index) => (
+              <Card key={index} className="modern-card group">
                 <CardHeader>
-                  <CardTitle className="text-lg">{model.name}</CardTitle>
+                  <CardTitle className="text-lg flex items-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                      <Star className="h-4 w-4 text-white" />
+                    </div>
+                    {model.name}
+                  </CardTitle>
                   <CardDescription>{model.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -385,108 +418,105 @@ const HomePage = () => {
                   </div>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
               Industries We Serve
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) =>
-            <div key={index} className="flex items-center bg-gray-50 p-4 rounded-lg">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">{industry}</span>
+            {industries.map((industry, index) => (
+              <div key={index} className="modern-card flex items-center p-6 group">
+                <CheckCircle className="h-6 w-6 text-green-500 mr-4 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-700 font-medium">{industry}</span>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section id="about" className="py-20 bg-blue-50">
+      <section id="about" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Why Choose Allurement Healthcare Staffing
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Healthcare Facilities</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <Award className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Reduced Vacancy Rates</h4>
-                    <p className="text-gray-600">Deep candidate pool means faster hires</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Heart className="h-6 w-6 text-red-500 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Higher Quality Care</h4>
-                    <p className="text-gray-600">Stringent vetting improves patient outcomes</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Clock className="h-6 w-6 text-green-600 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Cost Efficiency</h4>
-                    <p className="text-gray-600">Flexible models control labor costs</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Shield className="h-6 w-6 text-orange-600 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Risk Mitigation</h4>
-                    <p className="text-gray-600">Comprehensive compliance screening</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Healthcare Professionals</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <Users className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Career-Matching</h4>
-                    <p className="text-gray-600">Aligns skills and passion with ideal workplaces</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Star className="h-6 w-6 text-yellow-500 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Ongoing Support</h4>
-                    <p className="text-gray-600">Access to free continuing education opportunities</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Award className="h-6 w-6 text-green-600 mr-3 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold">Advocacy</h4>
-                    <p className="text-gray-600">Clinical background ensures fair working conditions</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <Card className="modern-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
+                  <Building2 className="h-8 w-8 text-blue-600 mr-3" />
+                  For Healthcare Facilities
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-4">
+                  {[
+                    { icon: Award, title: "Reduced Vacancy Rates", desc: "Deep candidate pool means faster hires" },
+                    { icon: Heart, title: "Higher Quality Care", desc: "Stringent vetting improves patient outcomes" },
+                    { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
+                    { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }
+                  ].map((benefit, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center mr-4 mt-1">
+                        <benefit.icon className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{benefit.title}</h4>
+                        <p className="text-gray-600">{benefit.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="modern-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
+                  <Users className="h-8 w-8 text-purple-600 mr-3" />
+                  For Healthcare Professionals
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-4">
+                  {[
+                    { icon: Users, title: "Career-Matching", desc: "Aligns skills and passion with ideal workplaces" },
+                    { icon: Star, title: "Ongoing Support", desc: "Access to free continuing education opportunities" },
+                    { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
+                    { icon: Sparkles, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }
+                  ].map((benefit, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl flex items-center justify-center mr-4 mt-1">
+                        <benefit.icon className="h-5 w-5 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{benefit.title}</h4>
+                        <p className="text-gray-600">{benefit.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
           
           {/* Professional Care Image */}
           <div className="mt-16 text-center">
-            <div className="relative rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-2xl mx-auto modern-card">
               <img
                 src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png"
                 alt="Healthcare professional providing compassionate care"
                 className="w-full h-96 object-cover" />
-
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h4 className="text-xl font-semibold mb-2">Compassionate Care</h4>
@@ -499,10 +529,10 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Get Started Today
             </h2>
             <p className="text-xl text-gray-600">
@@ -510,116 +540,137 @@ const HomePage = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+            <Card className="modern-card group">
               <CardHeader>
-                <CardTitle>For Healthcare Facilities</CardTitle>
+                <CardTitle className="flex items-center">
+                  <Building2 className="h-6 w-6 text-blue-600 mr-2" />
+                  For Healthcare Facilities
+                </CardTitle>
                 <CardDescription>
                   Let us help you find the right staff for your facility
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full mb-4" asChild>
-                  <Link to="/request-staffing">Request Staffing Solutions</Link>
-                </Button>
+                <ModernButton variant="gradient" className="w-full mb-4" asChild>
+                  <Link to="/request-staffing">
+                    Request Staffing Solutions
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </ModernButton>
                 <p className="text-sm text-gray-600 text-center">
                   24-72 hour emergency placements available
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="modern-card group">
               <CardHeader>
-                <CardTitle>For Healthcare Professionals</CardTitle>
+                <CardTitle className="flex items-center">
+                  <Users className="h-6 w-6 text-purple-600 mr-2" />
+                  For Healthcare Professionals
+                </CardTitle>
                 <CardDescription>
                   Join our network of skilled healthcare professionals
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full mb-4" variant="outline" asChild>
-                  <Link to="/apply-now">Apply Now</Link>
-                </Button>
+                <ModernButton variant="secondary" className="w-full mb-4" asChild>
+                  <Link to="/apply-now">
+                    Apply Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </ModernButton>
                 <p className="text-sm text-gray-600 text-center">
                   Flexible schedules and competitive compensation
                 </p>
               </CardContent>
             </Card>
           </div>
+          
           {/* Service Hours and Contact Info */}
-          <div className="mt-16 bg-blue-50 rounded-lg p-8">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">📌 Service Hours</h3>
-              <div className="space-y-2">
-                <p className="text-gray-700"><strong>Monday-Friday:</strong> 8:00 AM – 6:00 PM</p>
-                <p className="text-gray-700"><strong>Weekends:</strong> Emergency staffing only</p>
+          <Card className="mt-16 modern-card">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center justify-center">
+                  <Clock className="h-5 w-5 text-blue-600 mr-2" />
+                  Service Hours
+                </h3>
+                <div className="space-y-2">
+                  <p className="text-gray-700"><strong>Monday-Friday:</strong> 8:00 AM – 6:00 PM</p>
+                  <p className="text-gray-700"><strong>Weekends:</strong> Emergency staffing only</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-              <div className="flex flex-col items-center">
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 <a
                   href="https://maps.google.com/?q=2+County+Ln,+Barrie,+ON+L4N+0E6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
-
-                  <MapPin className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
-                  <p className="font-semibold text-gray-900">Address</p>
-                  <p className="text-sm text-gray-600 hover:text-blue-600">2 County Ln, Barrie, ON L4N 0E6</p>
+                  className="group"
+                >
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 group-hover:shadow-lg transition-all duration-300">
+                    <MapPin className="h-6 w-6 text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="font-semibold text-gray-900">Address</p>
+                    <p className="text-sm text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
+                  </div>
                 </a>
-              </div>
-              <div className="flex flex-col items-center">
                 <a
                   href="tel:+14372202025"
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
-
-                  <Phone className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
-                  <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-sm text-gray-600 hover:text-blue-600">(437) 220-2025</p>
+                  className="group"
+                >
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-50 to-blue-50 group-hover:shadow-lg transition-all duration-300">
+                    <Phone className="h-6 w-6 text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="font-semibold text-gray-900">Phone</p>
+                    <p className="text-sm text-gray-600">(437) 220-2025</p>
+                  </div>
                 </a>
-              </div>
-              <div className="flex flex-col items-center">
                 <a
-                  href="https://app.titan.email/login/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center hover:text-blue-600 transition-colors duration-200">
-
-                  <Mail className="h-6 w-6 text-blue-600 mb-2 hover:text-blue-800" />
-                  <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-sm text-gray-600 hover:text-blue-600">enquire@allurementhealthcares.com</p>
+                  href="mailto:enquire@allurementhealthcares.com"
+                  className="group"
+                >
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 group-hover:shadow-lg transition-all duration-300">
+                    <Mail className="h-6 w-6 text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="font-semibold text-gray-900">Email</p>
+                    <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
+                  </div>
                 </a>
+                <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-orange-50 to-red-50">
+                  <Globe className="h-6 w-6 text-orange-600 mb-2" />
+                  <p className="font-semibold text-gray-900">Website</p>
+                  <p className="text-sm text-gray-600">www.allurementhealthcares.com</p>
+                </div>
               </div>
-              <div className="flex flex-col items-center">
-                <Globe className="h-6 w-6 text-blue-600 mb-2" />
-                <p className="font-semibold text-gray-900">Website</p>
-                <p className="text-sm text-gray-600">www.allurementhealthcares.com</p>
-              </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
-              <img src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/9feb6ea2-78af-4017-a792-94fb0d17ce4e.png" alt="Logo" className="h-8 w-8 mr-2" />
-              <span className="text-2xl font-bold">Allurement Healthcare Staffing</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-3">
+                <Sparkles className="h-8 w-8 text-white" />
+              </div>
+              <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
             </div>
             <p className="text-lg text-blue-300 font-medium mb-2">
               "Your Workforce, Our Commitment"
             </p>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-300 mb-4">
               Providing flexible, reliable, and high-quality staffing services across Ontario
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               © 2024 Allurement Healthcare Staffing. All rights reserved.
             </p>
           </div>
         </div>
       </footer>
-    </div>);
 
+      {/* ChatBot Component */}
+      <ChatBot />
+    </div>
+  );
 };
 
 export default HomePage;
