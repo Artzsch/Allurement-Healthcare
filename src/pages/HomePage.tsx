@@ -20,12 +20,8 @@ import {
   Star,
   Award,
   Globe,
-  ArrowRight,
-  Sparkles } from
-"lucide-react";
-import ModernButton from '@/components/ModernButton';
-import ImageCarousel from '@/components/ImageCarousel';
-import ChatBot from '@/components/ChatBot';
+  ArrowRight
+} from "lucide-react";
 
 const HomePage = () => {
   const scrollToSection = (sectionId: string) => {
@@ -35,120 +31,83 @@ const HomePage = () => {
     }
   };
 
-  // Carousel slides showcasing company services
-  const carouselSlides = [
-  {
-    image: "https://images.unsplash.com/photo-1592392821486-71f028a00581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFsdGhjYXJlJTIwc3RhZmZpbmclMjBudXJzZXMlMjB0ZWFtJTIwd29ya2luZ3xlbnwwfHx8fDE3NTIzNDM2NTl8MA&ixlib=rb-4.1.0&q=80",
-    title: "Professional Nursing Teams",
-    description: "Experienced RNs and RPNs ready to provide exceptional patient care across all healthcare settings.",
-    caption: "Critical Care • Medical-Surgical • Specialty Units"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1596241487476-90c5e85de8db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFscyUyMHByb3ZpZGluZyUyMGNhcmUlMjBlbGRlcmx5fGVufDB8fHx8MTc1MjM0MzY1OXww&ixlib=rb-4.1.0&q=80",
-    title: "Compassionate PSW Care",
-    description: "Dedicated Personal Support Workers providing personalized care with empathy and professionalism.",
-    caption: "Long-Term Care • Home Care • Dementia Support"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1711343777918-6d395c16e37f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZmFjaWxpdHklMjBudXJzaW5nJTIwc3RhZmZ8ZW58MHx8fHwxNzUyMzQzNjU5fDA&ixlib=rb-4.1.0&q=80",
-    title: "Modern Healthcare Facilities",
-    description: "Supporting state-of-the-art healthcare facilities with qualified, vetted professionals.",
-    caption: "Hospitals • Clinics • Specialized Care Centers"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1596276547385-61a667714f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFscyUyMHByb3ZpZGluZyUyMGNhcmUlMjBlbGRlcmx5fGVufDB8fHx8MTc1MjM0MzY1OXww&ixlib=rb-4.1.0&q=80",
-    title: "Home Care Excellence",
-    description: "Bringing professional healthcare services directly to clients' homes with warmth and expertise.",
-    caption: "In-Home Care • Companion Services • Medical Support"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1566806885837-6d7b4bb3029a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZmFjaWxpdHklMjBudXJzaW5nJTIwc3RhZmZ8ZW58MHx8fHwxNzUyMzQzNjU5fDA&ixlib=rb-4.1.0&q=80",
-    title: "24/7 Staffing Solutions",
-    description: "Round-the-clock availability to meet urgent staffing needs and emergency placements.",
-    caption: "Emergency Response • Flexible Scheduling • Rapid Deployment"
-  }];
-
-
   const services = [
-  {
-    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-    title: "Nursing Staff Solutions",
-    description: "RNs, RPNs, and specialized nursing professionals",
-    features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
-  },
-  {
-    icon: <Heart className="h-8 w-8 text-red-500" />,
-    title: "Personal Support Workers",
-    description: "Compassionate PSWs for all care settings",
-    features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
-  },
-  {
-    icon: <Home className="h-8 w-8 text-green-600" />,
-    title: "Home Care Support",
-    description: "Comprehensive in-home healthcare services",
-    features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
-  },
-  {
-    icon: <ChefHat className="h-8 w-8 text-orange-600" />,
-    title: "Personal Chef Services",
-    description: "Culinary professionals for healthcare settings",
-    features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
-  }];
-
+    {
+      icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
+      title: "Nursing Staff Solutions",
+      description: "RNs, RPNs, and specialized nursing professionals",
+      features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
+    },
+    {
+      icon: <Heart className="h-8 w-8 text-red-500" />,
+      title: "Personal Support Workers",
+      description: "Compassionate PSWs for all care settings",
+      features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
+    },
+    {
+      icon: <Home className="h-8 w-8 text-green-600" />,
+      title: "Home Care Support",
+      description: "Comprehensive in-home healthcare services",
+      features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
+    },
+    {
+      icon: <ChefHat className="h-8 w-8 text-orange-600" />,
+      title: "Personal Chef Services",
+      description: "Culinary professionals for healthcare settings",
+      features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
+    }
+  ];
 
   const staffingModels = [
-  { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
-  { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
-  { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
-  { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
-  { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }];
-
+    { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
+    { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
+    { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
+    { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
+    { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }
+  ];
 
   const industries = [
-  "Hospitals & Health Networks",
-  "Long-Term Care & Retirement Homes",
-  "Home Care Agencies",
-  "Private Residences (Concierge Care)",
-  "Government Health Programs",
-  "Rehabilitation Centers"];
-
+    "Hospitals & Health Networks",
+    "Long-Term Care & Retirement Homes",
+    "Home Care Agencies",
+    "Private Residences (Concierge Care)",
+    "Government Health Programs",
+    "Rehabilitation Centers"
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30">
-      {/* Modern Navigation */}
-      <nav className="glass-card sticky top-0 z-50 border-b border-white/20">
+    <div className="min-h-screen bg-gray-50">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm sticky top-0 z-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 text-white" />
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-xl font-bold text-gray-900">
                   Allurement Healthcare Staffing
                 </span>
               </div>
             </div>
-            <div className="hidden md:flex space-x-1">
+            <div className="hidden md:flex space-x-4">
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection('services')}
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300">
-
+                className="text-gray-700 hover:text-blue-600">
                 Services
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300">
-
+                className="text-gray-700 hover:text-blue-600">
                 About
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-xl transition-all duration-300">
-
+                className="text-gray-700 hover:text-blue-600">
                 Contact
               </Button>
             </div>
@@ -156,59 +115,50 @@ const HomePage = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Carousel */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 animated-bg opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-2 mb-6">
-              <Sparkles className="h-4 w-4 text-blue-600" />
+      {/* Hero Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-full px-6 py-2 mb-6">
+              <Heart className="h-4 w-4 text-blue-600" />
               <span className="text-sm font-medium text-blue-600">"Your Workforce, Our Commitment"</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               Flexible, Reliable
               <br />
               Healthcare Staffing
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-600">
+            <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-600">
               Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ModernButton
-                variant="gradient"
+              <Button
                 size="lg"
                 onClick={() => scrollToSection('services')}
-                className="group">
-
+                className="bg-blue-600 hover:bg-blue-700 text-white">
                 Our Services
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </ModernButton>
-              <ModernButton
-                variant="glass"
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
                 size="lg"
                 onClick={() => scrollToSection('contact')}>
-
                 Get Started
-              </ModernButton>
+              </Button>
             </div>
-          </div>
-
-          {/* Image Carousel */}
-          <div className="max-w-6xl mx-auto">
-            <ImageCarousel slides={carouselSlides} className="float-animation" />
           </div>
         </div>
       </section>
 
       {/* Main Services Overview */}
-      <section id="services" className="py-20">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-blue-50/80 backdrop-blur-sm border border-blue-200/50 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-full px-6 py-2 mb-6">
               <Heart className="h-4 w-4 text-blue-600" />
               <span className="text-sm font-medium text-blue-600">Comprehensive Solutions</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Healthcare Staffing Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -217,11 +167,11 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) =>
-            <Card key={index} className="modern-card group">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center">
                       {service.icon}
                     </div>
                   </div>
@@ -230,48 +180,48 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) =>
-                  <li key={idx} className="flex items-center text-sm text-gray-600">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
                         <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
-                  )}
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-white/50 backdrop-blur-sm">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Nursing Staff Solutions */}
           <div className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
-                <Stethoscope className="h-6 w-6 text-white" />
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                <Stethoscope className="h-6 w-6 text-blue-600" />
               </div>
               Nursing Staff Solutions
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="modern-card">
+              <Card>
                 <CardHeader>
                   <CardTitle>Registered Nurses (RNs) & Registered Practical Nurses (RPNs)</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <h4 className="font-semibold mb-3">Specialty Placements:</h4>
                   <div className="grid grid-cols-1 gap-2 mb-4">
-                    {["Critical Care (ICU, CCU, ER)", "Medical-Surgical", "Gerontology & Long-Term Care", "Pediatrics & Neonatal", "Mental Health & Addictions", "Perioperative (OR, PACU)", "Community & Public Health"].map((specialty, idx) =>
-                    <Badge key={idx} variant="outline" className="justify-start border-blue-200 text-blue-700 hover:bg-blue-50">
+                    {["Critical Care (ICU, CCU, ER)", "Medical-Surgical", "Gerontology & Long-Term Care", "Pediatrics & Neonatal", "Mental Health & Addictions", "Perioperative (OR, PACU)", "Community & Public Health"].map((specialty, idx) => (
+                      <Badge key={idx} variant="outline" className="justify-start border-blue-200 text-blue-700">
                         {specialty}
                       </Badge>
-                    )}
+                    ))}
                   </div>
                 </CardContent>
               </Card>
-              <Card className="modern-card">
+              <Card>
                 <CardHeader>
                   <CardTitle>Nurse Leadership Recruitment</CardTitle>
                 </CardHeader>
@@ -297,59 +247,59 @@ const HomePage = () => {
 
           {/* PSW Solutions */}
           <div className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
-                <Heart className="h-6 w-6 text-white" />
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                <Heart className="h-6 w-6 text-red-600" />
               </div>
               Personal Support Worker (PSW) Solutions
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="modern-card">
+              <Card>
                 <CardHeader>
                   <CardTitle>Facility-Based Placements</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {["Long-Term Care Homes", "Retirement Residences", "Hospitals (elderly care, rehab units)", "Respite Care Facilities"].map((facility, idx) =>
-                    <li key={idx} className="flex items-center">
+                    {["Long-Term Care Homes", "Retirement Residences", "Hospitals (elderly care, rehab units)", "Respite Care Facilities"].map((facility, idx) => (
+                      <li key={idx} className="flex items-center">
                         <Building2 className="h-4 w-4 text-red-500 mr-3" />
                         <span className="text-sm">{facility}</span>
                       </li>
-                    )}
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="modern-card">
+              <Card>
                 <CardHeader>
                   <CardTitle>Home & Community Care</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {["Dementia & Alzheimer's Care", "Palliative & End-of-Life Support", "Post-Surgical/Injury Recovery", "Developmental Disability Support"].map((care, idx) =>
-                    <li key={idx} className="flex items-center">
+                    {["Dementia & Alzheimer's Care", "Palliative & End-of-Life Support", "Post-Surgical/Injury Recovery", "Developmental Disability Support"].map((care, idx) => (
+                      <li key={idx} className="flex items-center">
                         <Home className="h-4 w-4 text-green-600 mr-3" />
                         <span className="text-sm">{care}</span>
                       </li>
-                    )}
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="modern-card">
+              <Card>
                 <CardHeader>
                   <CardTitle>Specialty PSW Programs</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {[
-                    { icon: Clock, text: "Overnight & Live-In Care" },
-                    { icon: Users, text: "Language-Specific PSWs" },
-                    { icon: Shield, text: "Behavioral Support PSWs" }].
-                    map((item, idx) =>
-                    <li key={idx} className="flex items-center">
+                      { icon: Clock, text: "Overnight & Live-In Care" },
+                      { icon: Users, text: "Language-Specific PSWs" },
+                      { icon: Shield, text: "Behavioral Support PSWs" }
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center">
                         <item.icon className="h-4 w-4 text-orange-600 mr-3" />
                         <span className="text-sm">{item.text}</span>
                       </li>
-                    )}
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -358,24 +308,24 @@ const HomePage = () => {
 
           {/* Personal Chef Services */}
           <div className="mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
-                <ChefHat className="h-6 w-6 text-white" />
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                <ChefHat className="h-6 w-6 text-orange-600" />
               </div>
               Personal Chef Staffing
             </h3>
-            <Card className="modern-card">
+            <Card>
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-4">
                   Unique to Allurement, we place culinary professionals for specialized dietary needs:
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {["Healthcare Facilities", "Private Clients", "Therapeutic Nutrition", "Cultural Meal Specialists"].map((service, idx) =>
-                  <div key={idx} className="flex items-center">
+                  {["Healthcare Facilities", "Private Clients", "Therapeutic Nutrition", "Cultural Meal Specialists"].map((service, idx) => (
+                    <div key={idx} className="flex items-center">
                       <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
                       <span>{service}</span>
                     </div>
-                  )}
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -384,14 +334,14 @@ const HomePage = () => {
       </section>
 
       {/* Staffing Models */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-purple-50/80 backdrop-blur-sm border border-purple-200/50 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center space-x-2 bg-purple-50 border border-purple-200 rounded-full px-6 py-2 mb-6">
               <Star className="h-4 w-4 text-purple-600" />
               <span className="text-sm font-medium text-purple-600">Flexible Solutions</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Flexible Staffing Models
             </h2>
             <p className="text-xl text-gray-600">
@@ -400,12 +350,12 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staffingModels.map((model, index) =>
-            <Card key={index} className="modern-card group">
+            {staffingModels.map((model, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center">
-                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                      <Star className="h-4 w-4 text-white" />
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                      <Star className="h-4 w-4 text-purple-600" />
                     </div>
                     {model.name}
                   </CardTitle>
@@ -418,40 +368,40 @@ const HomePage = () => {
                   </div>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-20 bg-white/50 backdrop-blur-sm">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Industries We Serve
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) =>
-            <div key={index} className="modern-card flex items-center p-6 group">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-4 group-hover:scale-110 transition-transform duration-300" />
+            {industries.map((industry, index) => (
+              <div key={index} className="flex items-center p-6 bg-white border rounded-lg hover:shadow-md transition-shadow">
+                <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
                 <span className="text-gray-700 font-medium">{industry}</span>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Choose Allurement Healthcare Staffing
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-16">
-            <Card className="modern-card">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
                   <Building2 className="h-8 w-8 text-blue-600 mr-3" />
@@ -461,13 +411,13 @@ const HomePage = () => {
               <CardContent>
                 <ul className="space-y-4">
                   {[
-                  { icon: Award, title: "Reduced Vacancy Rates", desc: "Deep candidate pool means faster hires" },
-                  { icon: Heart, title: "Higher Quality Care", desc: "Stringent vetting improves patient outcomes" },
-                  { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
-                  { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }].
-                  map((benefit, idx) =>
-                  <li key={idx} className="flex items-start">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center mr-4 mt-1">
+                    { icon: Award, title: "Reduced Vacancy Rates", desc: "Deep candidate pool means faster hires" },
+                    { icon: Heart, title: "Higher Quality Care", desc: "Stringent vetting improves patient outcomes" },
+                    { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
+                    { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }
+                  ].map((benefit, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-blue-600" />
                       </div>
                       <div>
@@ -475,12 +425,12 @@ const HomePage = () => {
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
                     </li>
-                  )}
+                  ))}
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="modern-card">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
                   <Users className="h-8 w-8 text-purple-600 mr-3" />
@@ -490,13 +440,13 @@ const HomePage = () => {
               <CardContent>
                 <ul className="space-y-4">
                   {[
-                  { icon: Users, title: "Career-Matching", desc: "Aligns skills and passion with ideal workplaces" },
-                  { icon: Star, title: "Ongoing Support", desc: "Access to free continuing education opportunities" },
-                  { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
-                  { icon: Sparkles, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }].
-                  map((benefit, idx) =>
-                  <li key={idx} className="flex items-start">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl flex items-center justify-center mr-4 mt-1">
+                    { icon: Users, title: "Career-Matching", desc: "Aligns skills and passion with ideal workplaces" },
+                    { icon: Star, title: "Ongoing Support", desc: "Access to free continuing education opportunities" },
+                    { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
+                    { icon: Heart, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }
+                  ].map((benefit, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-purple-600" />
                       </div>
                       <div>
@@ -504,7 +454,7 @@ const HomePage = () => {
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
                     </li>
-                  )}
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -512,7 +462,7 @@ const HomePage = () => {
           
           {/* Professional Care Image */}
           <div className="mt-16 text-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-2xl mx-auto modern-card">
+            <div className="relative rounded-xl overflow-hidden shadow-lg max-w-2xl mx-auto">
               <img
                 src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png"
                 alt="Healthcare professional providing compassionate care"
@@ -529,10 +479,10 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white/50 backdrop-blur-sm">
+      <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Get Started Today
             </h2>
             <p className="text-xl text-gray-600">
@@ -540,7 +490,7 @@ const HomePage = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="modern-card group">
+            <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Building2 className="h-6 w-6 text-blue-600 mr-2" />
@@ -551,18 +501,18 @@ const HomePage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ModernButton variant="gradient" className="w-full mb-4" asChild>
+                <Button className="w-full mb-4 bg-blue-600 hover:bg-blue-700" asChild>
                   <Link to="/request-staffing">
                     Request Staffing Solutions
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-                </ModernButton>
+                </Button>
                 <p className="text-sm text-gray-600 text-center">
                   24-72 hour emergency placements available
                 </p>
               </CardContent>
             </Card>
-            <Card className="modern-card group">
+            <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Users className="h-6 w-6 text-purple-600 mr-2" />
@@ -573,12 +523,12 @@ const HomePage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ModernButton variant="secondary" className="w-full mb-4" asChild>
+                <Button variant="outline" className="w-full mb-4" asChild>
                   <Link to="/apply-now">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-                </ModernButton>
+                </Button>
                 <p className="text-sm text-gray-600 text-center">
                   Flexible schedules and competitive compensation
                 </p>
@@ -587,7 +537,7 @@ const HomePage = () => {
           </div>
           
           {/* Service Hours and Contact Info */}
-          <Card className="mt-16 modern-card">
+          <Card className="mt-16">
             <CardContent className="p-8">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center justify-center">
@@ -606,9 +556,8 @@ const HomePage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group">
-
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 group-hover:shadow-lg transition-all duration-300">
-                    <MapPin className="h-6 w-6 text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
+                    <MapPin className="h-6 w-6 text-blue-600 mb-2" />
                     <p className="font-semibold text-gray-900">Address</p>
                     <p className="text-sm text-gray-600">2 County Ln, Barrie, ON L4N 0E6</p>
                   </div>
@@ -616,24 +565,24 @@ const HomePage = () => {
                 <a
                   href="tel:+14372202025"
                   className="group">
-
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-50 to-blue-50 group-hover:shadow-lg transition-all duration-300">
-                    <Phone className="h-6 w-6 text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-green-50 group-hover:bg-green-100 transition-colors">
+                    <Phone className="h-6 w-6 text-green-600 mb-2" />
                     <p className="font-semibold text-gray-900">Phone</p>
                     <p className="text-sm text-gray-600">(437) 220-2025</p>
                   </div>
                 </a>
                 <a
-                  href="mailto:enquire@allurementhealthcares.com"
+                  href="https://app.titan.email/login/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group">
-
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 group-hover:shadow-lg transition-all duration-300">
-                    <Mail className="h-6 w-6 text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-purple-50 group-hover:bg-purple-100 transition-colors">
+                    <Mail className="h-6 w-6 text-purple-600 mb-2" />
                     <p className="font-semibold text-gray-900">Email</p>
                     <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
                   </div>
                 </a>
-                <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-orange-50 to-red-50">
+                <div className="flex flex-col items-center p-4 rounded-xl bg-orange-50">
                   <Globe className="h-6 w-6 text-orange-600 mb-2" />
                   <p className="font-semibold text-gray-900">Website</p>
                   <p className="text-sm text-gray-600">www.allurementhealthcares.com</p>
@@ -645,12 +594,12 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-3">
-                <Sparkles className="h-8 w-8 text-white" />
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-3">
+                <Heart className="h-8 w-8 text-white" />
               </div>
               <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
             </div>
@@ -666,11 +615,8 @@ const HomePage = () => {
           </div>
         </div>
       </footer>
-
-      {/* ChatBot Component */}
-      <ChatBot />
-    </div>);
-
+    </div>
+  );
 };
 
 export default HomePage;
