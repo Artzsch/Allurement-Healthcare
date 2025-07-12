@@ -20,8 +20,8 @@ import {
   Star,
   Award,
   Globe,
-  ArrowRight
-} from "lucide-react";
+  ArrowRight } from
+"lucide-react";
 
 const HomePage = () => {
   const scrollToSection = (sectionId: string) => {
@@ -32,48 +32,48 @@ const HomePage = () => {
   };
 
   const services = [
-    {
-      icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
-      title: "Nursing Staff Solutions",
-      description: "RNs, RPNs, and specialized nursing professionals",
-      features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
-    },
-    {
-      icon: <Heart className="h-8 w-8 text-red-500" />,
-      title: "Personal Support Workers",
-      description: "Compassionate PSWs for all care settings",
-      features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
-    },
-    {
-      icon: <Home className="h-8 w-8 text-green-600" />,
-      title: "Home Care Support",
-      description: "Comprehensive in-home healthcare services",
-      features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
-    },
-    {
-      icon: <ChefHat className="h-8 w-8 text-orange-600" />,
-      title: "Personal Chef Services",
-      description: "Culinary professionals for healthcare settings",
-      features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
-    }
-  ];
+  {
+    icon: <Stethoscope className="h-8 w-8 text-blue-600" />,
+    title: "Nursing Staff Solutions",
+    description: "RNs, RPNs, and specialized nursing professionals",
+    features: ["Critical Care", "Medical-Surgical", "Gerontology", "Pediatrics", "Mental Health"]
+  },
+  {
+    icon: <Heart className="h-8 w-8 text-red-500" />,
+    title: "Personal Support Workers",
+    description: "Compassionate PSWs for all care settings",
+    features: ["Long-Term Care", "Home Care", "Dementia Care", "Palliative Care", "Language-Specific"]
+  },
+  {
+    icon: <Home className="h-8 w-8 text-green-600" />,
+    title: "Home Care Support",
+    description: "Comprehensive in-home healthcare services",
+    features: ["Companion Care", "Meal Preparation", "Medication Reminders", "Chronic Condition Support"]
+  },
+  {
+    icon: <ChefHat className="h-8 w-8 text-orange-600" />,
+    title: "Personal Chef Services",
+    description: "Culinary professionals for healthcare settings",
+    features: ["Therapeutic Nutrition", "Cultural Meals", "Texture-Modified Diets", "Private Clients"]
+  }];
+
 
   const staffingModels = [
-    { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
-    { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
-    { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
-    { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
-    { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }
-  ];
+  { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
+  { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
+  { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
+  { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
+  { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }];
+
 
   const industries = [
-    "Hospitals & Health Networks",
-    "Long-Term Care & Retirement Homes",
-    "Home Care Agencies",
-    "Private Residences (Concierge Care)",
-    "Government Health Programs",
-    "Rehabilitation Centers"
-  ];
+  "Hospitals & Health Networks",
+  "Long-Term Care & Retirement Homes",
+  "Home Care Agencies",
+  "Private Residences (Concierge Care)",
+  "Government Health Programs",
+  "Rehabilitation Centers"];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -83,9 +83,11 @@ const HomePage = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-white" />
-                </div>
+                <img 
+                  src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png" 
+                  alt="Allurement Healthcare Staffing Logo" 
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="text-xl font-bold text-gray-900">
                   Allurement Healthcare Staffing
                 </span>
@@ -167,8 +169,8 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {services.map((service, index) =>
+            <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
                     <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center">
@@ -180,16 +182,16 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                    {service.features.map((feature, idx) =>
+                  <li key={idx} className="flex items-center text-sm text-gray-600">
                         <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -213,11 +215,11 @@ const HomePage = () => {
                 <CardContent>
                   <h4 className="font-semibold mb-3">Specialty Placements:</h4>
                   <div className="grid grid-cols-1 gap-2 mb-4">
-                    {["Critical Care (ICU, CCU, ER)", "Medical-Surgical", "Gerontology & Long-Term Care", "Pediatrics & Neonatal", "Mental Health & Addictions", "Perioperative (OR, PACU)", "Community & Public Health"].map((specialty, idx) => (
-                      <Badge key={idx} variant="outline" className="justify-start border-blue-200 text-blue-700">
+                    {["Critical Care (ICU, CCU, ER)", "Medical-Surgical", "Gerontology & Long-Term Care", "Pediatrics & Neonatal", "Mental Health & Addictions", "Perioperative (OR, PACU)", "Community & Public Health"].map((specialty, idx) =>
+                    <Badge key={idx} variant="outline" className="justify-start border-blue-200 text-blue-700">
                         {specialty}
                       </Badge>
-                    ))}
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -260,12 +262,12 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {["Long-Term Care Homes", "Retirement Residences", "Hospitals (elderly care, rehab units)", "Respite Care Facilities"].map((facility, idx) => (
-                      <li key={idx} className="flex items-center">
+                    {["Long-Term Care Homes", "Retirement Residences", "Hospitals (elderly care, rehab units)", "Respite Care Facilities"].map((facility, idx) =>
+                    <li key={idx} className="flex items-center">
                         <Building2 className="h-4 w-4 text-red-500 mr-3" />
                         <span className="text-sm">{facility}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </CardContent>
               </Card>
@@ -275,12 +277,12 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {["Dementia & Alzheimer's Care", "Palliative & End-of-Life Support", "Post-Surgical/Injury Recovery", "Developmental Disability Support"].map((care, idx) => (
-                      <li key={idx} className="flex items-center">
+                    {["Dementia & Alzheimer's Care", "Palliative & End-of-Life Support", "Post-Surgical/Injury Recovery", "Developmental Disability Support"].map((care, idx) =>
+                    <li key={idx} className="flex items-center">
                         <Home className="h-4 w-4 text-green-600 mr-3" />
                         <span className="text-sm">{care}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </CardContent>
               </Card>
@@ -291,15 +293,15 @@ const HomePage = () => {
                 <CardContent>
                   <ul className="space-y-3">
                     {[
-                      { icon: Clock, text: "Overnight & Live-In Care" },
-                      { icon: Users, text: "Language-Specific PSWs" },
-                      { icon: Shield, text: "Behavioral Support PSWs" }
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-center">
+                    { icon: Clock, text: "Overnight & Live-In Care" },
+                    { icon: Users, text: "Language-Specific PSWs" },
+                    { icon: Shield, text: "Behavioral Support PSWs" }].
+                    map((item, idx) =>
+                    <li key={idx} className="flex items-center">
                         <item.icon className="h-4 w-4 text-orange-600 mr-3" />
                         <span className="text-sm">{item.text}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </CardContent>
               </Card>
@@ -320,12 +322,12 @@ const HomePage = () => {
                   Unique to Allurement, we place culinary professionals for specialized dietary needs:
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {["Healthcare Facilities", "Private Clients", "Therapeutic Nutrition", "Cultural Meal Specialists"].map((service, idx) => (
-                    <div key={idx} className="flex items-center">
+                  {["Healthcare Facilities", "Private Clients", "Therapeutic Nutrition", "Cultural Meal Specialists"].map((service, idx) =>
+                  <div key={idx} className="flex items-center">
                       <ChefHat className="h-5 w-5 text-orange-600 mr-2" />
                       <span>{service}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -350,8 +352,8 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staffingModels.map((model, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {staffingModels.map((model, index) =>
+            <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center">
                     <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
@@ -368,7 +370,7 @@ const HomePage = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -382,12 +384,12 @@ const HomePage = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) => (
-              <div key={index} className="flex items-center p-6 bg-white border rounded-lg hover:shadow-md transition-shadow">
+            {industries.map((industry, index) =>
+            <div key={index} className="flex items-center p-6 bg-white border rounded-lg hover:shadow-md transition-shadow">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
                 <span className="text-gray-700 font-medium">{industry}</span>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -411,12 +413,12 @@ const HomePage = () => {
               <CardContent>
                 <ul className="space-y-4">
                   {[
-                    { icon: Award, title: "Reduced Vacancy Rates", desc: "Deep candidate pool means faster hires" },
-                    { icon: Heart, title: "Higher Quality Care", desc: "Stringent vetting improves patient outcomes" },
-                    { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
-                    { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
+                  { icon: Award, title: "Reduced Vacancy Rates", desc: "Deep candidate pool means faster hires" },
+                  { icon: Heart, title: "Higher Quality Care", desc: "Stringent vetting improves patient outcomes" },
+                  { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
+                  { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }].
+                  map((benefit, idx) =>
+                  <li key={idx} className="flex items-start">
                       <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-blue-600" />
                       </div>
@@ -425,7 +427,7 @@ const HomePage = () => {
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </CardContent>
             </Card>
@@ -440,12 +442,12 @@ const HomePage = () => {
               <CardContent>
                 <ul className="space-y-4">
                   {[
-                    { icon: Users, title: "Career-Matching", desc: "Aligns skills and passion with ideal workplaces" },
-                    { icon: Star, title: "Ongoing Support", desc: "Access to free continuing education opportunities" },
-                    { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
-                    { icon: Heart, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
+                  { icon: Users, title: "Career-Matching", desc: "Aligns skills and passion with ideal workplaces" },
+                  { icon: Star, title: "Ongoing Support", desc: "Access to free continuing education opportunities" },
+                  { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
+                  { icon: Heart, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }].
+                  map((benefit, idx) =>
+                  <li key={idx} className="flex items-start">
                       <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-purple-600" />
                       </div>
@@ -454,7 +456,7 @@ const HomePage = () => {
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </CardContent>
             </Card>
@@ -598,9 +600,11 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-3">
-                <Heart className="h-8 w-8 text-white" />
-              </div>
+              <img 
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png" 
+                alt="Allurement Healthcare Staffing Logo" 
+                className="w-12 h-12 object-contain mr-3"
+              />
               <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
             </div>
             <p className="text-lg text-blue-300 font-medium mb-2">
@@ -615,8 +619,8 @@ const HomePage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default HomePage;
