@@ -64,11 +64,11 @@ const ModernButton: React.FC<ModernButtonProps> = ({
       disabled={disabled}
       type={type}
       asChild={asChild}
-      {...props}
-    >
+      {...props}>
+
       {children}
-    </Button>
-  );
+    </Button>);
+
 };
 
 export default ModernButton;
