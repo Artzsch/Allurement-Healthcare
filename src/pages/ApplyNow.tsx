@@ -218,11 +218,11 @@ const ApplyNow = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <img 
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png" 
-                alt="Allurement Healthcare Staffing Logo" 
-                className="h-8 w-8 object-contain mr-2"
-              />
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
+                alt="Allurement Healthcare Staffing Logo"
+                className="h-8 w-8 object-contain mr-2" />
+
               <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
             </div>
             <Link to="/" className="flex items-center text-gray-600 hover:text-blue-600">
