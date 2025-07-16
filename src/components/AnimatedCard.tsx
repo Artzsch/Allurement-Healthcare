@@ -17,18 +17,18 @@ const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ 
+        transition={{
           delay,
           duration: 0.5,
           ease: [0.25, 0.46, 0.45, 0.94]
         }}
-        whileHover={hover ? { 
+        whileHover={hover ? {
           y: -8,
           transition: { duration: 0.2 }
         } : {}}
         className={cn('group', className)}
-        {...props}
-      >
+        {...props}>
+
         <Card className={cn(
           'transition-all duration-300 backdrop-blur-sm',
           'hover:shadow-xl hover:shadow-primary/10',
@@ -38,8 +38,8 @@ const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
         )}>
           {children}
         </Card>
-      </motion.div>
-    );
+      </motion.div>);
+
   }
 );
 

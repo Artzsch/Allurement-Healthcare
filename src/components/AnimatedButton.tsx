@@ -18,13 +18,13 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
         <motion.div
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          transition={{ 
-            type: 'spring', 
-            stiffness: 400, 
+          transition={{
+            type: 'spring',
+            stiffness: 400,
             damping: 17,
             duration: 0.1
-          }}
-        >
+          }}>
+
           <Button
             className={cn(
               'relative overflow-hidden transition-all duration-200',
@@ -36,25 +36,25 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
             size={size}
             ref={ref}
             asChild
-            {...props}
-          >
+            {...props}>
+
             {children}
           </Button>
-        </motion.div>
-      );
+        </motion.div>);
+
     }
 
     return (
       <motion.div
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ 
-          type: 'spring', 
-          stiffness: 400, 
+        transition={{
+          type: 'spring',
+          stiffness: 400,
           damping: 17,
           duration: 0.1
-        }}
-      >
+        }}>
+
         <Button
           className={cn(
             'relative overflow-hidden transition-all duration-200',
@@ -65,25 +65,25 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
           variant={variant}
           size={size}
           ref={ref}
-          {...props}
-        >
+          {...props}>
+
           <motion.div
             className="relative z-10 flex items-center justify-center"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-          >
+            transition={{ delay: 0.1 }}>
+
             {children}
           </motion.div>
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
             initial={{ x: '-100%' }}
             whileHover={{ x: '100%' }}
-            transition={{ duration: 0.6 }}
-          />
+            transition={{ duration: 0.6 }} />
+
         </Button>
-      </motion.div>
-    );
+      </motion.div>);
+
   }
 );
 

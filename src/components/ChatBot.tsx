@@ -19,26 +19,26 @@ interface ChatBotProps {
 
 const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
   const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Hello! I\'m here to help you with information about Allurement Healthcare Staffing. How can I assist you today?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ]);
+  {
+    id: '1',
+    text: 'Hello! I\'m here to help you with information about Allurement Healthcare Staffing. How can I assist you today?',
+    sender: 'bot',
+    timestamp: new Date()
+  }]
+  );
   const [inputText, setInputText] = useState('');
 
   const quickReplies = [
-    'Tell me about your services',
-    'How do I apply for a position?',
-    'What are your contact details?',
-    'Emergency staffing availability',
-    'Speak with a human'
-  ];
+  'Tell me about your services',
+  'How do I apply for a position?',
+  'What are your contact details?',
+  'Emergency staffing availability',
+  'Speak with a human'];
+
 
   const getBotResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
-    
+
     if (lowerMessage.includes('service') || lowerMessage.includes('what do you do')) {
       return 'We provide comprehensive healthcare staffing solutions including Registered Nurses (RNs), Personal Support Workers (PSWs), and Personal Chef services. We serve hospitals, long-term care facilities, and home care agencies across Ontario.';
     } else if (lowerMessage.includes('apply') || lowerMessage.includes('job') || lowerMessage.includes('position')) {
@@ -72,7 +72,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInputText('');
 
     // Simulate bot response delay
@@ -83,7 +83,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
         sender: 'bot',
         timestamp: new Date()
       };
-      setMessages(prev => [...prev, botResponse]);
+      setMessages((prev) => [...prev, botResponse]);
     }, 1000);
   };
 
@@ -99,14 +99,14 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
 
   return (
     <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.95 }}
-          transition={{ duration: 0.2 }}
-          className="fixed bottom-20 right-6 w-80 md:w-96 h-96 z-50"
-        >
+      {isOpen &&
+      <motion.div
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="fixed bottom-20 right-6 w-80 md:w-96 h-96 z-50">
+
           <Card className="h-full flex flex-col backdrop-blur-xl bg-background/95 border-border/50 shadow-xl">
             <CardHeader className="flex flex-row items-center justify-between p-4 border-b">
               <CardTitle className="flex items-center text-sm font-medium">
@@ -114,11 +114,11 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
                 Healthcare Staffing Assistant
               </CardTitle>
               <Button
-                variant="ghost"
-                size="icon"
-                onClick={onToggle}
-                className="h-8 w-8"
-              >
+              variant="ghost"
+              size="icon"
+              onClick={onToggle}
+              className="h-8 w-8">
+
                 <X className="h-4 w-4" />
               </Button>
             </CardHeader>
@@ -126,48 +126,48 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
             <CardContent className="flex-1 flex flex-col p-0">
               {/* Messages */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {messages.map((message) => (
-                  <motion.div
-                    key={message.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-                  >
+                {messages.map((message) =>
+              <motion.div
+                key={message.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+
                     <div
-                      className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
-                        message.sender === 'user'
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted text-muted-foreground'
-                      }`}
-                    >
+                  className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
+                  message.sender === 'user' ?
+                  'bg-primary text-primary-foreground' :
+                  'bg-muted text-muted-foreground'}`
+                  }>
+
                       <div className="flex items-start space-x-2">
-                        {message.sender === 'bot' && (
-                          <Bot className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                        )}
-                        {message.sender === 'user' && (
-                          <User className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                        )}
+                        {message.sender === 'bot' &&
+                    <Bot className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                    }
+                        {message.sender === 'user' &&
+                    <User className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                    }
                         <div className="whitespace-pre-line">{message.text}</div>
                       </div>
                     </div>
                   </motion.div>
-                ))}
+              )}
               </div>
 
               {/* Quick Replies */}
               <div className="p-4 pt-0">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {quickReplies.map((reply) => (
-                    <Button
-                      key={reply}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handleQuickReply(reply)}
-                      className="text-xs"
-                    >
+                  {quickReplies.map((reply) =>
+                <Button
+                  key={reply}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleQuickReply(reply)}
+                  className="text-xs">
+
                       {reply}
                     </Button>
-                  ))}
+                )}
                 </div>
               </div>
 
@@ -175,17 +175,17 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
               <div className="p-4 pt-0 border-t">
                 <div className="flex space-x-2">
                   <Input
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    placeholder="Type your message..."
-                    className="flex-1"
-                  />
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message..."
+                  className="flex-1" />
+
                   <Button
-                    onClick={handleSendMessage}
-                    size="icon"
-                    className="bg-primary hover:bg-primary/90"
-                  >
+                  onClick={handleSendMessage}
+                  size="icon"
+                  className="bg-primary hover:bg-primary/90">
+
                     <Send className="h-4 w-4" />
                   </Button>
                 </div>
@@ -193,9 +193,9 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
             </CardContent>
           </Card>
         </motion.div>
-      )}
-    </AnimatePresence>
-  );
+      }
+    </AnimatePresence>);
+
 };
 
 export default ChatBot;

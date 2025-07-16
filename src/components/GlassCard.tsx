@@ -8,10 +8,10 @@ interface GlassCardProps {
   hover?: boolean;
 }
 
-const GlassCard: React.FC<GlassCardProps> = ({ 
-  children, 
-  className, 
-  hover = true 
+const GlassCard: React.FC<GlassCardProps> = ({
+  children,
+  className,
+  hover = true
 }) => {
   return (
     <motion.div
@@ -25,11 +25,11 @@ const GlassCard: React.FC<GlassCardProps> = ({
         className
       )}
       whileHover={hover ? { scale: 1.02 } : {}}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-    >
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+
       {children}
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default GlassCard;

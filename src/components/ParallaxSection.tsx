@@ -7,10 +7,10 @@ interface ParallaxSectionProps {
   speed?: number;
 }
 
-const ParallaxSection: React.FC<ParallaxSectionProps> = ({ 
-  children, 
+const ParallaxSection: React.FC<ParallaxSectionProps> = ({
+  children,
   className,
-  speed = 0.5 
+  speed = 0.5
 }) => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 1000 * speed]);
@@ -18,11 +18,11 @@ const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   return (
     <motion.div
       style={{ y }}
-      className={className}
-    >
+      className={className}>
+
       {children}
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default ParallaxSection;

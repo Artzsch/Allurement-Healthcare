@@ -86,39 +86,39 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       {/* Navigation */}
-      <motion.nav 
+      <motion.nav
         className="bg-background/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-border/50"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+        transition={{ duration: 0.6 }}>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <motion.div 
+            <motion.div
               className="flex items-center"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+              transition={{ delay: 0.2 }}>
+
               <div className="flex items-center space-x-3">
                 <motion.img
                   src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
                   alt="Allurement Healthcare Staffing Logo"
                   className="w-10 h-10 object-contain"
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                />
+                  transition={{ type: 'spring', stiffness: 300 }} />
+
                 <span className="text-xl font-bold text-foreground">
                   Allurement Healthcare Staffing
                 </span>
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="hidden md:flex space-x-4 items-center"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+              transition={{ delay: 0.4 }}>
+
               <AnimatedButton
                 variant="ghost"
                 onClick={() => scrollToSection('services')}
@@ -149,46 +149,45 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
         </ParallaxSection>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
+          <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.div 
+            transition={{ duration: 0.8 }}>
+
+            <motion.div
               className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
+              transition={{ delay: 0.3 }}>
+
               <Heart className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium text-primary">"Your Workforce, Our Commitment"</span>
               <Sparkles className="h-4 w-4 text-primary" />
             </motion.div>
-            <motion.h1 
-              className="text-4xl md:text-6xl font-bold mb-6 text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Flexible, Reliable
-              <br />
-              Healthcare Staffing
+              transition={{ delay: 0.5 }}>
+
+              <span className="block">Flexible, Reliable</span>
+              <span className="block">Healthcare Staffing</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl mb-8 max-w-3xl mx-auto text-muted-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-            >
+              transition={{ delay: 0.7 }}>
+
               Providing high-quality staffing services tailored to diverse healthcare environments across Ontario
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-            >
+              transition={{ delay: 0.9 }}>
+
               <AnimatedButton
                 size="lg"
                 onClick={() => scrollToSection('services')}
@@ -212,12 +211,12 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
-              <motion.div 
+              <motion.div
                 className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
+                transition={{ delay: 0.2 }}>
+
                 <Heart className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium text-primary">Comprehensive Solutions</span>
               </motion.div>
@@ -234,11 +233,11 @@ const HomePage = () => {
             {services.map((service, index) =>
             <AnimatedCard key={index} delay={index * 0.1}>
                 <CardHeader className="text-center">
-                  <motion.div 
-                    className="flex justify-center mb-4"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
+                  <motion.div
+                  className="flex justify-center mb-4"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: 'spring', stiffness: 300 }}>
+
                     <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
                       {service.icon}
                     </div>
@@ -249,13 +248,13 @@ const HomePage = () => {
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) =>
-                  <motion.li 
-                    key={idx} 
+                  <motion.li
+                    key={idx}
                     className="flex items-center text-sm text-muted-foreground"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (index * 0.1) + (idx * 0.05) }}
-                  >
+                    transition={{ delay: index * 0.1 + idx * 0.05 }}>
+
                         <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </motion.li>
@@ -412,12 +411,12 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
-              <motion.div 
+              <motion.div
                 className="inline-flex items-center space-x-2 bg-secondary/20 border border-secondary/30 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
+                transition={{ delay: 0.2 }}>
+
                 <Star className="h-4 w-4 text-secondary-foreground" />
                 <span className="text-sm font-medium text-secondary-foreground">Flexible Solutions</span>
               </motion.div>
@@ -435,11 +434,11 @@ const HomePage = () => {
             <AnimatedCard key={index} delay={index * 0.1}>
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center">
-                    <motion.div 
-                      className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center justify-center mr-3"
-                      whileHover={{ scale: 1.1, rotate: 10 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
+                    <motion.div
+                    className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center justify-center mr-3"
+                    whileHover={{ scale: 1.1, rotate: 10 }}
+                    transition={{ type: 'spring', stiffness: 300 }}>
+
                       <Star className="h-4 w-4 text-secondary-foreground" />
                     </motion.div>
                     {model.name}
@@ -651,8 +650,8 @@ const HomePage = () => {
                     rel="noopener noreferrer"
                     className="group"
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                    whileTap={{ scale: 0.95 }}>
+
                     <div className="flex flex-col items-center p-4 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
                       <MapPin className="h-6 w-6 text-primary mb-2" />
                       <p className="font-semibold text-foreground">Address</p>
@@ -663,8 +662,8 @@ const HomePage = () => {
                     href="tel:+14372202025"
                     className="group"
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                    whileTap={{ scale: 0.95 }}>
+
                     <div className="flex flex-col items-center p-4 rounded-xl bg-green-500/10 group-hover:bg-green-500/20 transition-colors">
                       <Phone className="h-6 w-6 text-green-600 mb-2" />
                       <p className="font-semibold text-foreground">Phone</p>
@@ -677,18 +676,18 @@ const HomePage = () => {
                     rel="noopener noreferrer"
                     className="group"
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                    whileTap={{ scale: 0.95 }}>
+
                     <div className="flex flex-col items-center p-4 rounded-xl bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
                       <Mail className="h-6 w-6 text-purple-600 mb-2" />
                       <p className="font-semibold text-foreground">Email</p>
                       <p className="text-sm text-muted-foreground">enquire@allurementhealthcares.com</p>
                     </div>
                   </motion.a>
-                  <motion.div 
+                  <motion.div
                     className="flex flex-col items-center p-4 rounded-xl bg-orange-500/10"
-                    whileHover={{ scale: 1.05 }}
-                  >
+                    whileHover={{ scale: 1.05 }}>
+
                     <Globe className="h-6 w-6 text-orange-600 mb-2" />
                     <p className="font-semibold text-foreground">Website</p>
                     <p className="text-sm text-muted-foreground">www.allurementhealthcares.com</p>
@@ -705,42 +704,42 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center">
-              <motion.div 
+              <motion.div
                 className="flex justify-center items-center mb-4"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
+                transition={{ type: 'spring', stiffness: 300 }}>
+
                 <motion.img
                   src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
                   alt="Allurement Healthcare Staffing Logo"
                   className="w-12 h-12 object-contain mr-3"
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                />
+                  transition={{ duration: 0.6 }} />
+
                 <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
               </motion.div>
-              <motion.p 
+              <motion.p
                 className="text-lg text-primary font-medium mb-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
+                transition={{ delay: 0.2 }}>
+
                 "Your Workforce, Our Commitment"
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-background/80 mb-4"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
+                transition={{ delay: 0.4 }}>
+
                 Providing flexible, reliable, and high-quality staffing services across Ontario
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-background/60 text-sm"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
+                transition={{ delay: 0.6 }}>
+
                 © 2024 Allurement Healthcare Staffing. All rights reserved.
               </motion.p>
             </div>
