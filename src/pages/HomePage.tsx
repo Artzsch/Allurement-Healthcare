@@ -508,7 +508,7 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/8598faa0-1627-49c8-ad7f-25717719b903.png"
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/f0c4866f-95de-48ea-a73d-e86c86d3fc44.png"
                 alt="Diverse healthcare team of professionals"
                 className="w-full h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
@@ -526,7 +526,7 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/0d04404b-16ad-400a-9880-dfa1220f3f1d.png"
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/92a62d1f-fe36-4fc9-aa4b-139a11d8bd29.png"
                 alt="Professional healthcare team collaboration"
                 className="w-full h-80 object-cover" />
               
