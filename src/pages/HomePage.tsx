@@ -66,21 +66,7 @@ const HomePage = () => {
   }];
 
 
-  const staffingModels = [
-  { name: "Direct Hire", description: "Permanent staffing with 90-day guarantee", best: "Long-term positions" },
-  { name: "Temp-to-Perm", description: "Trial periods before hiring", best: "Evaluation periods" },
-  { name: "Contract Staffing", description: "Flexible 1-12+ month terms", best: "Project-based needs" },
-  { name: "Rapid Response", description: "24-48 hour placements", best: "Emergency shortages" },
-  { name: "Specialized Teams", description: "Pre-trained unit-ready staff", best: "Outbreak support" }];
 
-
-  const industries = [
-  "Hospitals & Health Networks",
-  "Long-Term Care & Retirement Homes",
-  "Home Care Agencies",
-  "Private Residences (Concierge Care)",
-  "Government Health Programs",
-  "Rehabilitation Centers"];
 
 
   return (
@@ -406,75 +392,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Staffing Models */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollAnimatedSection>
-            <div className="text-center mb-16">
-              <motion.div
-                className="inline-flex items-center space-x-2 bg-secondary/20 border border-secondary/30 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}>
 
-                <Star className="h-4 w-4 text-secondary-foreground" />
-                <span className="text-sm font-medium text-secondary-foreground">Flexible Solutions</span>
-              </motion.div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Flexible Staffing Models
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Multiple engagement options to meet your specific needs
-              </p>
-            </div>
-          </ScrollAnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staffingModels.map((model, index) =>
-            <AnimatedCard key={index} delay={index * 0.1}>
-                <CardHeader>
-                  <CardTitle className="text-lg flex items-center">
-                    <motion.div
-                    className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center justify-center mr-3"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                    transition={{ type: 'spring', stiffness: 300 }}>
 
-                      <Star className="h-4 w-4 text-secondary-foreground" />
-                    </motion.div>
-                    {model.name}
-                  </CardTitle>
-                  <CardDescription>{model.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-yellow-500 mr-2" />
-                    <span>Best for: {model.best}</span>
-                  </div>
-                </CardContent>
-              </AnimatedCard>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Serve */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Industries We Serve
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) =>
-            <div key={index} className="flex items-center p-6 bg-white border rounded-lg hover:shadow-md transition-shadow">
-                <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
-                <span className="text-gray-700 font-medium">{industry}</span>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* Our Team Section */}
       <section id="about" className="py-20 bg-gray-50">
