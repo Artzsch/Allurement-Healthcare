@@ -476,16 +476,122 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Our Team Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Allurement Healthcare Staffing
-            </h2>
+          <ScrollAnimatedSection>
+            <div className="text-center mb-16">
+              <motion.div
+                className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}>
+                <Users className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Our Team</span>
+              </motion.div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Meet Our Healthcare Professionals
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Our diverse team of healthcare professionals brings together expertise, 
+                compassion, and dedication to deliver exceptional care across all settings.
+              </p>
+            </div>
+          </ScrollAnimatedSection>
+
+          {/* Team Images */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/8598faa0-1627-49c8-ad7f-25717719b903.png"
+                alt="Diverse healthcare team of professionals"
+                className="w-full h-80 object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Diverse Expertise</h4>
+                  <p className="text-sm opacity-90">Our team represents various healthcare specialties and backgrounds</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/0d04404b-16ad-400a-9880-dfa1220f3f1d.png"
+                alt="Professional healthcare team collaboration"
+                className="w-full h-80 object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Professional Excellence</h4>
+                  <p className="text-sm opacity-90">Committed to maintaining the highest standards of professional care</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
+
+          {/* Growth and Success Section */}
+          <ScrollAnimatedSection>
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Growing Together, Succeeding Together
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Our success is built on the foundation of investing in our healthcare professionals 
+                and fostering environments where both careers and patient care flourish.
+              </p>
+            </div>
+          </ScrollAnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/d7f72189-3603-4fae-a84e-0800fe2aeb57.png"
+                alt="Growth and investment in healthcare careers"
+                className="w-full h-80 object-cover bg-white" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Investment in Growth</h4>
+                  <p className="text-sm opacity-90">We invest in our professionals' development and career advancement</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/6ff3a9d9-1f24-433a-8600-2bdeecd0feab.png"
+                alt="Sustainable growth and success in healthcare"
+                className="w-full h-80 object-cover bg-white" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Sustainable Success</h4>
+                  <p className="text-sm opacity-90">Building lasting partnerships that benefit everyone involved</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Why Choose Us */}
           <div className="grid md:grid-cols-2 gap-16">
-            <Card>
+            <AnimatedCard delay={0.1}>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
                   <Building2 className="h-8 w-8 text-blue-600 mr-3" />
@@ -500,7 +606,13 @@ const HomePage = () => {
                   { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
                   { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }].
                   map((benefit, idx) =>
-                  <li key={idx} className="flex items-start">
+                  <motion.li 
+                    key={idx} 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    viewport={{ once: true }}>
                       <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-blue-600" />
                       </div>
@@ -508,13 +620,13 @@ const HomePage = () => {
                         <h4 className="font-semibold">{benefit.title}</h4>
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
-                    </li>
+                    </motion.li>
                   )}
                 </ul>
               </CardContent>
-            </Card>
+            </AnimatedCard>
 
-            <Card>
+            <AnimatedCard delay={0.2}>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
                   <Users className="h-8 w-8 text-purple-600 mr-3" />
@@ -529,7 +641,13 @@ const HomePage = () => {
                   { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
                   { icon: Heart, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }].
                   map((benefit, idx) =>
-                  <li key={idx} className="flex items-start">
+                  <motion.li 
+                    key={idx} 
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    viewport={{ once: true }}>
                       <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mr-4 mt-1">
                         <benefit.icon className="h-5 w-5 text-purple-600" />
                       </div>
@@ -537,27 +655,11 @@ const HomePage = () => {
                         <h4 className="font-semibold">{benefit.title}</h4>
                         <p className="text-gray-600">{benefit.desc}</p>
                       </div>
-                    </li>
+                    </motion.li>
                   )}
                 </ul>
               </CardContent>
-            </Card>
-          </div>
-          
-          {/* Professional Care Image */}
-          <div className="mt-16 text-center">
-            <div className="relative rounded-xl overflow-hidden shadow-lg max-w-2xl mx-auto">
-              <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/bfb2aa4b-8961-4813-9119-95088a94045a.png"
-                alt="Healthcare professional providing compassionate care"
-                className="w-full h-96 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h4 className="text-xl font-semibold mb-2">Compassionate Care</h4>
-                  <p className="text-sm opacity-90">Our professionals deliver exceptional care with empathy and expertise</p>
-                </div>
-              </div>
-            </div>
+            </AnimatedCard>
           </div>
         </div>
       </section>
