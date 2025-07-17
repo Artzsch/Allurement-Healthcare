@@ -529,12 +529,12 @@ const HomePage = () => {
                 src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/0d04404b-16ad-400a-9880-dfa1220f3f1d.png"
                 alt="Professional healthcare team collaboration"
                 className="w-full h-80 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h4 className="text-xl font-semibold mb-2">Professional Excellence</h4>
-                  <p className="text-sm opacity-90">Committed to maintaining the highest standards of professional care</p>
-                </div>
-              </div>
+              
+
+
+
+
+
             </motion.div>
           </div>
 
@@ -606,8 +606,8 @@ const HomePage = () => {
                   { icon: Clock, title: "Cost Efficiency", desc: "Flexible models control labor costs" },
                   { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive compliance screening" }].
                   map((benefit, idx) =>
-                  <motion.li 
-                    key={idx} 
+                  <motion.li
+                    key={idx}
                     className="flex items-start"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -641,8 +641,8 @@ const HomePage = () => {
                   { icon: Award, title: "Advocacy", desc: "Clinical background ensures fair working conditions" },
                   { icon: Heart, title: "Growth Opportunities", desc: "Access to diverse healthcare environments" }].
                   map((benefit, idx) =>
-                  <motion.li 
-                    key={idx} 
+                  <motion.li
+                    key={idx}
                     className="flex items-start"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
