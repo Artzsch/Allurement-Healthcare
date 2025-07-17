@@ -548,7 +548,7 @@ const HomePage = () => {
           <div className="mt-16 text-center">
             <div className="relative rounded-xl overflow-hidden shadow-lg max-w-2xl mx-auto">
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/beba4a93-a580-40b7-af4e-12cbaf367a59.png"
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/bfb2aa4b-8961-4813-9119-95088a94045a.png"
                 alt="Healthcare professional providing compassionate care"
                 className="w-full h-96 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
