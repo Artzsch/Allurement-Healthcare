@@ -88,10 +88,14 @@ const HomePage = () => {
 
               <div className="flex items-center space-x-3">
                 <motion.div
-                  className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"
+                  className="w-10 h-10 flex items-center justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: 'spring', stiffness: 300 }}>
-                  <Heart className="h-6 w-6 text-primary" />
+                  <img 
+                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png" 
+                    alt="Allurement Healthcare Staffing Logo" 
+                    className="h-10 w-10 object-contain"
+                  />
                 </motion.div>
 
                 <span className="text-xl font-bold text-foreground">
@@ -732,10 +736,14 @@ const HomePage = () => {
                 transition={{ type: 'spring', stiffness: 300 }}>
 
                 <motion.div
-                  className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-3"
+                  className="w-12 h-12 flex items-center justify-center mr-3"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}>
-                  <Heart className="h-8 w-8 text-primary" />
+                  <img 
+                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png" 
+                    alt="Allurement Healthcare Staffing Logo" 
+                    className="h-12 w-12 object-contain"
+                  />
                 </motion.div>
 
                 <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
