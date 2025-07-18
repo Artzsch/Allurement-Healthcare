@@ -19,8 +19,8 @@ const Disclaimer = () => {
           <Button
             onClick={handleBackToHome}
             variant="outline"
-            className="flex items-center gap-2"
-          >
+            className="flex items-center gap-2">
+
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Button>
@@ -138,8 +138,8 @@ const Disclaimer = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Disclaimer;

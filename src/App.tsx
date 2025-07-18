@@ -9,6 +9,7 @@ import AdminLogin from "./pages/AdminLogin";
 import ConsultationForm from "./pages/ConsultationForm";
 import RequestStaffingSolutions from "./pages/RequestStaffingSolutions";
 import ApplyNow from "./pages/ApplyNow";
+import FAQ from "./pages/FAQ";
 import Disclaimer from "./pages/Disclaimer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import InteractiveBackground from "./components/InteractiveBackground";
@@ -25,10 +26,11 @@ const App = () =>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/consultation" element={<ConsultationForm />} />
+            <Route path="/consultation-form" element={<ConsultationForm />} />
             <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/request-staffing" element={<RequestStaffingSolutions />} />
+            <Route path="/request-staffing-solutions" element={<RequestStaffingSolutions />} />
             <Route path="/apply-now" element={<ApplyNow />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

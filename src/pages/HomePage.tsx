@@ -126,6 +126,12 @@ const HomePage = () => {
                 className="text-foreground hover:text-primary">
                 Contact
               </AnimatedButton>
+              <AnimatedButton
+                variant="ghost"
+                asChild
+                className="text-foreground hover:text-primary">
+                <Link to="/faq">FAQ</Link>
+              </AnimatedButton>
               <ThemeToggle />
             </motion.div>
           </div>
@@ -190,6 +196,14 @@ const HomePage = () => {
                 onClick={() => scrollToSection('contact')}>
                 Get Started
               </AnimatedButton>
+              <div className="text-center mt-4">
+                <Button
+                  variant="ghost"
+                  asChild
+                  className="text-primary hover:text-primary/80 text-sm">
+                  <Link to="/faq">Have questions? Check our FAQ →</Link>
+                </Button>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -806,22 +820,22 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}>
-                <Link 
-                  to="/disclaimer" 
-                  className="text-background/80 hover:text-background text-sm transition-colors"
-                >
+                <Link
+                  to="/disclaimer"
+                  className="text-background/80 hover:text-background text-sm transition-colors">
+
                   Disclaimer
                 </Link>
-                <Link 
-                  to="/privacy-policy" 
-                  className="text-background/80 hover:text-background text-sm transition-colors"
-                >
+                <Link
+                  to="/privacy-policy"
+                  className="text-background/80 hover:text-background text-sm transition-colors">
+
                   Privacy Policy
                 </Link>
-                <Link 
-                  to="/admin" 
-                  className="text-background/80 hover:text-background text-sm transition-colors"
-                >
+                <Link
+                  to="/admin"
+                  className="text-background/80 hover:text-background text-sm transition-colors">
+
                   Admin Login
                 </Link>
               </motion.div>
