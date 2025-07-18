@@ -87,12 +87,12 @@ const HomePage = () => {
               transition={{ delay: 0.2 }}>
 
               <div className="flex items-center space-x-3">
-                <motion.img
-                  src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
-                  alt="Allurement Healthcare Staffing Logo"
-                  className="w-10 h-10 object-contain"
+                <motion.div
+                  className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }} />
+                  transition={{ type: 'spring', stiffness: 300 }}>
+                  <Heart className="h-6 w-6 text-primary" />
+                </motion.div>
 
                 <span className="text-xl font-bold text-foreground">
                   Allurement Healthcare Staffing
@@ -428,7 +428,7 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/f0c4866f-95de-48ea-a73d-e86c86d3fc44.png"
+                src="https://images.unsplash.com/photo-1592392821486-71f028a00581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwdGVhbSUyMGRpdmVyc2UlMjBwcm9mZXNzaW9uYWxzJTIwbWVkaWNhbCUyMHN0YWZmfGVufDB8fHx8MTc1MjgwMzIyOHww&ixlib=rb-4.1.0&q=80&w=800"
                 alt="Diverse healthcare team of professionals"
                 className="w-full h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
@@ -446,7 +446,7 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/92a62d1f-fe36-4fc9-aa4b-139a11d8bd29.png"
+                src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwdGVhbSUyMGRpdmVyc2UlMjBwcm9mZXNzaW9uYWxzJTIwbWVkaWNhbCUyMHN0YWZmfGVufDB8fHx8MTc1MjgwMzIyOHww&ixlib=rb-4.1.0&q=80&w=800"
                 alt="Professional healthcare team collaboration"
                 className="w-full h-80 object-cover" />
               
@@ -479,9 +479,9 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/d7f72189-3603-4fae-a84e-0800fe2aeb57.png"
+                src="https://images.unsplash.com/photo-1659353888818-0e41520d086a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsJTIwZ3Jvd3RoJTIwc3VjY2VzcyUyMG1lZGljYWwlMjBjYXJlZXJ8ZW58MHx8fHwxNzUyODAzMjMzfDA&ixlib=rb-4.1.0&q=80&w=800"
                 alt="Growth and investment in healthcare careers"
-                className="w-full h-80 object-cover bg-white" />
+                className="w-full h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h4 className="text-xl font-semibold mb-2">Investment in Growth</h4>
@@ -497,9 +497,9 @@ const HomePage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}>
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/6ff3a9d9-1f24-433a-8600-2bdeecd0feab.png"
+                src="https://images.unsplash.com/photo-1673865641073-4479f93a7776?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwzfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsJTIwZ3Jvd3RoJTIwc3VjY2VzcyUyMG1lZGljYWwlMjBjYXJlZXJ8ZW58MHx8fHwxNzUyODAzMjMzfDA&ixlib=rb-4.1.0&q=80&w=800"
                 alt="Sustainable growth and success in healthcare"
-                className="w-full h-80 object-cover bg-white" />
+                className="w-full h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h4 className="text-xl font-semibold mb-2">Sustainable Success</h4>
@@ -731,12 +731,12 @@ const HomePage = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}>
 
-                <motion.img
-                  src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
-                  alt="Allurement Healthcare Staffing Logo"
-                  className="w-12 h-12 object-contain mr-3"
+                <motion.div
+                  className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-3"
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }} />
+                  transition={{ duration: 0.6 }}>
+                  <Heart className="h-8 w-8 text-primary" />
+                </motion.div>
 
                 <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
               </motion.div>
