@@ -728,7 +728,7 @@ const HomePage = () => {
                     </div>
                   </motion.a>
                   <motion.a
-                    href="https://app.titan.email/login/"
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=new"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group"
@@ -741,14 +741,20 @@ const HomePage = () => {
                       <p className="text-sm text-muted-foreground">enquire@allurementhealthcares.com</p>
                     </div>
                   </motion.a>
-                  <motion.div
-                    className="flex flex-col items-center p-4 rounded-xl bg-orange-500/10"
-                    whileHover={{ scale: 1.05 }}>
+                  <motion.a
+                    href="https://www.allurementhealthcares.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}>
 
-                    <Globe className="h-6 w-6 text-orange-600 mb-2" />
-                    <p className="font-semibold text-foreground">Website</p>
-                    <p className="text-sm text-muted-foreground">www.allurementhealthcares.com</p>
-                  </motion.div>
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors">
+                      <Globe className="h-6 w-6 text-orange-600 mb-2" />
+                      <p className="font-semibold text-foreground">Website</p>
+                      <p className="text-sm text-muted-foreground">www.allurementhealthcares.com</p>
+                    </div>
+                  </motion.a>
                 </div>
               </CardContent>
             </Card>
