@@ -68,7 +68,6 @@ const HomePage = () => {
 
 
 
-
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       {/* Navigation */}
@@ -91,11 +90,11 @@ const HomePage = () => {
                   className="w-10 h-10 flex items-center justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: 'spring', stiffness: 300 }}>
-                  <img 
-                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png" 
-                    alt="Allurement Healthcare Staffing Logo" 
-                    className="h-10 w-10 object-contain"
-                  />
+                  <img
+                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png"
+                    alt="Allurement Healthcare Staffing Logo"
+                    className="h-10 w-10 object-contain" />
+
                 </motion.div>
 
                 <span className="text-xl font-bold text-foreground">
@@ -396,10 +395,6 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
-
-
       {/* Our Team Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -424,41 +419,77 @@ const HomePage = () => {
           </ScrollAnimatedSection>
 
           {/* Team Images */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             <motion.div
               className="relative rounded-xl overflow-hidden shadow-xl"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}>
               <img
-                src="https://images.unsplash.com/photo-1592392821486-71f028a00581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwdGVhbSUyMGRpdmVyc2UlMjBwcm9mZXNzaW9uYWxzJTIwbWVkaWNhbCUyMHN0YWZmfGVufDB8fHx8MTc1MjgwMzIyOHww&ixlib=rb-4.1.0&q=80&w=800"
-                alt="Diverse healthcare team of professionals"
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/33c2e3cf-6171-4a54-925e-550719c3fb67.png"
+                alt="Professional healthcare administrator"
                 className="w-full h-80 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                 <div className="p-6 text-white">
-                  <h4 className="text-xl font-semibold mb-2">Diverse Expertise</h4>
-                  <p className="text-sm opacity-90">Our team represents various healthcare specialties and backgrounds</p>
+                  <h4 className="text-xl font-semibold mb-2">Leadership</h4>
+                  <p className="text-sm opacity-90">Experienced healthcare management professionals</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
               className="relative rounded-xl overflow-hidden shadow-xl"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/1e3be502-0178-46d0-8c2d-86188a261f34.png"
+                alt="Skilled healthcare nurse"
+                className="w-full h-80 object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Nursing Excellence</h4>
+                  <p className="text-sm opacity-90">Skilled RNs and RPNs across all specialties</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}>
               <img
-                src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwdGVhbSUyMGRpdmVyc2UlMjBwcm9mZXNzaW9uYWxzJTIwbWVkaWNhbCUyMHN0YWZmfGVufDB8fHx8MTc1MjgwMzIyOHww&ixlib=rb-4.1.0&q=80&w=800"
-                alt="Professional healthcare team collaboration"
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/952d0a71-867d-4c54-8bf8-8a4512e77e76.png"
+                alt="Compassionate patient care"
                 className="w-full h-80 object-cover" />
-              
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Patient-Centered Care</h4>
+                  <p className="text-sm opacity-90">Dedicated PSWs providing personalized support</p>
+                </div>
+              </div>
+            </motion.div>
 
-
-
-
-
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}>
+              <img
+                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/63e02ff1-c447-4720-a22f-8edda13c34e4.png"
+                alt="Diverse healthcare team of professionals"
+                className="w-full h-80 object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Diverse Expertise</h4>
+                  <p className="text-sm opacity-90">Our team represents various healthcare specialties</p>
+                </div>
+              </div>
             </motion.div>
           </div>
 
@@ -739,11 +770,11 @@ const HomePage = () => {
                   className="w-12 h-12 flex items-center justify-center mr-3"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}>
-                  <img 
-                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png" 
-                    alt="Allurement Healthcare Staffing Logo" 
-                    className="h-12 w-12 object-contain"
-                  />
+                  <img
+                    src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png"
+                    alt="Allurement Healthcare Staffing Logo"
+                    className="h-12 w-12 object-contain" />
+
                 </motion.div>
 
                 <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
