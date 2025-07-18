@@ -20,15 +20,6 @@ const FloatingActionButton: React.FC = () => {
     label: 'Email Us',
     href: 'mailto:enquire@allurementhealthcares.com',
     color: 'bg-blue-500 hover:bg-blue-600'
-  },
-  {
-    icon: MessageCircle,
-    label: 'Live Chat',
-    onClick: () => {
-      // This would open a chat widget
-      console.log('Opening chat...');
-    },
-    color: 'bg-purple-500 hover:bg-purple-600'
   }];
 
 
