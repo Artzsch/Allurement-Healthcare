@@ -801,12 +801,35 @@ const HomePage = () => {
 
                 Providing flexible, reliable, and high-quality staffing services across Ontario
               </motion.p>
+              <motion.div
+                className="flex justify-center gap-6 mb-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}>
+                <Link 
+                  to="/disclaimer" 
+                  className="text-background/80 hover:text-background text-sm transition-colors"
+                >
+                  Disclaimer
+                </Link>
+                <Link 
+                  to="/privacy-policy" 
+                  className="text-background/80 hover:text-background text-sm transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+                <Link 
+                  to="/admin" 
+                  className="text-background/80 hover:text-background text-sm transition-colors"
+                >
+                  Admin Login
+                </Link>
+              </motion.div>
               <motion.p
                 className="text-background/60 text-sm"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}>
-
+                transition={{ delay: 0.8 }}>
                 © 2024 Allurement Healthcare Staffing. All rights reserved.
               </motion.p>
             </div>

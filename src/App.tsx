@@ -9,6 +9,8 @@ import AdminLogin from "./pages/AdminLogin";
 import ConsultationForm from "./pages/ConsultationForm";
 import RequestStaffingSolutions from "./pages/RequestStaffingSolutions";
 import ApplyNow from "./pages/ApplyNow";
+import Disclaimer from "./pages/Disclaimer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import InteractiveBackground from "./components/InteractiveBackground";
 import FloatingActionButton from "./components/FloatingActionButton";
 
@@ -27,6 +29,8 @@ const App = () =>
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/request-staffing" element={<RequestStaffingSolutions />} />
             <Route path="/apply-now" element={<ApplyNow />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
