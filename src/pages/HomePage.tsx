@@ -92,13 +92,13 @@ const HomePage = () => {
                   transition={{ type: 'spring', stiffness: 300 }}>
                   <img
                     src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png"
-                    alt="Allurement Healthcare Staffing Logo"
+                    alt="Allurement Healthcare Logo"
                     className="h-10 w-10 object-contain" />
 
                 </motion.div>
 
                 <span className="text-xl font-bold text-foreground">
-                  Allurement Healthcare Staffing
+                  Allurement Healthcare
                 </span>
               </div>
             </motion.div>
@@ -792,12 +792,12 @@ const HomePage = () => {
                   transition={{ duration: 0.6 }}>
                   <img
                     src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/23c5760d-6f79-43e0-9cee-ef76f128e5df.png"
-                    alt="Allurement Healthcare Staffing Logo"
+                    alt="Allurement Healthcare Logo"
                     className="h-12 w-12 object-contain" />
 
                 </motion.div>
 
-                <span className="text-3xl font-bold">Allurement Healthcare Staffing</span>
+                <span className="text-3xl font-bold">Allurement Healthcare</span>
               </motion.div>
               <motion.p
                 className="text-lg text-primary font-medium mb-2"
@@ -844,7 +844,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}>
-                © 2024 Allurement Healthcare Staffing. All rights reserved.
+                © 2025 Allurement Healthcare. All rights reserved.
               </motion.p>
             </div>
           </ScrollAnimatedSection>
