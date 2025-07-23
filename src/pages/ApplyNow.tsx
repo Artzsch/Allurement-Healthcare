@@ -212,9 +212,9 @@ const ApplyNow = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50/20 to-red-50/30 dark:from-gray-900 dark:via-orange-950/10 dark:to-red-950/15">
       {/* Header */}
-      <div className="bg-white shadow-sm">
+      <div className="bg-gradient-to-r from-white via-orange-50/30 to-red-50/30 dark:from-gray-900 dark:via-orange-950/20 dark:to-red-950/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -709,7 +709,7 @@ const ApplyNow = () => {
           </Card>
 
           <div className="flex gap-4">
-            <Button type="submit" className="flex-1">
+            <Button type="submit" className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg">
               Submit Application
             </Button>
             <Button type="button" variant="outline" asChild>

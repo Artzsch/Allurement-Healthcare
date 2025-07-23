@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'orange' | 'warm';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   children: React.ReactNode;
   className?: string;
@@ -13,6 +13,21 @@ interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 
 const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
   ({ className, variant = 'default', size = 'default', children, asChild, ...props }, ref) => {
+    const getVariantStyles = () => {
+      switch (variant) {
+        case 'orange':
+          return 'orange-gradient text-white hover:shadow-lg hover:shadow-orange-500/30 border-0';
+        case 'warm':
+          return 'warm-gradient text-white hover:shadow-lg hover:shadow-red-500/30 border-0';
+        default:
+          return '';
+      }
+    };
+
+    const shadowClass = variant === 'orange' ? 'hover:shadow-orange-500/25' :
+                       variant === 'warm' ? 'hover:shadow-red-500/25' :
+                       'hover:shadow-primary/25';
+
     if (asChild) {
       return (
         <motion.div
@@ -28,11 +43,12 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
           <Button
             className={cn(
               'relative overflow-hidden transition-all duration-200',
-              'hover:shadow-lg hover:shadow-primary/25',
+              `hover:shadow-lg ${shadowClass}`,
               'active:shadow-md',
+              getVariantStyles(),
               className
             )}
-            variant={variant}
+            variant={variant === 'orange' || variant === 'warm' ? 'default' : variant}
             size={size}
             ref={ref}
             asChild
@@ -58,11 +74,12 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
         <Button
           className={cn(
             'relative overflow-hidden transition-all duration-200',
-            'hover:shadow-lg hover:shadow-primary/25',
+            `hover:shadow-lg ${shadowClass}`,
             'active:shadow-md',
+            getVariantStyles(),
             className
           )}
-          variant={variant}
+          variant={variant === 'orange' || variant === 'warm' ? 'default' : variant}
           size={size}
           ref={ref}
           {...props}>

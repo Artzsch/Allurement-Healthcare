@@ -133,10 +133,10 @@ const HomePage = () => {
                 className="text-foreground hover:text-primary">
                 <Link to="/faq">FAQ</Link>
               </AnimatedButton>
-              <AdminLoginButton 
+              <AdminLoginButton
                 variant="ghost"
-                className="text-foreground hover:text-primary"
-              />
+                className="text-foreground hover:text-primary" />
+
               <ThemeToggle />
             </motion.div>
           </div>
@@ -144,9 +144,9 @@ const HomePage = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-background via-orange-50/30 dark:via-orange-950/20 to-primary/5 relative overflow-hidden">
         <ParallaxSection speed={0.3}>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-red-500/5" />
         </ParallaxSection>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -156,17 +156,17 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}>
 
             <motion.div
-              className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 border border-orange-300/50 dark:border-orange-700/50 rounded-full px-6 py-2 mb-6 backdrop-blur-sm shadow-lg"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3 }}>
 
-              <Heart className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">"Your Workforce, Our Commitment"</span>
-              <Sparkles className="h-4 w-4 text-primary" />
+              <Heart className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+              <span className="text-sm font-medium text-orange-700 dark:text-orange-300">"Your Workforce, Our Commitment"</span>
+              <Sparkles className="h-4 w-4 text-orange-600 dark:text-orange-400" />
             </motion.div>
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}>
@@ -189,9 +189,10 @@ const HomePage = () => {
               transition={{ delay: 0.9 }}>
 
               <AnimatedButton
+                variant="orange"
                 size="lg"
                 onClick={() => scrollToSection('services')}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
+                className="shadow-lg orange-glow">
                 Our Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </AnimatedButton>
@@ -215,18 +216,18 @@ const HomePage = () => {
       </section>
 
       {/* Main Services Overview */}
-      <section id="services" className="py-20 bg-muted/30">
+      <section id="services" className="py-20 bg-gradient-to-br from-orange-50/50 via-red-50/30 to-pink-50/50 dark:from-orange-950/20 dark:via-red-950/10 dark:to-pink-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
               <motion.div
-                className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 border border-orange-300/50 dark:border-orange-700/50 rounded-full px-6 py-2 mb-6 backdrop-blur-sm shadow-lg"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}>
 
-                <Heart className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Comprehensive Solutions</span>
+                <Heart className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+                <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Comprehensive Solutions</span>
               </motion.div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Our Healthcare Staffing Services
@@ -246,7 +247,7 @@ const HomePage = () => {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: 'spring', stiffness: 300 }}>
 
-                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 rounded-xl flex items-center justify-center shadow-lg">
                       {service.icon}
                     </div>
                   </motion.div>
@@ -276,7 +277,7 @@ const HomePage = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-white via-orange-50/20 to-red-50/30 dark:from-background dark:via-orange-950/10 dark:to-red-950/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Nursing Staff Solutions */}
           <div className="mb-16">
@@ -415,17 +416,17 @@ const HomePage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section id="about" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-orange-50/30 to-red-50/20 dark:from-gray-900/50 dark:via-orange-950/20 dark:to-red-950/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
               <motion.div
-                className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6 backdrop-blur-sm"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 border border-orange-300/50 dark:border-orange-700/50 rounded-full px-6 py-2 mb-6 backdrop-blur-sm shadow-lg"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}>
-                <Users className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Our Team</span>
+                <Users className="h-4 w-4 text-orange-600 dark:text-orange-400" />
+                <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Our Team</span>
               </motion.div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Meet Our Healthcare Professionals
@@ -639,7 +640,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-background to-primary/5">
+      <section id="contact" className="py-20 bg-gradient-to-br from-background via-orange-50/20 dark:via-orange-950/10 to-red-50/30 dark:to-red-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
@@ -652,11 +653,11 @@ const HomePage = () => {
             </div>
           </ScrollAnimatedSection>
           <div className="grid md:grid-cols-2 gap-8">
-            <GlassCard>
+            <GlassCard variant="warm">
               <Card className="bg-transparent border-none shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-foreground">
-                    <Building2 className="h-6 w-6 text-primary mr-2" />
+                    <Building2 className="h-6 w-6 text-orange-600 dark:text-orange-400 mr-2" />
                     For Healthcare Facilities
                   </CardTitle>
                   <CardDescription>
@@ -664,7 +665,7 @@ const HomePage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <AnimatedButton className="w-full mb-4 bg-primary hover:bg-primary/90" asChild>
+                  <AnimatedButton variant="warm" className="w-full mb-4" asChild>
                     <Link to="/request-staffing-solutions">
                       Request Staffing Solutions
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -676,11 +677,11 @@ const HomePage = () => {
                 </CardContent>
               </Card>
             </GlassCard>
-            <GlassCard>
+            <GlassCard variant="orange">
               <Card className="bg-transparent border-none shadow-none">
                 <CardHeader>
                   <CardTitle className="flex items-center text-foreground">
-                    <Users className="h-6 w-6 text-primary mr-2" />
+                    <Users className="h-6 w-6 text-orange-600 dark:text-orange-400 mr-2" />
                     For Healthcare Professionals
                   </CardTitle>
                   <CardDescription>
@@ -688,7 +689,7 @@ const HomePage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <AnimatedButton variant="outline" className="w-full mb-4" asChild>
+                  <AnimatedButton variant="orange" className="w-full mb-4" asChild>
                     <Link to="/apply-now">
                       Apply Now
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -703,7 +704,7 @@ const HomePage = () => {
           </div>
           
           {/* Service Hours and Contact Info */}
-          <GlassCard className="mt-16">
+          <GlassCard variant="orange" className="mt-16">
             <Card className="bg-transparent border-none shadow-none">
               <CardContent className="p-8">
                 <ScrollAnimatedSection>
@@ -728,8 +729,8 @@ const HomePage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
 
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <MapPin className="h-6 w-6 text-primary mb-2" />
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 group-hover:from-orange-200 group-hover:to-red-200 dark:group-hover:from-orange-800/40 dark:group-hover:to-red-800/40 transition-all duration-300 shadow-lg">
+                      <MapPin className="h-6 w-6 text-orange-600 dark:text-orange-400 mb-2" />
                       <p className="font-semibold text-foreground">Address</p>
                       <p className="text-sm text-muted-foreground">2 County Ln, Barrie, ON L4N 0E6</p>
                     </div>
@@ -740,8 +741,8 @@ const HomePage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
 
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-green-500/10 group-hover:bg-green-500/20 transition-colors">
-                      <Phone className="h-6 w-6 text-green-600 mb-2" />
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 group-hover:from-green-200 group-hover:to-emerald-200 dark:group-hover:from-green-800/40 dark:group-hover:to-emerald-800/40 transition-all duration-300 shadow-lg">
+                      <Phone className="h-6 w-6 text-green-600 dark:text-green-400 mb-2" />
                       <p className="font-semibold text-foreground">Phone</p>
                       <p className="text-sm text-muted-foreground">(437) 220-2025</p>
                     </div>
@@ -754,8 +755,8 @@ const HomePage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
 
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
-                      <Mail className="h-6 w-6 text-purple-600 mb-2" />
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 group-hover:from-purple-200 group-hover:to-indigo-200 dark:group-hover:from-purple-800/40 dark:group-hover:to-indigo-800/40 transition-all duration-300 shadow-lg">
+                      <Mail className="h-6 w-6 text-purple-600 dark:text-purple-400 mb-2" />
                       <p className="font-semibold text-foreground">Email</p>
                       <p className="text-sm text-muted-foreground">enquire@allurementhealthcares.com</p>
                     </div>
@@ -768,10 +769,10 @@ const HomePage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
 
-                    <div className="flex flex-col items-center p-4 rounded-xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors">
-                      <Globe className="h-6 w-6 text-orange-600 mb-2" />
-                      <p className="font-semibold text-foreground">Website</p>
-                      <p className="text-sm text-muted-foreground">www.allurementhealthcares.com</p>
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-orange-200 to-red-200 dark:from-orange-800/40 dark:to-red-800/40 group-hover:from-orange-300 group-hover:to-red-300 dark:group-hover:from-orange-700/50 dark:group-hover:to-red-700/50 transition-all duration-300 shadow-lg animate-warm-gradient">
+                      <Globe className="h-6 w-6 text-white dark:text-orange-200 mb-2" />
+                      <p className="font-semibold text-white dark:text-orange-100">Website</p>
+                      <p className="text-sm text-white/90 dark:text-orange-200/90">www.allurementhealthcares.com</p>
                     </div>
                   </motion.a>
                 </div>
@@ -782,7 +783,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12">
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900/20 text-background py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center">

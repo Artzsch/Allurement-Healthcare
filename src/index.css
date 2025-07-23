@@ -113,6 +113,26 @@
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
   
+  .orange-gradient {
+    @apply bg-gradient-to-r from-orange-400 to-orange-600;
+  }
+  
+  .orange-gradient-subtle {
+    @apply bg-gradient-to-r from-orange-100 to-orange-200 dark:from-orange-900/20 dark:to-orange-800/20;
+  }
+  
+  .orange-gradient-text {
+    @apply bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent;
+  }
+  
+  .warm-gradient {
+    @apply bg-gradient-to-br from-orange-400 via-red-400 to-pink-400;
+  }
+  
+  .warm-gradient-light {
+    @apply bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/30 dark:via-red-950/30 dark:to-pink-950/30;
+  }
+  
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -142,6 +162,14 @@
   
   .glow-effect:hover::before {
     transform: translateX(100%);
+  }
+  
+  .orange-glow {
+    @apply shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300;
+  }
+  
+  .warm-glow {
+    @apply shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30 transition-all duration-300;
   }
 }
 
@@ -179,6 +207,18 @@
   background: linear-gradient(-45deg, #4F46E5, #8B5CF6, #60A5FA, #A78BFA);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+}
+
+.animate-warm-gradient {
+  background: linear-gradient(-45deg, #f97316, #ef4444, #f59e0b, #ec4899);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+}
+
+.animate-orange-gradient {
+  background: linear-gradient(-45deg, #fb923c, #f97316, #ea580c, #dc2626);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
 /* Custom scrollbar */

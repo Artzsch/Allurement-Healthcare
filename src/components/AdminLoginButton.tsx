@@ -24,19 +24,19 @@ const AdminLoginButton: React.FC<AdminLoginButtonProps> = ({
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ type: 'spring', stiffness: 300 }}
-    >
+      transition={{ type: 'spring', stiffness: 300 }}>
+
       <Button
         onClick={handleAdminLogin}
         variant={variant}
         size={size}
-        className={`${className} transition-colors duration-200`}
-      >
+        className={`${className} transition-colors duration-200`}>
+
         {showIcon && <ExternalLink className="mr-2 h-4 w-4" />}
         Admin Login
       </Button>
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default AdminLoginButton;
