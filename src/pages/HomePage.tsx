@@ -144,9 +144,18 @@ const HomePage = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-orange-50/20 dark:via-orange-950/10 to-gray-50/30 dark:to-gray-900/20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/261ef118-1ff4-4589-958c-f9d8a3eccfff.png")',
+          }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
         <ParallaxSection speed={0.3}>
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-red-500/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-red-500/10" />
         </ParallaxSection>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -166,7 +175,7 @@ const HomePage = () => {
               <Sparkles className="h-4 w-4 text-orange-600 dark:text-orange-400" />
             </motion.div>
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 bg-clip-text text-transparent leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}>
@@ -175,7 +184,7 @@ const HomePage = () => {
               <span className="block">Healthcare Staffing</span>
             </motion.h1>
             <motion.p
-              className="text-xl mb-8 max-w-3xl mx-auto text-muted-foreground"
+              className="text-xl mb-8 max-w-3xl mx-auto text-white/90 drop-shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}>
