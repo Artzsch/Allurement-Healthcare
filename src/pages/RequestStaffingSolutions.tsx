@@ -147,7 +147,7 @@ const RequestStaffingSolutions = () => {
 
       // Save to database
       const { error } = await window.ezsite.apis.tableCreate(30197, requestData);
-      
+
       if (error) throw error;
 
       // Send notification email

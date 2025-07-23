@@ -660,7 +660,7 @@ const HomePage = () => {
                 </CardHeader>
                 <CardContent>
                   <AnimatedButton className="w-full mb-4 bg-primary hover:bg-primary/90" asChild>
-                    <Link to="/request-staffing">
+                    <Link to="/request-staffing-solutions">
                       Request Staffing Solutions
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
