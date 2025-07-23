@@ -144,7 +144,7 @@ const HomePage = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-orange-50/30 dark:via-orange-950/20 to-primary/5 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-background via-orange-50/20 dark:via-orange-950/10 to-gray-50/30 dark:to-gray-900/20 relative overflow-hidden">
         <ParallaxSection speed={0.3}>
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-red-500/5" />
         </ParallaxSection>
@@ -216,7 +216,7 @@ const HomePage = () => {
       </section>
 
       {/* Main Services Overview */}
-      <section id="services" className="py-20 bg-gradient-to-br from-orange-50/50 via-red-50/30 to-pink-50/50 dark:from-orange-950/20 dark:via-red-950/10 dark:to-pink-950/20">
+      <section id="services" className="py-20 bg-gradient-to-br from-orange-50/30 via-gray-50/20 to-orange-100/30 dark:from-orange-950/15 dark:via-gray-900/10 dark:to-orange-900/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
@@ -247,7 +247,7 @@ const HomePage = () => {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: 'spring', stiffness: 300 }}>
 
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30 rounded-xl flex items-center justify-center shadow-lg">
                       {service.icon}
                     </div>
                   </motion.div>
@@ -277,13 +277,13 @@ const HomePage = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-gradient-to-br from-white via-orange-50/20 to-red-50/30 dark:from-background dark:via-orange-950/10 dark:to-red-950/15">
+      <section className="py-20 bg-gradient-to-br from-gray-50/50 via-orange-50/15 to-gray-100/30 dark:from-gray-900/30 dark:via-orange-950/10 dark:to-gray-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Nursing Staff Solutions */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
-                <Stethoscope className="h-6 w-6 text-blue-600" />
+            <h3 className="text-3xl font-bold text-foreground mb-8 flex items-center">
+              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mr-4">
+                <Stethoscope className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
               Nursing Staff Solutions
             </h3>
@@ -329,9 +329,9 @@ const HomePage = () => {
 
           {/* PSW Solutions */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
-                <Heart className="h-6 w-6 text-red-600" />
+            <h3 className="text-3xl font-bold text-foreground mb-8 flex items-center">
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800/50 rounded-xl flex items-center justify-center mr-4">
+                <Heart className="h-6 w-6 text-gray-600 dark:text-gray-400" />
               </div>
               Personal Support Worker (PSW) Solutions
             </h3>
@@ -390,9 +390,9 @@ const HomePage = () => {
 
           {/* Personal Chef Services */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
-                <ChefHat className="h-6 w-6 text-orange-600" />
+            <h3 className="text-3xl font-bold text-foreground mb-8 flex items-center">
+              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mr-4">
+                <ChefHat className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
               Personal Chef Staffing
             </h3>
@@ -416,7 +416,7 @@ const HomePage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-orange-50/30 to-red-50/20 dark:from-gray-900/50 dark:via-orange-950/20 dark:to-red-950/10">
+      <section id="about" className="py-20 bg-gradient-to-br from-gray-50/80 via-orange-50/20 to-gray-100/50 dark:from-gray-900/40 dark:via-orange-950/15 dark:to-gray-800/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
@@ -428,7 +428,7 @@ const HomePage = () => {
                 <Users className="h-4 w-4 text-orange-600 dark:text-orange-400" />
                 <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Our Team</span>
               </motion.div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Meet Our Healthcare Professionals
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -516,7 +516,7 @@ const HomePage = () => {
           {/* Growth and Success Section */}
           <ScrollAnimatedSection>
             <div className="text-center mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Growing Together, Succeeding Together
               </h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -568,8 +568,8 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-16">
             <AnimatedCard delay={0.1}>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                  <Building2 className="h-8 w-8 text-blue-600 mr-3" />
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center">
+                  <Building2 className="h-8 w-8 text-orange-600 dark:text-orange-400 mr-3" />
                   For Healthcare Facilities
                 </CardTitle>
               </CardHeader>
@@ -603,8 +603,8 @@ const HomePage = () => {
 
             <AnimatedCard delay={0.2}>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                  <Users className="h-8 w-8 text-purple-600 mr-3" />
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center">
+                  <Users className="h-8 w-8 text-gray-600 dark:text-gray-400 mr-3" />
                   For Healthcare Professionals
                 </CardTitle>
               </CardHeader>
@@ -640,7 +640,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-background via-orange-50/20 dark:via-orange-950/10 to-red-50/30 dark:to-red-950/20">
+      <section id="contact" className="py-20 bg-gradient-to-br from-background via-orange-50/15 dark:via-orange-950/10 to-gray-50/25 dark:to-gray-900/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center mb-16">
@@ -783,7 +783,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900/20 text-background py-12">
+      <footer className="bg-gradient-to-br from-gray-900 via-black to-orange-900/30 text-background py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimatedSection>
             <div className="text-center">

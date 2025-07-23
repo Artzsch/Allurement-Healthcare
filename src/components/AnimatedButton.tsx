@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'orange' | 'warm';
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'orange' | 'warm' | 'grey';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   children: React.ReactNode;
   className?: string;
@@ -18,15 +18,20 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
         case 'orange':
           return 'orange-gradient text-white hover:shadow-lg hover:shadow-orange-500/30 border-0';
         case 'warm':
-          return 'warm-gradient text-white hover:shadow-lg hover:shadow-red-500/30 border-0';
+          return 'warm-gradient text-white hover:shadow-lg hover:shadow-orange-500/30 border-0';
+        case 'grey':
+          return 'grey-gradient text-white hover:shadow-lg hover:shadow-gray-500/25 border-0';
         default:
           return '';
       }
     };
 
     const shadowClass = variant === 'orange' ? 'hover:shadow-orange-500/25' :
-                       variant === 'warm' ? 'hover:shadow-red-500/25' :
-                       'hover:shadow-primary/25';
+    variant === 'warm' ? 'hover:shadow-orange-500/25' :
+    variant === 'grey' ? 'hover:shadow-gray-500/20' :
+    'hover:shadow-primary/25';
+
+    const buttonVariant = variant === 'orange' || variant === 'warm' || variant === 'grey' ? 'default' : variant;
 
     if (asChild) {
       return (
@@ -48,7 +53,7 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
               getVariantStyles(),
               className
             )}
-            variant={variant === 'orange' || variant === 'warm' ? 'default' : variant}
+            variant={buttonVariant}
             size={size}
             ref={ref}
             asChild
@@ -79,7 +84,7 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
             getVariantStyles(),
             className
           )}
-          variant={variant === 'orange' || variant === 'warm' ? 'default' : variant}
+          variant={buttonVariant}
           size={size}
           ref={ref}
           {...props}>

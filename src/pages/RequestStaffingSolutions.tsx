@@ -223,9 +223,9 @@ const RequestStaffingSolutions = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50/20 to-gray-100/50 dark:from-gray-900 dark:via-orange-950/10 dark:to-gray-800/30">
       {/* Header */}
-      <div className="bg-white shadow-sm">
+      <div className="bg-background/80 backdrop-blur-md shadow-sm border-b border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -234,9 +234,9 @@ const RequestStaffingSolutions = () => {
                 alt="Allurement Healthcare Staffing Logo"
                 className="h-8 w-8 object-contain mr-2" />
 
-              <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
+              <span className="text-xl font-bold text-foreground">Allurement Healthcare Staffing</span>
             </div>
-            <Link to="/" className="flex items-center text-gray-600 hover:text-blue-600">
+            <Link to="/" className="flex items-center text-muted-foreground hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Link>
@@ -247,10 +247,10 @@ const RequestStaffingSolutions = () => {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Request Staffing Solutions
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Tell us about your facility's staffing needs and we'll provide customized solutions within 24 hours.
           </p>
         </div>
@@ -530,24 +530,24 @@ const RequestStaffingSolutions = () => {
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-600 mr-3" />
+                <Phone className="h-5 w-5 text-orange-600 dark:text-orange-400 mr-3" />
                 <div>
-                  <p className="font-semibold">Call Us</p>
-                  <p className="text-sm text-gray-600">(437) 220-2025</p>
+                  <p className="font-semibold text-foreground">Call Us</p>
+                  <p className="text-sm text-muted-foreground">(437) 220-2025</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-600 mr-3" />
+                <Mail className="h-5 w-5 text-orange-600 dark:text-orange-400 mr-3" />
                 <div>
-                  <p className="font-semibold">Email Us</p>
-                  <p className="text-sm text-gray-600">enquire@allurementhealthcares.com</p>
+                  <p className="font-semibold text-foreground">Email Us</p>
+                  <p className="text-sm text-muted-foreground">enquire@allurementhealthcares.com</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-blue-600 mr-3" />
+                <MapPin className="h-5 w-5 text-orange-600 dark:text-orange-400 mr-3" />
                 <div>
-                  <p className="font-semibold">Visit Us</p>
-                  <p className="text-sm text-gray-600">2 County Ln, Barrie, ON</p>
+                  <p className="font-semibold text-foreground">Visit Us</p>
+                  <p className="text-sm text-muted-foreground">2 County Ln, Barrie, ON</p>
                 </div>
               </div>
             </div>
