@@ -121,34 +121,105 @@ const RequestStaffingSolutions = () => {
       return;
     }
 
-    // Here you would typically send the data to your API
-    console.log('Form submitted:', formData);
+    try {
+      // Prepare data for database
+      const requestData = {
+        facility_name: formData.facilityName,
+        contact_name: formData.contactName,
+        contact_title: formData.contactTitle,
+        email: formData.email,
+        phone: formData.phone,
+        facility_type: formData.facilityType,
+        address: formData.address,
+        city: formData.city,
+        province: formData.province,
+        postal_code: formData.postalCode,
+        urgency: formData.urgency,
+        staffing_needs: JSON.stringify(formData.staffingNeeds),
+        shift_preferences: JSON.stringify(formData.shiftPreferences),
+        duration: formData.duration,
+        start_date: formData.startDate,
+        special_requirements: formData.specialRequirements,
+        additional_info: formData.additionalInfo,
+        status: 'pending',
+        created_at: new Date().toISOString()
+      };
 
-    toast({
-      title: "Request Submitted Successfully!",
-      description: "We'll contact you within 24 hours to discuss your staffing needs."
-    });
+      // Save to database
+      const { error } = await window.ezsite.apis.tableCreate(30197, requestData);
+      
+      if (error) throw error;
 
-    // Reset form
-    setFormData({
-      facilityName: '',
-      contactName: '',
-      contactTitle: '',
-      email: '',
-      phone: '',
-      facilityType: '',
-      address: '',
-      city: '',
-      province: 'Ontario',
-      postalCode: '',
-      urgency: '',
-      staffingNeeds: [],
-      shiftPreferences: [],
-      duration: '',
-      startDate: '',
-      specialRequirements: '',
-      additionalInfo: ''
-    });
+      // Send notification email
+      try {
+        await window.ezsite.apis.sendEmail({
+          from: 'Allurement Healthcare Staffing <noreply@allurementhealthcares.com>',
+          to: ['enquire@allurementhealthcares.com'],
+          subject: `New Staffing Request from ${formData.facilityName}`,
+          html: `
+            <h2>New Staffing Request Received</h2>
+            <h3>Facility Information</h3>
+            <p><strong>Facility Name:</strong> ${formData.facilityName}</p>
+            <p><strong>Facility Type:</strong> ${formData.facilityType}</p>
+            <p><strong>Address:</strong> ${formData.address}, ${formData.city}, ${formData.province} ${formData.postalCode}</p>
+            
+            <h3>Contact Information</h3>
+            <p><strong>Contact Name:</strong> ${formData.contactName}</p>
+            <p><strong>Title:</strong> ${formData.contactTitle}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Phone:</strong> ${formData.phone}</p>
+            
+            <h3>Staffing Requirements</h3>
+            <p><strong>Urgency:</strong> ${formData.urgency}</p>
+            <p><strong>Duration:</strong> ${formData.duration}</p>
+            <p><strong>Start Date:</strong> ${formData.startDate}</p>
+            <p><strong>Staffing Needs:</strong> ${formData.staffingNeeds.join(', ')}</p>
+            <p><strong>Shift Preferences:</strong> ${formData.shiftPreferences.join(', ')}</p>
+            
+            <h3>Additional Details</h3>
+            <p><strong>Special Requirements:</strong> ${formData.specialRequirements}</p>
+            <p><strong>Additional Information:</strong> ${formData.additionalInfo}</p>
+          `
+        });
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Don't fail the entire submission if email fails
+      }
+
+      toast({
+        title: "Request Submitted Successfully!",
+        description: "We'll contact you within 24 hours to discuss your staffing needs."
+      });
+
+      // Reset form
+      setFormData({
+        facilityName: '',
+        contactName: '',
+        contactTitle: '',
+        email: '',
+        phone: '',
+        facilityType: '',
+        address: '',
+        city: '',
+        province: 'Ontario',
+        postalCode: '',
+        urgency: '',
+        staffingNeeds: [],
+        shiftPreferences: [],
+        duration: '',
+        startDate: '',
+        specialRequirements: '',
+        additionalInfo: ''
+      });
+
+    } catch (error) {
+      console.error('Error submitting request:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your request. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -159,7 +230,7 @@ const RequestStaffingSolutions = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
+                src="https://cdn.ezsite.ai/AutoDev/22124/01158ef8-d8f5-4400-b0ae-045101e8a83d.png"
                 alt="Allurement Healthcare Staffing Logo"
                 className="h-8 w-8 object-contain mr-2" />
 
