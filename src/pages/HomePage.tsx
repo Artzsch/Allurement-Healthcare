@@ -11,6 +11,7 @@ import ScrollAnimatedSection from '@/components/ScrollAnimatedSection';
 import GlassCard from '@/components/GlassCard';
 import ParallaxSection from '@/components/ParallaxSection';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import AdminLoginButton from '@/components/AdminLoginButton';
 import {
   Heart,
   Users,
@@ -132,6 +133,10 @@ const HomePage = () => {
                 className="text-foreground hover:text-primary">
                 <Link to="/faq">FAQ</Link>
               </AnimatedButton>
+              <AdminLoginButton 
+                variant="ghost"
+                className="text-foreground hover:text-primary"
+              />
               <ThemeToggle />
             </motion.div>
           </div>
