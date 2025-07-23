@@ -21,7 +21,7 @@ const AdminLogin = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{
-          backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/95ac3bc1-4d15-4073-bbea-4c395c3a1f91.png')`
+          backgroundImage: `url('https://cdn.ezsite.ai/AutoDev/22124/ead26c68-e105-4920-b56d-98da4948bb42.jpg')`
         }}>
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-green-50/90"></div>
