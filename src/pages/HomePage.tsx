@@ -146,12 +146,12 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/261ef118-1ff4-4589-958c-f9d8a3eccfff.png")',
-          }}
-        />
+            backgroundImage: 'url("https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/261ef118-1ff4-4589-958c-f9d8a3eccfff.png")'
+          }} />
+
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
         <ParallaxSection speed={0.3}>

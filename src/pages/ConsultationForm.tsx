@@ -82,9 +82,46 @@ const ConsultationForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // Send notification email to enquire@allurementhealthcares.com
+      const { error: emailError } = await window.ezsite.apis.sendEmail({
+        from: 'Allurement Healthcare Staffing <noreply@allurementhealthcares.com>',
+        to: ['enquire@allurementhealthcares.com'],
+        subject: `New Consultation Request from ${formData.company}`,
+        html: `
+          <h2>New Healthcare Facility Consultation Request</h2>
+          
+          <h3>Contact Information</h3>
+          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Company/Facility:</strong> ${formData.company}</p>
+          <p><strong>Position:</strong> ${formData.position}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p><strong>Preferred Contact Method:</strong> ${formData.contactMethod}</p>
+          
+          <h3>Facility Information</h3>
+          <p><strong>Facility Type:</strong> ${formData.facilityType}</p>
+          
+          <h3>Staffing Requirements</h3>
+          <p><strong>Staffing Type:</strong> ${formData.staffingType}</p>
+          <p><strong>Urgency:</strong> ${formData.urgency}</p>
+          <p><strong>Positions Needed:</strong> ${formData.positions.join(', ')}</p>
+          <p><strong>Number of Staff:</strong> ${formData.numberOfStaff}</p>
+          <p><strong>Duration:</strong> ${formData.duration}</p>
+          <p><strong>Start Date:</strong> ${formData.startDate}</p>
+          <p><strong>Budget Range:</strong> ${formData.budget}</p>
+          
+          <h3>Additional Information</h3>
+          <p><strong>Message:</strong> ${formData.message}</p>
+          
+          <hr>
+          <p><em>This consultation request was submitted through the Allurement Healthcare website.</em></p>
+        `
+      });
+
+      if (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Don't fail the entire submission if email fails
+      }
 
       toast({
         title: "Consultation Request Submitted!",
@@ -113,6 +150,7 @@ const ConsultationForm = () => {
       });
 
     } catch (error) {
+      console.error('Error submitting consultation request:', error);
       toast({
         title: "Submission Error",
         description: "There was an error submitting your request. Please try again.",

@@ -172,43 +172,100 @@ const ApplyNow = () => {
       return;
     }
 
-    // Here you would typically send the data to your API
-    console.log('Application submitted:', formData);
+    try {
+      // Send notification email to enquire@allurementhealthcares.com
+      const { error: emailError } = await window.ezsite.apis.sendEmail({
+        from: 'Allurement Healthcare Staffing <noreply@allurementhealthcares.com>',
+        to: ['enquire@allurementhealthcares.com'],
+        subject: `New Healthcare Professional Application from ${formData.firstName} ${formData.lastName}`,
+        html: `
+          <h2>New Healthcare Professional Job Application</h2>
+          
+          <h3>Personal Information</h3>
+          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p><strong>Address:</strong> ${formData.address}, ${formData.city}, ${formData.province} ${formData.postalCode}</p>
+          
+          <h3>Professional Information</h3>
+          <p><strong>Profession:</strong> ${formData.profession}</p>
+          <p><strong>License/Registration:</strong> ${formData.license}</p>
+          <p><strong>Years of Experience:</strong> ${formData.experience}</p>
+          <p><strong>Specializations:</strong> ${formData.specializations.join(', ')}</p>
+          <p><strong>Availability:</strong> ${formData.availability}</p>
+          <p><strong>Shift Preferences:</strong> ${formData.shiftPreferences.join(', ')}</p>
+          
+          <h3>Employment Preferences</h3>
+          <p><strong>Employment Type:</strong> ${formData.employmentType}</p>
+          <p><strong>Minimum Hourly Rate:</strong> $${formData.minHourlyRate} CAD</p>
+          <p><strong>Preferred Locations:</strong> ${formData.preferredLocations.join(', ')}</p>
+          <p><strong>Reliable Transportation:</strong> ${formData.transportationReliable}</p>
+          
+          <h3>Qualifications</h3>
+          <p><strong>Education Level:</strong> ${formData.education}</p>
+          <p><strong>Certifications:</strong> ${formData.certifications.join(', ')}</p>
+          <p><strong>Languages:</strong> ${formData.languages.join(', ')}</p>
+          
+          <h3>Additional Information</h3>
+          <p><strong>Additional Skills:</strong> ${formData.additionalSkills}</p>
+          <p><strong>Why Join Us:</strong> ${formData.whyJoin}</p>
+          <p><strong>Eligible to Work in Canada:</strong> ${formData.eligibleToWork}</p>
+          <p><strong>Background Check Consent:</strong> ${formData.backgroundCheck}</p>
+          <p><strong>References:</strong> ${formData.references}</p>
+          
+          <hr>
+          <p><em>This application was submitted through the Allurement Healthcare website.</em></p>
+        `
+      });
 
-    toast({
-      title: "Application Submitted Successfully!",
-      description: "We'll review your application and contact you within 48 hours."
-    });
+      if (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Don't fail the entire submission if email fails
+      }
 
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      province: 'Ontario',
-      postalCode: '',
-      profession: '',
-      license: '',
-      experience: '',
-      specializations: [],
-      availability: '',
-      shiftPreferences: [],
-      employmentType: '',
-      minHourlyRate: '',
-      preferredLocations: [],
-      transportationReliable: '',
-      education: '',
-      certifications: [],
-      languages: [],
-      additionalSkills: '',
-      whyJoin: '',
-      eligibleToWork: '',
-      backgroundCheck: '',
-      references: ''
-    });
+      toast({
+        title: "Application Submitted Successfully!",
+        description: "We'll review your application and contact you within 48 hours."
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: '',
+        city: '',
+        province: 'Ontario',
+        postalCode: '',
+        profession: '',
+        license: '',
+        experience: '',
+        specializations: [],
+        availability: '',
+        shiftPreferences: [],
+        employmentType: '',
+        minHourlyRate: '',
+        preferredLocations: [],
+        transportationReliable: '',
+        education: '',
+        certifications: [],
+        languages: [],
+        additionalSkills: '',
+        whyJoin: '',
+        eligibleToWork: '',
+        backgroundCheck: '',
+        references: ''
+      });
+
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
