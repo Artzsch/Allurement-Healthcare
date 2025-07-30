@@ -745,7 +745,7 @@ const HomePage = () => {
                     </div>
                   </motion.a>
                   <motion.a
-                    href="tel:+14374947278"
+                    href="tel:+14372202025"
                     className="group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}>
@@ -753,7 +753,7 @@ const HomePage = () => {
                     <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 group-hover:from-green-200 group-hover:to-emerald-200 dark:group-hover:from-green-800/40 dark:group-hover:to-emerald-800/40 transition-all duration-300 shadow-lg">
                       <Phone className="h-6 w-6 text-green-600 dark:text-green-400 mb-2" />
                       <p className="font-semibold text-foreground">Phone</p>
-                      <p className="text-sm text-muted-foreground">+1 437 494 7278</p>
+                      <p className="text-sm text-muted-foreground">(437) 220-2025</p>
                     </div>
                   </motion.a>
                   <motion.a
