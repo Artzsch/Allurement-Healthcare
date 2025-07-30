@@ -14,6 +14,7 @@ import Disclaimer from "./pages/Disclaimer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import InteractiveBackground from "./components/InteractiveBackground";
 import FloatingActionButton from "./components/FloatingActionButton";
+import ChatBotTrigger from "./components/ChatBotTrigger";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () =>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingActionButton />
+          <ChatBotTrigger />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
