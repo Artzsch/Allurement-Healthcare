@@ -13,3 +13,28 @@ html {
 body {
   margin: 0;
 }
+import { VapiClient } from '@vapi-ai/server-sdk';
+
+const vapi = new VapiClient({
+  token: '2fa14117-dc19-49ff-9963-2978259ab5b6'
+});
+
+async function createCall() {
+  const call = await vapi.calls.create({
+    phoneNumberId: 'd7f2da84-d1da-4c12-b707-36b385c4aee8',
+    customer: { number: '+1 (437) 494 7278
+' },
+    assistant: {
+      model: {
+        provider: 'openai',
+        model: 'gpt-4o',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a helpful AI assistant. Keep your responses concise and friendly.'
+          }
+        ]
+      }
+    }
+  });
+}
