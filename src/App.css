@@ -21,11 +21,11 @@ const vapi = new VapiClient({
 
 async function createCall() {
   const call = await vapi.calls.create({
-    phoneNumberId: 'd7f2da84-d1da-4c12-b707-36b385c4aee8',
+    phoneNumberId: '211e9af0-db7d-479d-ab13-f88879a8718a',
     customer: { number: '+1 (437) 494 7278
 ' },
-    assistant: {
-      model: {
+    assistant: {211e9af0-db7d-479d-ab13-f88879a8718a
+      model: {Tiffany
         provider: 'openai',
         model: 'gpt-4o',
         messages: [
