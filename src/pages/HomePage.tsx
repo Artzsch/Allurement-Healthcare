@@ -211,6 +211,29 @@ const HomePage = () => {
                 onClick={() => scrollToSection('contact')}>
                 Get Started
               </AnimatedButton>
+              
+              {/* Hotline Number */}
+              <motion.div
+                className="flex flex-col items-center mt-6 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 }}>
+                <div className="flex items-center space-x-2 mb-2">
+                  <Phone className="h-5 w-5 text-white" />
+                  <span className="text-white font-medium">24/7 Hotline</span>
+                </div>
+                <motion.a
+                  href="tel:+14374947278"
+                  className="text-2xl font-bold text-white hover:text-orange-200 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}>
+                  +1 437 494 7278
+                </motion.a>
+                <p className="text-white/80 text-sm text-center mt-1">
+                  Emergency staffing available
+                </p>
+              </motion.div>
+              
               <div className="text-center mt-4">
                 <Button
                   variant="ghost"
@@ -729,7 +752,7 @@ const HomePage = () => {
                   </div>
                 </ScrollAnimatedSection>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
                   <motion.a
                     href="https://maps.google.com/?q=2+County+Ln,+Barrie,+ON+L4N+0E6"
                     target="_blank"
@@ -742,6 +765,18 @@ const HomePage = () => {
                       <MapPin className="h-6 w-6 text-orange-600 dark:text-orange-400 mb-2" />
                       <p className="font-semibold text-foreground">Address</p>
                       <p className="text-sm text-muted-foreground">2 County Ln, Barrie, ON L4N 0E6</p>
+                    </div>
+                  </motion.a>
+                  <motion.a
+                    href="tel:+14374947278"
+                    className="group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}>
+
+                    <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-red-100 to-orange-100 dark:from-red-900/30 dark:to-orange-900/30 group-hover:from-red-200 group-hover:to-orange-200 dark:group-hover:from-red-800/40 dark:group-hover:to-orange-800/40 transition-all duration-300 shadow-lg">
+                      <Phone className="h-6 w-6 text-red-600 dark:text-red-400 mb-2" />
+                      <p className="font-semibold text-foreground">24/7 Hotline</p>
+                      <p className="text-sm text-muted-foreground">+1 437 494 7278</p>
                     </div>
                   </motion.a>
                   <motion.a
