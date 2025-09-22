@@ -21,7 +21,7 @@ const AdminLogin = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{
-          backgroundImage: `url('https://cdn.ezsite.ai/AutoDev/22124/ead26c68-e105-4920-b56d-98da4948bb42.jpg')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1720726561387-db1df6afaa4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwc2VyZW5lJTIwYmFja2dyb3VuZCUyMGltYWdlJTIwZmVhdHVyaW5nJTIwYSUyMGdyYWRpZW50JTIwb2YlMjBibHVlJTIwYW5kJTIwZ3JlZW4lMjBodWVzJTJDJTIwd2l0aCUyMGElMjBzb2Z0JTIwYW5kJTIwY2FsbWluZyUyMGFlc3RoZXRpYy58ZW58MHx8fHwxNzU4NTQ2ODk4fDA&ixlib=rb-4.1.0&q=80&w=200$w=1920')`
         }}>
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-green-50/90"></div>

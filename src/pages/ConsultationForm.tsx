@@ -196,9 +196,9 @@ const ConsultationForm = () => {
               </Button>
               <div className="h-6 w-px bg-gray-300" />
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/445d0d96-0d8f-4745-bb50-4fd60987d463.png"
-                alt="Allurement Healthcare Logo"
-                className="h-12 w-12 object-contain" />
+                src="https://images.unsplash.com/photo-1674450371215-550d33a2d81e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwcHJvZmVzc2lvbmFsJTIwaGVhbHRoY2FyZSUyMHN0YWZmaW5nJTIwbG9nbyUyMGZvciUyMEFsbHVyZW1lbnQlMjBIZWFsdGhjYXJlLnxlbnwwfHx8fDE3NTg1NDcwNjF8MA&ixlib=rb-4.1.0&q=80&w=200$w=512"
+                alt="Allurement Healthcare - Professional Healthcare Staffing Logo"
+                className="h-12 w-12 object-contain rounded-lg shadow-sm" />
 
               <h1 className="text-xl font-bold text-gray-900">Allurement Healthcare</h1>
             </div>
@@ -216,7 +216,7 @@ const ConsultationForm = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url('https://newoaks.s3.us-west-1.amazonaws.com/NewOaks/5500/95ac3bc1-4d15-4073-bbea-4c395c3a1f91.png')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1702073882246-7a5444c3bebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwc2VyZW5lJTIwaGVhbHRoY2FyZSUyMGZhY2lsaXR5JTIwd2l0aCUyMGElMjBtb2Rlcm4lMjBkZXNpZ24lMkMlMjBzdXJyb3VuZGVkJTIwYnklMjBncmVlbmVyeSUyMGFuZCUyMGElMjBjbGVhciUyMGJsdWUlMjBza3kufGVufDB8fHx8MTc1ODU0NzA1NHww&ixlib=rb-4.1.0&q=80&w=200$w=1920')`
           }}>
         </div>
         <div className="container mx-auto px-4 relative z-10">

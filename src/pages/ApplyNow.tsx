@@ -276,9 +276,9 @@ const ApplyNow = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/22124/3010a2b2-03ad-48b6-ab6d-1b16477f66e1.png"
-                alt="Allurement Healthcare Staffing Logo"
-                className="h-8 w-8 object-contain mr-2" />
+                src="https://images.unsplash.com/photo-1636249253913-40e83d5423e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwbG9nbyUyMGZvciUyMEFsbHVyZW1lbnQlMjBIZWFsdGhjYXJlJTIwU3RhZmZpbmclMkMlMjBmZWF0dXJpbmclMjBhJTIwc3R5bGl6ZWQlMjBkZXNpZ24ufGVufDB8fHx8MTc1ODU0NjkwMHww&ixlib=rb-4.1.0&q=80&w=200$w=512"
+                alt="Allurement Healthcare Staffing - Career Opportunities Logo"
+                className="h-8 w-8 object-contain mr-2 rounded shadow-sm" />
 
               <span className="text-xl font-bold text-gray-900">Allurement Healthcare Staffing</span>
             </div>

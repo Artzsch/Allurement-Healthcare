@@ -230,9 +230,9 @@ const RequestStaffingSolutions = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="https://cdn.ezsite.ai/AutoDev/22124/01158ef8-d8f5-4400-b0ae-045101e8a83d.png"
-                alt="Allurement Healthcare Staffing Logo"
-                className="h-8 w-8 object-contain mr-2" />
+                src="https://images.unsplash.com/photo-1636249253913-40e83d5423e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwbG9nbyUyMGZvciUyMEFsbHVyZW1lbnQlMjBIZWFsdGhjYXJlJTIwU3RhZmZpbmclMkMlMjBmZWF0dXJpbmclMjBhJTIwcHJvZmVzc2lvbmFsJTIwZGVzaWduJTIwd2l0aCUyMGhlYWx0aGNhcmUtcmVsYXRlZCUyMGVsZW1lbnRzLnxlbnwwfHx8fDE3NTg1NDcwNjR8MA&ixlib=rb-4.1.0&q=80&w=200$w=512"
+                alt="Allurement Healthcare Staffing - Professional Healthcare Solutions Logo"
+                className="h-8 w-8 object-contain mr-2 rounded shadow-sm" />
 
               <span className="text-xl font-bold text-foreground">Allurement Healthcare Staffing</span>
             </div>
