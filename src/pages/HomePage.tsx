@@ -12,6 +12,7 @@ import GlassCard from '@/components/GlassCard';
 import ParallaxSection from '@/components/ParallaxSection';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import AdminLoginButton from '@/components/AdminLoginButton';
+import Logo from '@/components/Logo';
 import {
   Heart,
   Users,
@@ -87,16 +88,7 @@ const HomePage = () => {
               transition={{ delay: 0.2 }}>
 
               <div className="flex items-center space-x-3">
-                <motion.div
-                  className="w-10 h-10 flex items-center justify-center"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1636249253913-40e83d5423e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwbG9nbyUyMGZvciUyMEFsbHVyZW1lbnQlMjBIZWFsdGhjYXJlJTJDJTIwYSUyMHByb2Zlc3Npb25hbCUyMGhlYWx0aGNhcmUlMjBzdGFmZmluZyUyMGNvbXBhbnkufGVufDB8fHx8MTc1ODU0NzA1OXww&ixlib=rb-4.1.0&q=80&w=200$w=512"
-                    alt="Allurement Healthcare - Professional Healthcare Staffing Logo"
-                    className="h-10 w-10 object-contain rounded-lg shadow-sm" />
-
-                </motion.div>
+                <Logo animated size="md" />
 
                 <span className="text-xl font-bold text-foreground">
                   Allurement Healthcare
@@ -837,14 +829,10 @@ const HomePage = () => {
                 transition={{ type: 'spring', stiffness: 300 }}>
 
                 <motion.div
-                  className="w-12 h-12 flex items-center justify-center mr-3"
+                  className="mr-3"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1636249253913-40e83d5423e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwbG9nbyUyMGZvciUyMEFsbHVyZW1lbnQlMjBIZWFsdGhjYXJlJTJDJTIwYSUyMHByb2Zlc3Npb25hbCUyMGhlYWx0aGNhcmUlMjBzdGFmZmluZyUyMGNvbXBhbnkufGVufDB8fHx8MTc1ODU0NzA1OXww&ixlib=rb-4.1.0&q=80&w=200$w=512"
-                    alt="Allurement Healthcare - Professional Healthcare Staffing Logo"
-                    className="h-12 w-12 object-contain rounded-lg shadow-lg" />
-
+                  <Logo size="lg" />
                 </motion.div>
 
                 <span className="text-3xl font-bold">Allurement Healthcare</span>
