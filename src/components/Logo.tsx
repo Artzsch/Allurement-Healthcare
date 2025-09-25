@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = ({
 
   const logoContent =
   <img
-    src="https://images.unsplash.com/photo-1636249253913-40e83d5423e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwbG9nbyUyMGltYWdlJTIwZm9yJTIwQWxsdXJlbWVudCUyMEhlYWx0aGNhcmUlMkMlMjBmZWF0dXJpbmclMjBhJTIwc3R5bGl6ZWQlMjBkZXNpZ24lMjB3aXRoJTIwYSUyMHByb2Zlc3Npb25hbCUyMGFuZCUyMGNsZWFuJTIwYXBwZWFyYW5jZS58ZW58MHx8fHwxNzU4NTQ4NzI2fDA&ixlib=rb-4.1.0&q=80&w=200$w=512"
+    src="https://cdn.ezsite.ai/AutoDev/22124/89a3316d-4873-4f2f-b3ba-be4e60defe47.png"
     alt="Allurement Healthcare Logo"
     className={cn(
       sizeClasses[size],
